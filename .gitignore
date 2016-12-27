@@ -1,0 +1,8 @@
+/.sass-cache
+/_site
+/_story_photo_ideas
+.bundle/
+
+# Ignore OSX files like:
+.idea/
+.DS_Store

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-us">
+{% include head.html %}
+<body>
+    {{ content }}
+    <footer class="site-footer">
+        <div class="container">
+            &copy; {{ site.time | date: "%Y" }} {{ site.info.title }}
+
+            <nav>
+                <a href="/">Blog</a> &middot;
+                <a href="/about.html">About</a>
+            </nav>
+
+            <nav class="social">
+                {% include social_links.html %}
+            </nav>
+            <div>Made with <i class="love">♥</i></div>
+        </div>
+    </footer>
+</body>
+</html>
