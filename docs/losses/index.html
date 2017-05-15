@@ -1,0 +1,1051 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for polyaxon, a python Deep Learning library for TensorFlow.">
+      
+      
+        <link rel="canonical" href="http://polyaxon.com/losses/">
+      
+      
+      
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
+    
+    
+      
+        <title>Losses - Polyaxon Documentation</title>
+      
+    
+    
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-e2807e330f.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="http://polyaxon.com" title="Polyaxon Documentation" class="md-logo md-header-nav__button">
+            <img src="../assets/images/logo_white.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Losses
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../assets/images/logo_white.svg">
+      </i>
+    
+    Polyaxon Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting_started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Experiments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Experiments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/experiment/" title="Expermient" class="md-nav__link">
+      Expermient
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/estimator/" title="Estimator" class="md-nav__link">
+      Estimator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/model/" title="Model" class="md-nav__link">
+      Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/hooks/" title="Hooks" class="md-nav__link">
+      Hooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/subgraph/" title="Subgraph" class="md-nav__link">
+      Subgraph
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/summarizer/" title="Summerizer" class="md-nav__link">
+      Summerizer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Layers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Layers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/core/" title="Core Layers" class="md-nav__link">
+      Core Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/convolutional/" title="Convolutional Layers" class="md-nav__link">
+      Convolutional Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/recurrent/" title="Recurrent Layers" class="md-nav__link">
+      Recurrent Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/embeddings/" title="Embedding Layers" class="md-nav__link">
+      Embedding Layers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../activations/" title="Activations" class="md-nav__link">
+      Activations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Losses
+      </label>
+    
+    <a href="./" title="Losses" class="md-nav__link md-nav__link--active">
+      Losses
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#absolute_difference" title="absolute_difference" class="md-nav__link">
+    absolute_difference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log_loss" title="log_loss" class="md-nav__link">
+    log_loss
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mean_squared_error" title="mean_squared_error" class="md-nav__link">
+    mean_squared_error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#softmax_cross_entropy" title="softmax_cross_entropy" class="md-nav__link">
+    softmax_cross_entropy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sigmoid_cross_entropy" title="sigmoid_cross_entropy" class="md-nav__link">
+    sigmoid_cross_entropy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hinge_loss" title="hinge_loss" class="md-nav__link">
+    hinge_loss
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosine_distance" title="cosine_distance" class="md-nav__link">
+    cosine_distance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kullback_leibler_divergence" title="kullback_leibler_divergence" class="md-nav__link">
+    kullback_leibler_divergence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poisson_loss" title="poisson_loss" class="md-nav__link">
+    poisson_loss
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/" title="Metrics" class="md-nav__link">
+      Metrics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../optimizers/" title="Optimizers" class="md-nav__link">
+      Optimizers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../initializations/" title="Initializations" class="md-nav__link">
+      Initializations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../regularizations/" title="Regularizations" class="md-nav__link">
+      Regularizations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Libs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Libs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../libs/configs/" title="Configs" class="md-nav__link">
+      Configs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../libs/getters/" title="Getters" class="md-nav__link">
+      Getters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../libs/utils/" title="Utils" class="md-nav__link">
+      Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#absolute_difference" title="absolute_difference" class="md-nav__link">
+    absolute_difference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log_loss" title="log_loss" class="md-nav__link">
+    log_loss
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mean_squared_error" title="mean_squared_error" class="md-nav__link">
+    mean_squared_error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#softmax_cross_entropy" title="softmax_cross_entropy" class="md-nav__link">
+    softmax_cross_entropy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sigmoid_cross_entropy" title="sigmoid_cross_entropy" class="md-nav__link">
+    sigmoid_cross_entropy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hinge_loss" title="hinge_loss" class="md-nav__link">
+    hinge_loss
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosine_distance" title="cosine_distance" class="md-nav__link">
+    cosine_distance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kullback_leibler_divergence" title="kullback_leibler_divergence" class="md-nav__link">
+    kullback_leibler_divergence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poisson_loss" title="poisson_loss" class="md-nav__link">
+    poisson_loss
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Losses</h1>
+                
+                <h3 id="absolute_difference">absolute_difference</h3>
+<div class="codehilite"><pre><span></span><span class="n">absolute_difference</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AbsoluteDifference&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adds an Absolute Difference loss to the training procedure.</p>
+<p><code>weights</code> acts as a coefficient for the loss. If a scalar is provided, then
+the loss is simply scaled by the given value. If <code>weights</code> is a <code>Tensor</code> of
+shape <code>[batch_size]</code>, then the total loss for each sample of the batch is
+rescaled by the corresponding element in the <code>weights</code> vector. If the shape of
+<code>weights</code> matches the shape of <code>predictions</code>, then the loss of each
+measurable element of <code>predictions</code> is scaled by the corresponding value of
+<code>weights</code>.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>weights</strong>: Optional <code>Tensor</code> whose rank is either 0, or the same rank as
+<code>labels</code>, and must be broadcastable to <code>labels</code> (i.e., all dimensions must
+be either <code>1</code>, or the same as the corresponding <code>losses</code> dimension).</li>
+<li><strong>name</strong>: operation name.</li>
+<li><strong>scope</strong>: operation scope.</li>
+<li>
+<p><strong>collect</strong>: whether to collect this metric under the metric collection.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A scalar <code>Tensor</code> representing the loss value.</p>
+</li>
+</ul>
+<hr />
+<h3 id="log_loss">log_loss</h3>
+<div class="codehilite"><pre><span></span><span class="n">log_loss</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;LogLoss&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<h3 id="mean_squared_error">mean_squared_error</h3>
+<div class="codehilite"><pre><span></span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MeanSquaredError&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Computes Mean Square Loss.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
+<li><strong>scope</strong>: scope to add the op to.</li>
+<li><strong>name</strong>: name of the op.</li>
+<li>
+<p><strong>collect</strong>: add to losses collection.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A scalar <code>Tensor</code> representing the loss value.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
+</ul>
+<hr />
+<h3 id="softmax_cross_entropy">softmax_cross_entropy</h3>
+<div class="codehilite"><pre><span></span><span class="n">softmax_cross_entropy</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">label_smoothing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SoftmaxCrossEntropy&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Computes Softmax Cross entropy (softmax categorical cross entropy).</p>
+<p>Computes softmax cross entropy between y_pred (logits) and
+y_true (labels).</p>
+<p>Measures the probability error in discrete classification tasks in which
+the classes are mutually exclusive (each entry is in exactly one class).
+For example, each CIFAR-10 image is labeled with one and only one label:
+an image can be a dog or a truck, but not both.</p>
+<ul>
+<li><strong>**WARNING</strong>:** This op expects unscaled logits, since it performs a <code>softmax</code>
+on <code>y_pred</code> internally for efficiency.  Do not call this op with the
+output of <code>softmax</code>, as it will produce incorrect results.</li>
+</ul>
+<p><code>y_pred</code> and <code>y_true</code> must have the same shape <code>[batch_size, num_classes]</code>
+and the same dtype (either <code>float32</code> or <code>float64</code>). It is also required
+that <code>y_true</code> (labels) are binary arrays (For example, class 2 out of a
+total of 5 different classes, will be define as [0., 1., 0., 0., 0.])</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
+<li><strong>label_smoothing</strong>: If greater than <code>0</code> then smooth the labels.</li>
+<li><strong>scope</strong>: scope to add the op to.</li>
+<li><strong>name</strong>: name of the op.</li>
+<li>
+<p><strong>collect</strong>: add to losses collection.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A scalar <code>Tensor</code> representing the loss value.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
+</ul>
+<hr />
+<h3 id="sigmoid_cross_entropy">sigmoid_cross_entropy</h3>
+<div class="codehilite"><pre><span></span><span class="n">sigmoid_cross_entropy</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">label_smoothing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SigmoidCrossEntropy&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Computes Sigmoid cross entropy.(binary cross entropy):</p>
+<p>Computes sigmoid cross entropy between y_pred (logits) and y_true
+(labels).</p>
+<p>Measures the probability error in discrete classification tasks in which
+each class is independent and not mutually exclusive. For instance,
+one could perform multilabel classification where a picture can contain
+both an elephant and a dog at the same time.</p>
+<p>For brevity, let <code>x = logits</code>, <code>z = targets</code>.  The logistic loss is</p>
+<p>x - x * z + log(1 + exp(-x))</p>
+<p>To ensure stability and avoid overflow, the implementation uses</p>
+<p>max(x, 0) - x * z + log(1 + exp(-abs(x)))</p>
+<p><code>y_pred</code> and <code>y_true</code> must have the same type and shape.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
+<li><strong>label_smoothing</strong>: If greater than <code>0</code> then smooth the labels.</li>
+<li><strong>scope</strong>: scope to add the op to.</li>
+<li><strong>name</strong>: name of the op.</li>
+<li>
+<p><strong>collect</strong>: add to losses collection.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A scalar <code>Tensor</code> representing the loss value.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
+</ul>
+<hr />
+<h3 id="hinge_loss">hinge_loss</h3>
+<div class="codehilite"><pre><span></span><span class="n">hinge_loss</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;HingeLoss&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Hinge Loss.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
+<li><strong>name</strong>: name of the op.</li>
+<li><strong>scope</strong>: The scope for the operations performed in computing the loss.</li>
+<li>
+<p><strong>collect</strong>: add to losses collection.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A scalar <code>Tensor</code> representing the loss value.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
+</ul>
+<hr />
+<h3 id="cosine_distance">cosine_distance</h3>
+<div class="codehilite"><pre><span></span><span class="n">cosine_distance</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;CosineDistance&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adds a cosine-distance loss to the training procedure.</p>
+<p>Note that the function assumes that <code>predictions</code> and <code>labels</code> are already unit-normalized.</p>
+<ul>
+<li>
+<p><strong>WARNING</strong>: <code>weights</code> also supports dimensions of 1, but the broadcasting does
+not work as advertised, you'll wind up with weighted sum instead of weighted
+mean for any but the last dimension. This will be cleaned up soon, so please
+do not rely on the current behavior for anything but the shapes documented for
+<code>weights</code> below.</p>
+</li>
+<li>
+<p><strong>Args</strong>:</p>
+</li>
+<li><strong>dim</strong>: The dimension along which the cosine distance is computed.</li>
+<li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
+<li><strong>name</strong>: name of the op.</li>
+<li><strong>scope</strong>: The scope for the operations performed in computing the loss.</li>
+<li>
+<p><strong>collect</strong>: add to losses collection.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A scalar <code>Tensor</code> representing the loss value.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
+</ul>
+<hr />
+<h3 id="kullback_leibler_divergence">kullback_leibler_divergence</h3>
+<div class="codehilite"><pre><span></span><span class="n">kullback_leibler_divergence</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;KullbackLeiberDivergence&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adds a Kullback leiber diverenge loss to the training procedure.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>name</strong>: name of the op.</li>
+<li><strong>scope</strong>: The scope for the operations performed in computing the loss.</li>
+<li>
+<p><strong>collect</strong>: add to losses collection.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A scalar <code>Tensor</code> representing the loss value.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
+</ul>
+<hr />
+<h3 id="poisson_loss">poisson_loss</h3>
+<div class="codehilite"><pre><span></span><span class="n">poisson_loss</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;PoissonLoss&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adds a poisson loss to the training procedure.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>name</strong>: name of the op.</li>
+<li><strong>scope</strong>: The scope for the operations performed in computing the loss.</li>
+<li>
+<p><strong>collect</strong>: add to losses collection.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A scalar <code>Tensor</code> representing the loss value.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../activations/" title="Activations" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Activations
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../metrics/" title="Metrics" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Metrics
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application-6b599127bc.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-89493331-1","polyaxon.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

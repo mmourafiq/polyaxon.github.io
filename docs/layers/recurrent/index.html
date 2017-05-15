@@ -1,0 +1,1143 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for polyaxon, a python Deep Learning library for TensorFlow.">
+      
+      
+        <link rel="canonical" href="http://polyaxon.com/layers/recurrent/">
+      
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
+    
+    
+      
+        <title>Recurrent Layers - Polyaxon Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-e2807e330f.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="http://polyaxon.com" title="Polyaxon Documentation" class="md-logo md-header-nav__button">
+            <img src="../../assets/images/logo_white.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Layers
+                </span>
+              
+            
+            Recurrent Layers
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../assets/images/logo_white.svg">
+      </i>
+    
+    Polyaxon Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Experiments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Experiments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/experiment/" title="Expermient" class="md-nav__link">
+      Expermient
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/estimator/" title="Estimator" class="md-nav__link">
+      Estimator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/model/" title="Model" class="md-nav__link">
+      Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/hooks/" title="Hooks" class="md-nav__link">
+      Hooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/subgraph/" title="Subgraph" class="md-nav__link">
+      Subgraph
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/summarizer/" title="Summerizer" class="md-nav__link">
+      Summerizer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Layers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Layers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../core/" title="Core Layers" class="md-nav__link">
+      Core Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../convolutional/" title="Convolutional Layers" class="md-nav__link">
+      Convolutional Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Recurrent Layers
+      </label>
+    
+    <a href="./" title="Recurrent Layers" class="md-nav__link md-nav__link--active">
+      Recurrent Layers
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simplernn" title="SimpleRNN" class="md-nav__link">
+    SimpleRNN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lstm" title="LSTM" class="md-nav__link">
+    LSTM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gru" title="GRU" class="md-nav__link">
+    GRU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidirectionalrnn" title="BidirectionalRNN" class="md-nav__link">
+    BidirectionalRNN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basicrnncell" title="BasicRNNCell" class="md-nav__link">
+    BasicRNNCell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grucell" title="GRUCell" class="md-nav__link">
+    GRUCell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basiclstmcell" title="BasicLSTMCell" class="md-nav__link">
+    BasicLSTMCell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropoutwrapper" title="DropoutWrapper" class="md-nav__link">
+    DropoutWrapper
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multirnncell" title="MultiRNNCell" class="md-nav__link">
+    MultiRNNCell
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../embeddings/" title="Embedding Layers" class="md-nav__link">
+      Embedding Layers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../activations/" title="Activations" class="md-nav__link">
+      Activations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../losses/" title="Losses" class="md-nav__link">
+      Losses
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics/" title="Metrics" class="md-nav__link">
+      Metrics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../optimizers/" title="Optimizers" class="md-nav__link">
+      Optimizers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../initializations/" title="Initializations" class="md-nav__link">
+      Initializations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regularizations/" title="Regularizations" class="md-nav__link">
+      Regularizations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Libs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Libs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/configs/" title="Configs" class="md-nav__link">
+      Configs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/getters/" title="Getters" class="md-nav__link">
+      Getters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/utils/" title="Utils" class="md-nav__link">
+      Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simplernn" title="SimpleRNN" class="md-nav__link">
+    SimpleRNN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lstm" title="LSTM" class="md-nav__link">
+    LSTM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gru" title="GRU" class="md-nav__link">
+    GRU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidirectionalrnn" title="BidirectionalRNN" class="md-nav__link">
+    BidirectionalRNN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basicrnncell" title="BasicRNNCell" class="md-nav__link">
+    BasicRNNCell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grucell" title="GRUCell" class="md-nav__link">
+    GRUCell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basiclstmcell" title="BasicLSTMCell" class="md-nav__link">
+    BasicLSTMCell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropoutwrapper" title="DropoutWrapper" class="md-nav__link">
+    DropoutWrapper
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multirnncell" title="MultiRNNCell" class="md-nav__link">
+    MultiRNNCell
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Recurrent Layers</h1>
+                
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L114">[source]</a></span></p>
+<h3 id="simplernn">SimpleRNN</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">SimpleRNN</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">return_seq</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SimpleRNN&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Simple RNN (Simple Recurrent Layer.)</p>
+<ul>
+<li><strong>Output</strong>:
+if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
+<li>
+<p><strong>else</strong>: 2-D Tensor [samples, output dim].</p>
+</li>
+<li>
+<p><strong>Args</strong>:</p>
+</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
+<li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'sigmoid'.</li>
+<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (input_keep_prob, output_keep_prob). The
+    input and output keep probability.</li>
+<li><strong>num_layers</strong>: <code>int</code> how many times to stack the cell.</li>
+<li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
+<li><strong>weights_init</strong>: <code>str</code> (name) or <code>Tensor</code>. Weights initialization.</li>
+<li><strong>return_seq</strong>: <code>bool</code>. If True, returns the full sequence instead of
+    last sequence output only.</li>
+<li><strong>return_state</strong>: <code>bool</code>. If True, returns a tuple with output and<ul>
+<li><strong>states</strong>: (output, states).</li>
+</ul>
+</li>
+<li><strong>initial_state</strong>: <code>Tensor</code>. An initial state for the RNN.  This must be
+    a tensor of appropriate type and shape [batch_size x cell.state_size].</li>
+<li><strong>dynamic</strong>: <code>bool</code>. If True, dynamic computation is performed. It will not
+    compute RNN steps above the sequence length. Note that because TF
+    requires to feed sequences of same length, 0 is used as a mask.
+    So a sequence padded with 0 at the end must be provided. When
+    computation is performed, it will stop when it meets a step with
+    a value of 0.</li>
+<li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
+<li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when loading a model.</li>
+<li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L175">[source]</a></span></p>
+<h3 id="lstm">LSTM</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">inner_activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">forget_bias</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">return_seq</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;LSTM&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>LSTM (Long Short Term Memory Recurrent Layer).</p>
+<ul>
+<li><strong>Output</strong>:
+if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
+<li>
+<p><strong>else</strong>: 2-D Tensor [samples, output dim].</p>
+</li>
+<li>
+<p><strong>Args</strong>:</p>
+</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
+<li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'tanh'.</li>
+<li><strong>inner_activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>).
+    LSTM inner activation. Default: 'sigmoid'.</li>
+<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (input_keep_prob, output_keep_prob). The
+    input and output keep probability.</li>
+<li><strong>num_layers</strong>: <code>int</code> how many times to stack the cell.</li>
+<li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
+<li><strong>weights_init</strong>: <code>str</code> (name) or <code>Tensor</code>. Weights initialization.</li>
+<li><strong>forget_bias</strong>: <code>float</code>. Bias of the forget gate. Default: 1.0.</li>
+<li><strong>return_seq</strong>: <code>bool</code>. If True, returns the full sequence instead of
+    last sequence output only.</li>
+<li><strong>return_state</strong>: <code>bool</code>. If True, returns a tuple with output and<ul>
+<li><strong>states</strong>: (output, states).</li>
+</ul>
+</li>
+<li><strong>initial_state</strong>: <code>Tensor</code>. An initial state for the RNN.  This must be
+    a tensor of appropriate type and shape [batch_size x cell.state_size].</li>
+<li><strong>dynamic</strong>: <code>bool</code>. If True, dynamic computation is performed. It will not
+    compute RNN steps above the sequence length. Note that because TF
+    requires to feed sequences of same length, 0 is used as a mask.
+    So a sequence padded with 0 at the end must be provided. When
+    computation is performed, it will stop when it meets a step with
+    a value of 0.</li>
+<li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
+<li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when loading a model.</li>
+<li>
+<p><strong>name</strong>: <code>str</code>. A name for this layer (optional).</p>
+</li>
+<li>
+<p><strong>References</strong>:
+Long Short Term Memory, Sepp Hochreiter &amp; Jurgen Schmidhuber,
+Neural Computation 9(8): 1735-1780, 1997.</p>
+</li>
+<li>
+<p><strong>Links</strong>:</p>
+</li>
+<li><strong>[http</strong>://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf]
+(http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf)</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L251">[source]</a></span></p>
+<h3 id="gru">GRU</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">GRU</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">inner_activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">return_seq</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;GRU&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>GRU (Gated Recurrent Unit Layer).</p>
+<ul>
+<li><strong>Output</strong>:
+if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
+<li>
+<p><strong>else</strong>: 2-D Tensor [samples, output dim].</p>
+</li>
+<li>
+<p><strong>Args</strong>:</p>
+</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
+<li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'tanh'.</li>
+<li><strong>inner_activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>).
+    GRU inner activation. Default: 'sigmoid'.</li>
+<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (input_keep_prob, output_keep_prob). The
+    input and output keep probability.</li>
+<li><strong>num_layers</strong>: <code>int</code> how many times to stack the cell.</li>
+<li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
+<li><strong>weights_init</strong>: <code>str</code> (name) or <code>Tensor</code>. Weights initialization.</li>
+<li><strong>return_seq</strong>: <code>bool</code>. If True, returns the full sequence instead of
+    last sequence output only.</li>
+<li><strong>return_state</strong>: <code>bool</code>. If True, returns a tuple with output and<ul>
+<li><strong>states</strong>: (output, states).</li>
+</ul>
+</li>
+<li><strong>initial_state</strong>: <code>Tensor</code>. An initial state for the RNN.  This must be
+    a tensor of appropriate type and shape [batch_size x cell.state_size].</li>
+<li><strong>dynamic</strong>: <code>bool</code>. If True, dynamic computation is performed. It will not
+    compute RNN steps above the sequence length. Note that because TF
+    requires to feed sequences of same length, 0 is used as a mask.
+    So a sequence padded with 0 at the end must be provided. When
+    computation is performed, it will stop when it meets a step with
+    a value of 0.</li>
+<li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
+<li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when loading a model.</li>
+<li>
+<p><strong>name</strong>: <code>str</code>. A name for this layer (optional).</p>
+</li>
+<li>
+<p><strong>References</strong>:
+Learning Phrase Representations using RNN Encoder–Decoder for
+Statistical Machine Translation, K. Cho et al., 2014.</p>
+</li>
+<li>
+<p><strong>Links</strong>:</p>
+</li>
+<li>__<a href="http://arxiv.org/abs/1406.1078">http__://arxiv.org/abs/1406.1078</a></li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L323">[source]</a></span></p>
+<h3 id="bidirectionalrnn">BidirectionalRNN</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">BidirectionalRNN</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">rnncell_fw</span><span class="p">,</span> <span class="n">rnncell_bw</span><span class="p">,</span> <span class="n">return_seq</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">return_states</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">initial_state_fw</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">initial_state_bw</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;BiRNN&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Bidirectional RNN.</p>
+<p>Build a bidirectional recurrent neural network, it requires 2 RNN Cells
+to process sequence in forward and backward order. Any RNN Cell can be
+used i.e. SimpleRNN, LSTM, GRU... with its own parameters. But the two
+cells number of units must match.</p>
+<ul>
+<li><strong>Output</strong>:
+if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
+<li>
+<p><strong>else</strong>: 2-D Tensor Layer [samples, output dim].</p>
+</li>
+<li>
+<p><strong>Args</strong>:</p>
+</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>rnncell_fw</strong>: <code>RNNCell</code>. The RNN Cell to use for foward computation.</li>
+<li><strong>rnncell_bw</strong>: <code>RNNCell</code>. The RNN Cell to use for backward computation.</li>
+<li><strong>return_seq</strong>: <code>bool</code>. If True, returns the full sequence instead of
+    last sequence output only.</li>
+<li><strong>return_states</strong>: <code>bool</code>. If True, returns a tuple with output and<ul>
+<li><strong>states</strong>: (output, states).</li>
+</ul>
+</li>
+<li><strong>initial_state_fw</strong>: <code>Tensor</code>. An initial state for the forward RNN.
+    This must be a tensor of appropriate type and shape [batch_size
+    x cell.state_size].</li>
+<li><strong>initial_state_bw</strong>: <code>Tensor</code>. An initial state for the backward RNN.
+    This must be a tensor of appropriate type and shape [batch_size
+    x cell.state_size].</li>
+<li><strong>dynamic</strong>: <code>bool</code>. If True, dynamic computation is performed. It will not
+    compute RNN steps above the sequence length. Note that because TF
+    requires to feed sequences of same length, 0 is used as a mask.
+    So a sequence padded with 0 at the end must be provided. When
+    computation is performed, it will stop when it meets a step with
+    a value of 0.</li>
+<li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L444">[source]</a></span></p>
+<h3 id="basicrnncell">BasicRNNCell</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">BasicRNNCell</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;BasicRNNCell&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The most basic RNN cell with custom params.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
+<li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'tanh'.</li>
+<li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
+<li><strong>weights_init</strong>: <code>str</code> (name) or <code>Tensor</code>. Weights initialization.</li>
+<li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
+<li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when loading a model.</li>
+<li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L490">[source]</a></span></p>
+<h3 id="grucell">GRUCell</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">GRUCell</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">inner_activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;GRUCell&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Gated Recurrent Unit cell with custom params.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
+<li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'tanh'.</li>
+<li><strong>inner_activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>).
+    GRU inner activation. Default: 'sigmoid'.</li>
+<li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
+<li><strong>weights_init</strong>: <code>str</code> (name) or <code>Tensor</code>. Weights initialization.</li>
+<li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
+<li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when loading a model.</li>
+<li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L555">[source]</a></span></p>
+<h3 id="basiclstmcell">BasicLSTMCell</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">BasicLSTMCell</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">forget_bias</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">state_is_tuple</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">inner_activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">batch_norm</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;BasicLSTMCell&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Basic LSTM recurrent network cell with custo\m params.</p>
+<p>The implementation is based on: http://arxiv.org/abs/1409.2329.</p>
+<p>We add forget_bias (default: 1) to the biases of the forget gate in order to
+reduce the scale of forgetting in the beginning of the training.</p>
+<p>It does not allow cell clipping, a projection layer, and does not
+use peep-hole connections: it is the basic baseline.</p>
+<p>For advanced models, please use the full LSTMCell that follows.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
+<li><strong>forget_bias</strong>: <code>float</code>. Bias of the forget gate. Default: 1.0.</li>
+<li><strong>state_is_tuple</strong>: If True, accepted and returned states are n-tuples, where
+    <code>n = len(cells)</code>.  If False, the states are all
+    concatenated along the column axis.  This latter behavior will soon be
+    deprecated.</li>
+<li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'tanh'.</li>
+<li><strong>inner_activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>).
+    GRU inner activation. Default: 'sigmoid'.</li>
+<li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
+<li><strong>weights_init</strong>: <code>str</code> (name) or <code>Tensor</code>. Weights initialization.</li>
+<li><strong>batch_norm</strong>: <code>bool</code>. If True, use batch normalization for this cell.</li>
+<li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
+<li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when loading a model.</li>
+<li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L675">[source]</a></span></p>
+<h3 id="dropoutwrapper">DropoutWrapper</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">DropoutWrapper</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">input_keep_prob</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">output_keep_prob</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;DropoutWrapper&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Operator adding dropout to inputs and outputs of the given cell.</p>
+<p>Creates a cell with added input and/or output dropout.</p>
+<p>Dropout is never used on the state.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>cell</strong>: an RNNCell, a projection to output_size is added to it.</li>
+<li><strong>input_keep_prob</strong>: unit Tensor or float between 0 and 1, input keep probability;
+    if it is float and 1, no input dropout will be added.</li>
+<li><strong>output_keep_prob</strong>: unit Tensor or float between 0 and 1, output keep
+probability; if it is float and 1, no output dropout will be added.</li>
+<li>
+<p><strong>seed</strong>: (optional) integer, the randomness seed.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>TypeError</strong>: if cell is not an RNNCell.</li>
+<li><strong>ValueError</strong>: if keep_prob is not between 0 and 1.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L747">[source]</a></span></p>
+<h3 id="multirnncell">MultiRNNCell</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">MultiRNNCell</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">state_is_tuple</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MultiRNNCell&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>RNN cell composed sequentially of multiple simple cells.</p>
+<p>Create a RNN cell composed sequentially of a number of RNNCells.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>cells</strong>: list of RNNCells that will be composed in this order.</li>
+<li>
+<p><strong>state_is_tuple</strong>: If True, accepted and returned states are n-tuples, where
+    <code>n = len(cells)</code>.  If False, the states are all
+    concatenated along the column axis.  This latter behavior will soon be
+    deprecated.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if cells is empty (not allowed), or at least one of the cells
+    returns a state tuple but the flag <code>state_is_tuple</code> is <code>False</code>.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../convolutional/" title="Convolutional Layers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Convolutional Layers
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../embeddings/" title="Embedding Layers" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Embedding Layers
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-6b599127bc.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-89493331-1","polyaxon.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

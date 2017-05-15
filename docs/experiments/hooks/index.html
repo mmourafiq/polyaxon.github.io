@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for polyaxon, a python Deep Learning library for TensorFlow.">
+      
+      
+        <link rel="canonical" href="http://polyaxon.com/experiments/hooks/">
+      
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
+    
+    
+      
+        <title>Hooks - Polyaxon Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-e2807e330f.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="http://polyaxon.com" title="Polyaxon Documentation" class="md-logo md-header-nav__button">
+            <img src="../../assets/images/logo_white.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Experiments
+                </span>
+              
+            
+            Hooks
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../assets/images/logo_white.svg">
+      </i>
+    
+    Polyaxon Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Experiments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Experiments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiment/" title="Expermient" class="md-nav__link">
+      Expermient
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../estimator/" title="Estimator" class="md-nav__link">
+      Estimator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model/" title="Model" class="md-nav__link">
+      Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Hooks
+      </label>
+    
+    <a href="./" title="Hooks" class="md-nav__link md-nav__link--active">
+      Hooks
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checkpointsaverhook" title="CheckpointSaverHook" class="md-nav__link">
+    CheckpointSaverHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stopatstephook" title="StopAtStepHook" class="md-nav__link">
+    StopAtStepHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#globalstepwaiterhook" title="GlobalStepWaiterHook" class="md-nav__link">
+    GlobalStepWaiterHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loggingtensorhook" title="LoggingTensorHook" class="md-nav__link">
+    LoggingTensorHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finalopshook" title="FinalOpsHook" class="md-nav__link">
+    FinalOpsHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepcounterhook" title="StepCounterHook" class="md-nav__link">
+    StepCounterHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summarysaverhook" title="SummarySaverHook" class="md-nav__link">
+    SummarySaverHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nantensorhook" title="NanTensorHook" class="md-nav__link">
+    NanTensorHook
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../subgraph/" title="Subgraph" class="md-nav__link">
+      Subgraph
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../summarizer/" title="Summerizer" class="md-nav__link">
+      Summerizer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Layers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Layers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/core/" title="Core Layers" class="md-nav__link">
+      Core Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/convolutional/" title="Convolutional Layers" class="md-nav__link">
+      Convolutional Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/recurrent/" title="Recurrent Layers" class="md-nav__link">
+      Recurrent Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/embeddings/" title="Embedding Layers" class="md-nav__link">
+      Embedding Layers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../activations/" title="Activations" class="md-nav__link">
+      Activations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../losses/" title="Losses" class="md-nav__link">
+      Losses
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics/" title="Metrics" class="md-nav__link">
+      Metrics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../optimizers/" title="Optimizers" class="md-nav__link">
+      Optimizers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../initializations/" title="Initializations" class="md-nav__link">
+      Initializations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regularizations/" title="Regularizations" class="md-nav__link">
+      Regularizations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Libs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Libs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/configs/" title="Configs" class="md-nav__link">
+      Configs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/getters/" title="Getters" class="md-nav__link">
+      Getters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/utils/" title="Utils" class="md-nav__link">
+      Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checkpointsaverhook" title="CheckpointSaverHook" class="md-nav__link">
+    CheckpointSaverHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stopatstephook" title="StopAtStepHook" class="md-nav__link">
+    StopAtStepHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#globalstepwaiterhook" title="GlobalStepWaiterHook" class="md-nav__link">
+    GlobalStepWaiterHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loggingtensorhook" title="LoggingTensorHook" class="md-nav__link">
+    LoggingTensorHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finalopshook" title="FinalOpsHook" class="md-nav__link">
+    FinalOpsHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepcounterhook" title="StepCounterHook" class="md-nav__link">
+    StepCounterHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summarysaverhook" title="SummarySaverHook" class="md-nav__link">
+    SummarySaverHook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nantensorhook" title="NanTensorHook" class="md-nav__link">
+    NanTensorHook
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Hooks</h1>
+                
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/hooks.py#L57">[source]</a></span></p>
+<h3 id="checkpointsaverhook">CheckpointSaverHook</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">CheckpointSaverHook</span><span class="p">(</span><span class="n">checkpoint_dir</span><span class="p">,</span> <span class="n">save_secs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">saver</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">checkpoint_basename</span><span class="o">=</span><span class="s1">&#39;model.ckpt&#39;</span><span class="p">,</span> <span class="n">scaffold</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">listeners</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Saves checkpoints every N steps or seconds.
+(A mirror to tensorflow.python.training.basic_session_run_hooks CheckpointSaverHook.)</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>checkpoint_dir</strong>: <code>str</code>, base directory for the checkpoint files.</li>
+<li><strong>save_secs</strong>: <code>int</code>, save every N secs.</li>
+<li><strong>save_steps</strong>: <code>int</code>, save every N steps.</li>
+<li><strong>saver</strong>: <code>Saver</code> object, used for saving.</li>
+<li><strong>checkpoint_basename</strong>: <code>str</code>, base name for the checkpoint files.</li>
+<li><strong>scaffold</strong>: <code>Scaffold</code>, use to get saver object.</li>
+<li>
+<p><strong>listeners</strong>: List of <code>CheckpointSaverListener</code> subclass instances.
+    Used for callbacks that run immediately after the corresponding
+    CheckpointSaverHook callbacks, only in steps where the
+    CheckpointSaverHook was triggered.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: One of <code>save_steps</code> or <code>save_secs</code> should be set.</li>
+<li><strong>ValueError</strong>: Exactly one of saver or scaffold should be set.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/hooks.py#L32">[source]</a></span></p>
+<h3 id="stopatstephook">StopAtStepHook</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">StopAtStepHook</span><span class="p">(</span><span class="n">num_steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">last_step</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Monitor to request stop at a specified step.
+(A mirror to tensorflow.python.training.basic_session_run_hooks StopAtStepHook.)</p>
+<p>This hook requests stop after either a number of steps have been
+executed or a last step has been reached. Only one of the two options can be
+specified.</p>
+<p>if <code>num_steps</code> is specified, it indicates the number of steps to execute
+after <code>begin()</code> is called. If instead <code>last_step</code> is specified, it
+indicates the last step we want to execute, as passed to the <code>after_run()</code>
+call.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>num_steps</strong>: Number of steps to execute.</li>
+<li>
+<p><strong>last_step</strong>: Step after which to stop.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If one of the arguments is invalid.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/hooks.py#L139">[source]</a></span></p>
+<h3 id="globalstepwaiterhook">GlobalStepWaiterHook</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">GlobalStepWaiterHook</span><span class="p">(</span><span class="n">wait_until_step</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Delay execution until global step reaches to wait_until_step.
+(A mirror to tensorflow.python.training.basic_session_run_hooks GlobalStepWaiterHook.)</p>
+<p>This hook delays execution until global step reaches to <code>wait_until_step</code>. It
+is used to gradually start workers in distributed settings. One example usage
+would be setting <code>wait_until_step=int(K*log(task_id+1))</code> assuming that
+task_id=0 is the chief.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>wait_until_step</strong>: an <code>int</code> shows until which global step should we wait.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/hooks.py#L7">[source]</a></span></p>
+<h3 id="loggingtensorhook">LoggingTensorHook</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">LoggingTensorHook</span><span class="p">(</span><span class="n">tensors</span><span class="p">,</span> <span class="n">every_n_iter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">every_n_secs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Prints the given tensors once every N local steps or once every N seconds.
+(A mirror to tensorflow.python.training.basic_session_run_hooks LoggingTensorHook.)</p>
+<p>The tensors will be printed to the log, with <code>INFO</code> severity.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>tensors</strong>: <code>dict</code> that maps string-valued tags to tensors/tensor names,
+    or <code>iterable</code> of tensors/tensor names.</li>
+<li><strong>every_n_iter</strong>: <code>int</code>, print the values of <code>tensors</code> once every N local
+    steps taken on the current worker.</li>
+<li><strong>every_n_secs</strong>: <code>int</code> or <code>float</code>, print the values of <code>tensors</code> once every N
+    seconds. Exactly one of <code>every_n_iter</code> and <code>every_n_secs</code> should be
+    provided.</li>
+<li>
+<p><strong>formatter</strong>: function, takes dict of <code>tag</code>-&gt;<code>Tensor</code> and returns a string.
+    If <code>None</code> uses default printing all tensors.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if <code>every_n_iter</code> is non-positive.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/hooks.py#L156">[source]</a></span></p>
+<h3 id="finalopshook">FinalOpsHook</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">FinalOpsHook</span><span class="p">(</span><span class="n">final_ops</span><span class="p">,</span> <span class="n">final_ops_feed_dict</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>A run hook which evaluates <code>Tensors</code> at the end of a session.
+(A mirror to tensorflow.python.training.basic_session_run_hooks GlobalStepWaiterHook.)</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>final_ops</strong>: A single <code>Tensor</code>, a list of <code>Tensors</code> or a dictionary of names to <code>Tensors</code>.</li>
+<li><strong>final_ops_feed_dict</strong>: A feed dictionary to use when running <code>final_ops_dict</code>.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/hooks.py#L84">[source]</a></span></p>
+<h3 id="stepcounterhook">StepCounterHook</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">StepCounterHook</span><span class="p">(</span><span class="n">every_n_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">every_n_secs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summary_writer</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Steps per second monitor.
+(A mirror to tensorflow.python.training.basic_session_run_hooks CheckpointSaverHook.)</p>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/hooks.py#L110">[source]</a></span></p>
+<h3 id="summarysaverhook">SummarySaverHook</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">SummarySaverHook</span><span class="p">(</span><span class="n">save_steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_secs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summary_writer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scaffold</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summary_op</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Saves summaries every N steps.
+(A mirror to tensorflow.python.training.basic_session_run_hooks NanTensorHook.)</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>save_steps</strong>: <code>int</code>, save summaries every N steps. Exactly one of
+    <code>save_secs</code> and <code>save_steps</code> should be set.</li>
+<li><strong>save_secs</strong>: <code>int</code>, save summaries every N seconds.</li>
+<li><strong>output_dir</strong>: <code>string</code>, the directory to save the summaries to. Only used
+    if no <code>summary_writer</code> is supplied.</li>
+<li><strong>summary_writer</strong>: <code>SummaryWriter</code>. If <code>None</code> and an <code>output_dir</code> was passed,
+    one will be created accordingly.</li>
+<li><strong>scaffold</strong>: <code>Scaffold</code> to get summary_op if it's not provided.</li>
+<li>
+<p><strong>summary_op</strong>: <code>Tensor</code> of type <code>string</code> containing the serialized <code>Summary</code>
+    protocol buffer or a list of <code>Tensor</code>. They are most likely an output
+    by TF summary methods like <code>tf.summary.scalar</code> or
+    <code>tf.summary.merge_all</code>. It can be passed in as one tensor; if more
+    than one, they must be passed in as a list.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: Exactly one of scaffold or summary_op should be set.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/hooks.py#L94">[source]</a></span></p>
+<h3 id="nantensorhook">NanTensorHook</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">NanTensorHook</span><span class="p">(</span><span class="n">loss_tensor</span><span class="p">,</span> <span class="n">fail_on_nan_loss</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>NaN Loss monitor.
+(A mirror to tensorflow.python.training.basic_session_run_hooks NanTensorHook.)</p>
+<p>Monitors loss and stops training if loss is NaN.
+Can either fail with exception or just stop training.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>loss_tensor</strong>: <code>Tensor</code>, the loss tensor.</li>
+<li><strong>fail_on_nan_loss</strong>: <code>bool</code>, whether to raise exception when loss is NaN.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../model/" title="Model" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Model
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../subgraph/" title="Subgraph" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Subgraph
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-6b599127bc.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-89493331-1","polyaxon.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>
