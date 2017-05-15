@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for polyaxon, a python Deep Learning library for TensorFlow.">
+      
+      
+        <link rel="canonical" href="http://polyaxon.com/experiments/estimator/">
+      
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
+    
+    
+      
+        <title>Estimator - Polyaxon Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-e2807e330f.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="http://polyaxon.com" title="Polyaxon Documentation" class="md-logo md-header-nav__button">
+            <img src="../../assets/images/logo_white.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Experiments
+                </span>
+              
+            
+            Estimator
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../assets/images/logo_white.svg">
+      </i>
+    
+    Polyaxon Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Experiments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Experiments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiment/" title="Expermient" class="md-nav__link">
+      Expermient
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Estimator
+      </label>
+    
+    <a href="./" title="Estimator" class="md-nav__link md-nav__link--active">
+      Estimator
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estimator" title="Estimator" class="md-nav__link">
+    Estimator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export_savedmodel" title="export_savedmodel" class="md-nav__link">
+    export_savedmodel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train" title="train" class="md-nav__link">
+    train
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate" title="evaluate" class="md-nav__link">
+    evaluate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predict" title="predict" class="md-nav__link">
+    predict
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_variable_value" title="get_variable_value" class="md-nav__link">
+    get_variable_value
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_variable_names" title="get_variable_names" class="md-nav__link">
+    get_variable_names
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model/" title="Model" class="md-nav__link">
+      Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hooks/" title="Hooks" class="md-nav__link">
+      Hooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../subgraph/" title="Subgraph" class="md-nav__link">
+      Subgraph
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../summarizer/" title="Summerizer" class="md-nav__link">
+      Summerizer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Layers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Layers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/core/" title="Core Layers" class="md-nav__link">
+      Core Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/convolutional/" title="Convolutional Layers" class="md-nav__link">
+      Convolutional Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/recurrent/" title="Recurrent Layers" class="md-nav__link">
+      Recurrent Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/embeddings/" title="Embedding Layers" class="md-nav__link">
+      Embedding Layers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../activations/" title="Activations" class="md-nav__link">
+      Activations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../losses/" title="Losses" class="md-nav__link">
+      Losses
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics/" title="Metrics" class="md-nav__link">
+      Metrics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../optimizers/" title="Optimizers" class="md-nav__link">
+      Optimizers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../initializations/" title="Initializations" class="md-nav__link">
+      Initializations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regularizations/" title="Regularizations" class="md-nav__link">
+      Regularizations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Libs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Libs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/configs/" title="Configs" class="md-nav__link">
+      Configs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/getters/" title="Getters" class="md-nav__link">
+      Getters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/utils/" title="Utils" class="md-nav__link">
+      Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estimator" title="Estimator" class="md-nav__link">
+    Estimator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export_savedmodel" title="export_savedmodel" class="md-nav__link">
+    export_savedmodel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train" title="train" class="md-nav__link">
+    train
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate" title="evaluate" class="md-nav__link">
+    evaluate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predict" title="predict" class="md-nav__link">
+    predict
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_variable_value" title="get_variable_value" class="md-nav__link">
+    get_variable_value
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_variable_names" title="get_variable_names" class="md-nav__link">
+    get_variable_names
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Estimator</h1>
+                
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/estimator.py#L38">[source]</a></span></p>
+<h3 id="estimator">Estimator</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">Estimator</span><span class="p">(</span><span class="n">model_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">model_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Estimator class is the basic TensorFlow model trainer/evaluator.</p>
+<p>Constructs an <code>Estimator</code> instance.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li>
+<p><strong>model_fn</strong>: Model function. Follows the signature:</p>
+<ul>
+<li>Args:</li>
+<li><code>features</code>: single <code>Tensor</code> or <code>dict</code> of <code>Tensor</code>s
+     (depending on data passed to <code>fit</code>),</li>
+<li><code>labels</code>: <code>Tensor</code> or <code>dict</code> of <code>Tensor</code>s (for multi-head models).
+    If mode is <code>ModeKeys.PREDICT</code>, <code>labels=None</code> will be passed.
+    If the <code>model_fn</code>'s signature does not accept <code>mode</code>,
+    the <code>model_fn</code> must still be able to handle <code>labels=None</code>.</li>
+<li><code>mode</code>: Optional. Specifies if this training, evaluation or prediction.
+    See <code>ModeKeys</code>.</li>
+<li><code>params</code>: Optional <code>dict</code> of hyperparameters.  Will receive what
+    is passed to Estimator in <code>params</code> parameter. This allows
+    to configure Estimators from hyper parameter tuning.</li>
+<li><code>config</code>: Optional configuration object. Will receive what is passed
+    to Estimator in <code>config</code> parameter, or the default <code>config</code>.
+    Allows updating things in your model_fn based on configuration
+    such as <code>num_ps_replicas</code>.</li>
+<li>
+<p><code>model_dir</code>: Optional directory where model parameters, graph etc
+    are saved. Will receive what is passed to Estimator in
+    <code>model_dir</code> parameter, or the default <code>model_dir</code>. Allows
+    updating things in your model_fn that expect model_dir, such as
+    training hooks.</p>
+</li>
+<li>
+<p>Returns:
+   <code>EstimatorSpec</code></p>
+</li>
+</ul>
+<p>Supports next three signatures for the function:</p>
+<ul>
+<li><code>(features, labels)</code></li>
+<li><code>(features, labels, mode)</code></li>
+<li><code>(features, labels, mode, params)</code></li>
+<li><code>(features, labels, mode, params, config)</code></li>
+<li><code>(features, labels, mode, params, config, model_dir)</code></li>
+</ul>
+</li>
+<li>
+<p><strong>model_dir</strong>: Directory to save model parameters, graph and etc. This can
+    also be used to load checkpoints from the directory into a estimator to
+    continue training a previously saved model.</p>
+</li>
+<li><strong>config</strong>: Configuration object.</li>
+<li><strong>params</strong>: <code>dict</code> of hyper parameters that will be passed into <code>model_fn</code>.
+      Keys are names of parameters, values are basic python types.</li>
+<li><strong>Raises</strong>:</li>
+<li><strong>ValueError</strong>: parameters of <code>model_fn</code> don't match <code>params</code>.</li>
+</ul>
+<hr />
+<h3 id="export_savedmodel">export_savedmodel</h3>
+<div class="codehilite"><pre><span></span><span class="n">export_savedmodel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">export_dir_base</span><span class="p">,</span> <span class="n">serving_input_fn</span><span class="p">,</span> <span class="n">default_output_alternative_key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">assets_extra</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">as_text</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">checkpoint_path</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Exports inference graph as a SavedModel into given dir.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>export_dir_base</strong>: A str directory to write the exported graph and checkpoints.</li>
+<li><strong>serving_input_fn</strong>: A function that takes no argument and returns an <code>InputFnOps</code>.</li>
+<li><strong>default_output_alternative_key</strong>: the name of the head to serve when none is specified.
+    Not needed for single-headed models.</li>
+<li><strong>assets_extra</strong>: A dict specifying how to populate the assets.extra directory
+    within the exported SavedModel.  Each key should give the destination
+    path (including the filename) relative to the assets.extra directory.
+    The corresponding value gives the full path of the source file to be
+    copied.  For example, the simple case of copying a single file without
+    renaming it is specified as <code>{'my_asset_file.txt': '/path/to/my_asset_file.txt'}</code>.</li>
+<li><strong>as_text</strong>: whether to write the SavedModel proto in text format.</li>
+<li>
+<p><strong>checkpoint_path</strong>: The checkpoint path to export.  If None (the default),
+    the most recent checkpoint found within the model directory is chosen.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+  The string path to the exported directory.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if an unrecognized export_type is requested.</li>
+</ul>
+<hr />
+<h3 id="train">train</h3>
+<div class="codehilite"><pre><span></span><span class="n">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hooks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">max_steps</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Trains a model given training data <code>x</code> predictions and <code>y</code> labels.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>input_fn</strong>: Input function returning a tuple of:
+    features - <code>Tensor</code> or dictionary of string feature name to <code>Tensor</code>.
+    labels - <code>Tensor</code> or dictionary of <code>Tensor</code> with labels.</li>
+<li><strong>steps</strong>: Number of steps for which to train model. If <code>None</code>, train forever.
+    'steps' works incrementally. If you call two times fit(steps=10) then
+    training occurs in total 20 steps. If you don't want to have incremental
+    behaviour please set <code>max_steps</code> instead. If set, <code>max_steps</code> must be
+    <code>None</code>.</li>
+<li><strong>hooks</strong>: List of <code>BaseMonitor</code> subclass instances.
+    Used for callbacks inside the training loop.</li>
+<li><strong>max_steps</strong>: Number of total steps for which to train model. If <code>None</code>,
+    train forever. If set, <code>steps</code> must be <code>None</code>.</li>
+</ul>
+<p>Two calls to <code>fit(steps=100)</code> means 200 training iterations.
+On the other hand, two calls to <code>fit(max_steps=100)</code> means
+that the second call will not do any iteration since first call did all 100 steps.</p>
+<ul>
+<li><strong>Returns</strong>:
+<code>self</code>, for chaining.</li>
+</ul>
+<hr />
+<h3 id="evaluate">evaluate</h3>
+<div class="codehilite"><pre><span></span><span class="n">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hooks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">checkpoint_path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Evaluates given model with provided evaluation data.</p>
+<p>Stop conditions - we evaluate on the given input data until one of the
+- <strong>following</strong>:
+- If <code>steps</code> is provided, and <code>steps</code> batches of size <code>batch_size</code> are
+processed.
+- If <code>input_fn</code> is provided, and it raises an end-of-input
+exception (<code>OutOfRangeError</code> or <code>StopIteration</code>).
+- If <code>x</code> is provided, and all items in <code>x</code> have been processed.</p>
+<p>The return value is a dict containing the metrics specified in <code>metrics</code>, as
+well as an entry <code>global_step</code> which contains the value of the global step
+for which this evaluation was performed.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>input_fn</strong>: Input function returning a tuple of:
+    features - Dictionary of string feature name to <code>Tensor</code> or <code>Tensor</code>.
+    labels - <code>Tensor</code> or dictionary of <code>Tensor</code> with labels.
+    If <code>steps</code> is not provided, this should raise <code>OutOfRangeError</code> or
+    <code>StopIteration</code> after the desired amount of data (e.g., one epoch) has
+    been provided. See "Stop conditions" above for specifics.</li>
+<li><strong>steps</strong>: Number of steps for which to evaluate model. If <code>None</code>, evaluate
+    until <code>x</code> is consumed or <code>input_fn</code> raises an end-of-input exception.
+    See "Stop conditions" above for specifics.</li>
+<li><strong>name</strong>: Name of the evaluation if user needs to run multiple evaluations on
+    different data sets, such as on training data vs test data.</li>
+<li><strong>checkpoint_path</strong>: Path of a specific checkpoint to evaluate. If <code>None</code>,
+    the latest checkpoint in <code>model_dir</code> is used.</li>
+<li>
+<p><strong>hooks</strong>: List of <code>SessionRunHook</code> subclass instances.
+    Used for callbacks inside the evaluation call.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li>
+<p><strong>ValueError</strong>: If <code>metrics</code> is not <code>None</code> or <code>dict</code>.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+Returns <code>dict</code> with evaluation results.</p>
+</li>
+</ul>
+<hr />
+<h3 id="predict">predict</h3>
+<div class="codehilite"><pre><span></span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">predict_keys</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hooks</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns predictions for given features.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>input_fn</strong>: Input function.</li>
+<li><strong>predict_keys</strong>: list of <code>str</code>, name of the output to predict. If <code>None</code>, returns all.</li>
+<li>
+<p><strong>hooks</strong>: List of <code>SessionRunHook</code> subclass instances.
+    Used for callbacks inside the prediction call.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A numpy array of predicted classes or regression values if the
+constructor's <code>model_fn</code> returns a <code>Tensor</code> for <code>predictions</code> or a <code>dict</code>
+of numpy arrays if <code>model_fn</code> returns a <code>dict</code>. Returns an iterable of
+predictions if as_iterable is True.</p>
+</li>
+</ul>
+<hr />
+<h3 id="get_variable_value">get_variable_value</h3>
+<div class="codehilite"><pre><span></span><span class="n">get_variable_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns value of the variable given by name.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li>
+<p><strong>name</strong>: string, name of the tensor.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+Numpy array - value of the tensor.</p>
+</li>
+</ul>
+<hr />
+<h3 id="get_variable_names">get_variable_names</h3>
+<div class="codehilite"><pre><span></span><span class="n">get_variable_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns list of all variable names in this model.</p>
+<ul>
+<li><strong>Returns</strong>:
+List of names.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../experiment/" title="Expermient" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Expermient
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../model/" title="Model" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Model
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/polyaxon" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/polyaxonai" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-6b599127bc.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-89493331-1","polyaxon.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

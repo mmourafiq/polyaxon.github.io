@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for polyaxon, a python Deep Learning library for TensorFlow.">
+      
+      
+        <link rel="canonical" href="http://polyaxon.com/initializations/">
+      
+      
+      
+        <link rel="shortcut icon" href="../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
+    
+    
+      
+        <title>Initializations - Polyaxon Documentation</title>
+      
+    
+    
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-e2807e330f.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="http://polyaxon.com" title="Polyaxon Documentation" class="md-logo md-header-nav__button">
+            <img src="../assets/images/logo_white.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Initializations
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../assets/images/logo_white.svg">
+      </i>
+    
+    Polyaxon Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting_started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Experiments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Experiments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/experiment/" title="Expermient" class="md-nav__link">
+      Expermient
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/estimator/" title="Estimator" class="md-nav__link">
+      Estimator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/model/" title="Model" class="md-nav__link">
+      Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/hooks/" title="Hooks" class="md-nav__link">
+      Hooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/subgraph/" title="Subgraph" class="md-nav__link">
+      Subgraph
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/summarizer/" title="Summerizer" class="md-nav__link">
+      Summerizer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Layers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Layers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/core/" title="Core Layers" class="md-nav__link">
+      Core Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/convolutional/" title="Convolutional Layers" class="md-nav__link">
+      Convolutional Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/recurrent/" title="Recurrent Layers" class="md-nav__link">
+      Recurrent Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../layers/embeddings/" title="Embedding Layers" class="md-nav__link">
+      Embedding Layers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../activations/" title="Activations" class="md-nav__link">
+      Activations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../losses/" title="Losses" class="md-nav__link">
+      Losses
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/" title="Metrics" class="md-nav__link">
+      Metrics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../optimizers/" title="Optimizers" class="md-nav__link">
+      Optimizers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Initializations
+      </label>
+    
+    <a href="./" title="Initializations" class="md-nav__link md-nav__link--active">
+      Initializations
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zeros" title="zeros" class="md-nav__link">
+    zeros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniform" title="uniform" class="md-nav__link">
+    uniform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniform_scaling" title="uniform_scaling" class="md-nav__link">
+    uniform_scaling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal" title="normal" class="md-nav__link">
+    normal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truncated_normal" title="truncated_normal" class="md-nav__link">
+    truncated_normal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xavier" title="xavier" class="md-nav__link">
+    xavier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variance_scaling" title="variance_scaling" class="md-nav__link">
+    variance_scaling
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../regularizations/" title="Regularizations" class="md-nav__link">
+      Regularizations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Libs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Libs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../libs/configs/" title="Configs" class="md-nav__link">
+      Configs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../libs/getters/" title="Getters" class="md-nav__link">
+      Getters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../libs/utils/" title="Utils" class="md-nav__link">
+      Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zeros" title="zeros" class="md-nav__link">
+    zeros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniform" title="uniform" class="md-nav__link">
+    uniform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniform_scaling" title="uniform_scaling" class="md-nav__link">
+    uniform_scaling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal" title="normal" class="md-nav__link">
+    normal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truncated_normal" title="truncated_normal" class="md-nav__link">
+    truncated_normal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xavier" title="xavier" class="md-nav__link">
+    xavier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variance_scaling" title="variance_scaling" class="md-nav__link">
+    variance_scaling
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Initializations</h1>
+                
+                <h3 id="zeros">zeros</h3>
+<div class="codehilite"><pre><span></span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Zeros.</p>
+<p>Initialize a tensor with all elements set to zero.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
+<li><strong>dtype</strong>: The tensor data type.</li>
+<li>
+<p><strong>name</strong>: name of the op.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The Initializer, or an initialized <code>Tensor</code> if a shape is specified.</p>
+</li>
+</ul>
+<hr />
+<h3 id="uniform">uniform</h3>
+<div class="codehilite"><pre><span></span><span class="n">uniform</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">minval</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxval</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Uniform&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Uniform.</p>
+<p>Initialization with random values from a uniform distribution.</p>
+<p>The generated values follow a uniform distribution in the range
+<code>[minval, maxval)</code>. The lower bound <code>minval</code> is included in the range,
+while the upper bound <code>maxval</code> is excluded.</p>
+<p>For floats, the default range is <code>[0, 1)</code>.  For ints, at least <code>maxval</code>
+must be specified explicitly.</p>
+<p>In the integer case, the random integers are slightly biased unless
+<code>maxval - minval</code> is an exact power of two.  The bias is small for values of
+<code>maxval - minval</code> significantly smaller than the range of the output (either
+<code>2**32</code> or <code>2**64</code>).</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
+<li><strong>dtype</strong>: The tensor data type. Only float are supported.</li>
+<li><strong>seed</strong>: <code>int</code>. Used to create a random seed for the distribution.</li>
+<li>
+<p><strong>name</strong>: name of the op.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
+</li>
+</ul>
+<hr />
+<h3 id="uniform_scaling">uniform_scaling</h3>
+<div class="codehilite"><pre><span></span><span class="n">uniform_scaling</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;UniformScaling&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Uniform Scaling.</p>
+<p>Initialization with random values from uniform distribution without scaling
+variance.</p>
+<p>When initializing a deep network, it is in principle advantageous to keep
+the scale of the input variance constant, so it does not explode or diminish
+by reaching the final layer. If the input is <code>x</code> and the operation <code>x * W</code>,
+and we want to initialize <code>W</code> uniformly at random, we need to pick <code>W</code> from</p>
+<p>[-sqrt(3) / sqrt(dim), sqrt(3) / sqrt(dim)]</p>
+<p>to keep the scale intact, where <code>dim = W.shape[0]</code> (the size of the input).
+A similar calculation for convolutional networks gives an analogous result
+with <code>dim</code> equal to the product of the first 3 dimensions.  When
+nonlinearities are present, we need to multiply this by a constant <code>factor</code>.
+See <a href="https://arxiv.org/abs/1412.6558">Sussillo et al., 2014</a>
+(<a href="http://arxiv.org/pdf/1412.6558.pdf">pdf</a>) for deeper motivation, experiments
+and the calculation of constants. In section 2.3 there, the constants were
+numerically computed: for a linear layer it's 1.0, relu: ~1.43, tanh: ~1.15.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
+<li><strong>factor</strong>: <code>float</code>. A multiplicative factor by which the values will be
+scaled.</li>
+<li><strong>dtype</strong>: The tensor data type. Only float are supported.</li>
+<li><strong>seed</strong>: <code>int</code>. Used to create a random seed for the distribution.</li>
+<li>
+<p><strong>name</strong>: name of the op.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
+</li>
+</ul>
+<hr />
+<h3 id="normal">normal</h3>
+<div class="codehilite"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Normal&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Normal.</p>
+<p>Initialization with random values from a normal distribution.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
+<li><strong>mean</strong>: Same as <code>dtype</code>. The mean of the truncated normal distribution.</li>
+<li><strong>stddev</strong>: Same as <code>dtype</code>. The standard deviation of the truncated
+normal distribution.</li>
+<li><strong>dtype</strong>: The tensor data type.</li>
+<li><strong>seed</strong>: <code>int</code>. Used to create a random seed for the distribution.</li>
+<li><strong>scope</strong>: scope to add the op to.</li>
+<li>
+<p><strong>name</strong>: name of the op.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
+</li>
+</ul>
+<hr />
+<h3 id="truncated_normal">truncated_normal</h3>
+<div class="codehilite"><pre><span></span><span class="n">truncated_normal</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;TruncatedNormal&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Truncated Normal.</p>
+<p>Initialization with random values from a normal truncated distribution.</p>
+<p>The generated values follow a normal distribution with specified mean and
+standard deviation, except that values whose magnitude is more than 2 standard
+deviations from the mean are dropped and re-picked.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
+<li><strong>mean</strong>: Same as <code>dtype</code>. The mean of the truncated normal distribution.</li>
+<li><strong>stddev</strong>: Same as <code>dtype</code>. The standard deviation of the truncated
+normal distribution.</li>
+<li><strong>dtype</strong>: The tensor data type.</li>
+<li><strong>seed</strong>: <code>int</code>. Used to create a random seed for the distribution.</li>
+<li>
+<p><strong>name</strong>: name of the op.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
+</li>
+</ul>
+<hr />
+<h3 id="xavier">xavier</h3>
+<div class="codehilite"><pre><span></span><span class="n">xavier</span><span class="p">(</span><span class="n">uniform</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Xavier&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Xavier.</p>
+<p>Returns an initializer performing "Xavier" initialization for weights.</p>
+<p>This initializer is designed to keep the scale of the gradients roughly the
+same in all layers. In uniform distribution this ends up being the range:
+<code>x = sqrt(6. / (in + out)); [-x, x]</code> and for normal distribution a standard
+deviation of <code>sqrt(3. / (in + out))</code> is used.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>uniform</strong>: Whether to use uniform or normal distributed random
+initialization.</li>
+<li><strong>seed</strong>: A Python integer. Used to create random seeds. See
+<code>set_random_seed</code> for behavior.</li>
+<li><strong>dtype</strong>: The data type. Only floating point types are supported.</li>
+<li>
+<p><strong>name</strong>: name of the op.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+An initializer for a weight matrix.</p>
+</li>
+<li>
+<p><strong>References</strong>:
+Understanding the difficulty of training deep feedforward neural
+networks. International conference on artificial intelligence and
+statistics. Xavier Glorot and Yoshua Bengio (2010).</p>
+</li>
+<li>
+<p><strong>Links</strong>:</p>
+</li>
+<li><strong>[http</strong>://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf]
+(http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf)</li>
+</ul>
+<hr />
+<h3 id="variance_scaling">variance_scaling</h3>
+<div class="codehilite"><pre><span></span><span class="n">variance_scaling</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;FAN_IN&#39;</span><span class="p">,</span> <span class="n">uniform</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Xavier&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Variance Scaling.</p>
+<p>Returns an initializer that generates tensors without scaling variance.</p>
+<p>When initializing a deep network, it is in principle advantageous to keep
+the scale of the input variance constant, so it does not explode or diminish
+by reaching the final layer. This initializer use the following formula:</p>
+<div class="codehilite"><pre><span></span>if mode=&#39;FAN_IN&#39;: # Count only number of input connections.
+  n = fan_in
+elif mode=&#39;FAN_OUT&#39;: # Count only number of output connections.
+  n = fan_out
+elif mode=&#39;FAN_AVG&#39;: # Average number of inputs and output connections.
+  n = (fan_in + fan_out)/2.0
+
+  truncated_normal(shape, 0.0, stddev=sqrt(factor / n))
+</pre></div>
+
+
+<p>To get http://arxiv.org/pdf/1502.01852v1.pdf use (Default):
+- factor=2.0 mode='FAN_IN' uniform=False</p>
+<p>To get http://arxiv.org/abs/1408.5093 use:
+- factor=1.0 mode='FAN_IN' uniform=True</p>
+<p>To get http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf use:
+- factor=1.0 mode='FAN_AVG' uniform=True.</p>
+<p>To get xavier_initializer use either:
+- factor=1.0 mode='FAN_AVG' uniform=True.
+- factor=1.0 mode='FAN_AVG' uniform=False.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>factor</strong>: Float.  A multiplicative factor.</li>
+<li><strong>mode</strong>: String.  'FAN_IN', 'FAN_OUT', 'FAN_AVG'.</li>
+<li><strong>uniform</strong>: Whether to use uniform or normal distributed random
+initialization.</li>
+<li><strong>seed</strong>: A Python integer. Used to create random seeds. See
+<code>set_random_seed</code> for behavior.</li>
+<li><strong>dtype</strong>: The data type. Only floating point types are supported.</li>
+<li>
+<p><strong>name</strong>: name of the op.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+An initializer that generates tensors with unit variance.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if <code>dtype</code> is not a floating point type.</li>
+<li><strong>TypeError</strong>: if <code>mode</code> is not in ['FAN_IN', 'FAN_OUT', 'FAN_AVG'].</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../optimizers/" title="Optimizers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Optimizers
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../regularizations/" title="Regularizations" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Regularizations
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/polyaxon" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/polyaxonai" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application-6b599127bc.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-89493331-1","polyaxon.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>
