@@ -13,7 +13,7 @@
       
       
       
-        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+        <link rel="shortcut icon" href="../../images/favicon.ico">
       
       <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
     
@@ -526,13 +526,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optimizerconfig" title="OptimizerConfig" class="md-nav__link">
-    OptimizerConfig
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configurable" title="Configurable" class="md-nav__link">
     Configurable
   </a>
@@ -563,6 +556,13 @@
         <li class="md-nav__item">
   <a href="#metricconfig" title="MetricConfig" class="md-nav__link">
     MetricConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizerconfig" title="OptimizerConfig" class="md-nav__link">
+    OptimizerConfig
   </a>
   
 </li>
@@ -671,13 +671,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#optimizerconfig" title="OptimizerConfig" class="md-nav__link">
-    OptimizerConfig
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configurable" title="Configurable" class="md-nav__link">
     Configurable
   </a>
@@ -708,6 +701,13 @@
         <li class="md-nav__item">
   <a href="#metricconfig" title="MetricConfig" class="md-nav__link">
     MetricConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizerconfig" title="OptimizerConfig" class="md-nav__link">
+    OptimizerConfig
   </a>
   
 </li>
@@ -764,33 +764,7 @@
                 
                   <h1>Configs</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L171">[source]</a></span></p>
-<h3 id="optimizerconfig">OptimizerConfig</h3>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">OptimizerConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sync_replicas</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sync_replicas_to_aggregate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</pre></div>
-
-
-<p>The OptimizerConfig holds information needed to create a <code>Optimizer</code>.</p>
-<ul>
-<li><strong>Args</strong>:</li>
-<li><strong>name</strong>: <code>str</code>, name to give for the optimizer.</li>
-<li><strong>learning_rate</strong>: A Tensor or a floating point value. The learning rate to use.</li>
-<li><strong>decay_steps</strong>: How often to apply decay.</li>
-<li><strong>decay_rate</strong>: A Python number. The decay rate.</li>
-<li><strong>start_decay_at</strong>: Don't decay before this step</li>
-<li><strong>stop_decay_at</strong>: Don't decay after this step</li>
-<li><strong>min_learning_rate</strong>: Don't decay below this number</li>
-<li><strong>decay_type</strong>: A decay function name defined in <code>tf.train</code>
-    possible Values: exponential_decay, inverse_time_decay, natural_exp_decay,
-         piecewise_constant, polynomial_decay.</li>
-<li><strong>staircase</strong>: Whether to apply decay in a discrete staircase,
-    as opposed to continuous, fashion.</li>
-<li><strong>sync_replicas</strong>:</li>
-<li><strong>sync_replicas_to_aggregate</strong>:</li>
-<li><strong>params</strong>: <code>dict</code>, extra information to pass to the optimizer.</li>
-</ul>
-<hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L41">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L41">[source]</a></span></p>
 <h3 id="configurable">Configurable</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">Configurable</span><span class="p">()</span>
 </pre></div>
@@ -859,6 +833,32 @@
 <li><strong>Args</strong>:</li>
 <li><strong>name</strong>: <code>str</code>, name to give for the metric.</li>
 <li><strong>params</strong>: <code>dict</code>, extra information to pass to the metric.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L171">[source]</a></span></p>
+<h3 id="optimizerconfig">OptimizerConfig</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">OptimizerConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sync_replicas</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sync_replicas_to_aggregate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The OptimizerConfig holds information needed to create a <code>Optimizer</code>.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>name</strong>: <code>str</code>, name to give for the optimizer.</li>
+<li><strong>learning_rate</strong>: A Tensor or a floating point value. The learning rate to use.</li>
+<li><strong>decay_steps</strong>: How often to apply decay.</li>
+<li><strong>decay_rate</strong>: A Python number. The decay rate.</li>
+<li><strong>start_decay_at</strong>: Don't decay before this step</li>
+<li><strong>stop_decay_at</strong>: Don't decay after this step</li>
+<li><strong>min_learning_rate</strong>: Don't decay below this number</li>
+<li><strong>decay_type</strong>: A decay function name defined in <code>tf.train</code>
+    possible Values: exponential_decay, inverse_time_decay, natural_exp_decay,
+         piecewise_constant, polynomial_decay.</li>
+<li><strong>staircase</strong>: Whether to apply decay in a discrete staircase,
+    as opposed to continuous, fashion.</li>
+<li><strong>sync_replicas</strong>:</li>
+<li><strong>sync_replicas_to_aggregate</strong>:</li>
+<li><strong>params</strong>: <code>dict</code>, extra information to pass to the optimizer.</li>
 </ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L209">[source]</a></span></p>
@@ -1005,6 +1005,16 @@
       </div>
       
         
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/polyaxon" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/polyaxonai" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
       
     </div>
   </div>
