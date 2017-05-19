@@ -4,7 +4,7 @@
     
     <url>
      <loc>http://polyaxon.com/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>http://polyaxon.com/getting_started/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,43 +21,43 @@
         
     <url>
      <loc>http://polyaxon.com/experiments/introduction/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/experiments/experiment/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/experiments/estimator/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/experiments/model/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/experiments/hooks/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/experiments/subgraph/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/experiments/summarizer/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -67,31 +67,31 @@
         
     <url>
      <loc>http://polyaxon.com/layers/introduction/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/layers/core/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/layers/convolutional/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/layers/recurrent/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/layers/embeddings/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -100,7 +100,7 @@
     
     <url>
      <loc>http://polyaxon.com/activations/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -108,7 +108,7 @@
     
     <url>
      <loc>http://polyaxon.com/losses/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -116,7 +116,7 @@
     
     <url>
      <loc>http://polyaxon.com/metrics/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -124,7 +124,7 @@
     
     <url>
      <loc>http://polyaxon.com/optimizers/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -132,7 +132,7 @@
     
     <url>
      <loc>http://polyaxon.com/initializations/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -140,7 +140,7 @@
     
     <url>
      <loc>http://polyaxon.com/regularizations/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -149,19 +149,19 @@
         
     <url>
      <loc>http://polyaxon.com/libs/configs/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/libs/getters/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://polyaxon.com/libs/utils/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -170,7 +170,7 @@
     
     <url>
      <loc>http://polyaxon.com/CONTRIBUTING/</loc>
-     <lastmod>2017-05-16</lastmod>
+     <lastmod>2017-05-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
