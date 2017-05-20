@@ -667,47 +667,39 @@
 <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;lenet_mnsit&#39;</span><span class="p">,</span>
     <span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">,</span>
-    <span class="s1">&#39;eval_every_n_steps&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;eval_every_n_steps&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
     <span class="s1">&#39;train_steps_per_iteration&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
     <span class="s1">&#39;run_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;save_checkpoints_steps&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
     <span class="s1">&#39;train_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
-        <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;train&#39;</span><span class="p">,</span> 
-                            <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> 
-                            <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+        <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
                             <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">},</span>
-        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X_train</span><span class="p">,</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">Y_train</span>
     <span class="p">},</span>
     <span class="s1">&#39;eval_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
-        <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;eval&#39;</span><span class="p">,</span> 
-                            <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> 
-                            <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+        <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;eval&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
                             <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">},</span>
-        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X_test</span><span class="p">,</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">Y_test</span>
     <span class="p">},</span>
     <span class="s1">&#39;estimator_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">},</span>
     <span class="s1">&#39;model_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;summaries&#39;</span><span class="p">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span>
         <span class="s1">&#39;model_type&#39;</span><span class="p">:</span> <span class="s1">&#39;classifier&#39;</span><span class="p">,</span>
         <span class="s1">&#39;loss_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;softmax_cross_entropy&#39;</span><span class="p">},</span>
         <span class="s1">&#39;eval_metrics_config&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_accuracy&#39;</span><span class="p">},</span>
                                 <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_precision&#39;</span><span class="p">}],</span>
-        <span class="s1">&#39;optimizer_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> 
-                             <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.002</span><span class="p">,</span> 
-                             <span class="s1">&#39;decay_type&#39;</span><span class="p">:</span> <span class="s1">&#39;exponential_decay&#39;</span><span class="p">,</span> 
-                             <span class="s1">&#39;decay_rate&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
+        <span class="s1">&#39;optimizer_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.002</span><span class="p">,</span>
+                             <span class="s1">&#39;decay_type&#39;</span><span class="p">:</span> <span class="s1">&#39;exponential_decay&#39;</span><span class="p">,</span> <span class="s1">&#39;decay_rate&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
         <span class="s1">&#39;graph_config&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;lenet&#39;</span><span class="p">,</span>
             <span class="s1">&#39;definition&#39;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_filter&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> 
-                                     <span class="s1">&#39;filter_size&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> 
-                                     <span class="s1">&#39;strides&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_filter&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;filter_size&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;strides&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                                      <span class="s1">&#39;regularizer&#39;</span><span class="p">:</span> <span class="s1">&#39;l2_regularizer&#39;</span><span class="p">}),</span>
                 <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;kernel_size&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
-                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_filter&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> 
-                                     <span class="s1">&#39;filter_size&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> 
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_filter&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;filter_size&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
                                      <span class="s1">&#39;regularizer&#39;</span><span class="p">:</span> <span class="s1">&#39;l2_regularizer&#39;</span><span class="p">}),</span>
                 <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;kernel_size&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
                 <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;n_units&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span> <span class="s1">&#39;activation&#39;</span><span class="p">:</span> <span class="s1">&#39;tanh&#39;</span><span class="p">}),</span>
@@ -724,9 +716,34 @@
 <h1 id="polyaxon-estimator">Polyaxon Estimator</h1>
 <p>The <code>Estimator</code> is where the object responsible for training, evaluating and extracting predictions from the graph model.</p>
 <p>An <code>Estiamtor</code> expects a function that creates a model graph.  </p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">polyaxon</span> <span class="kn">as</span> <span class="nn">plx</span>
+
+<span class="k">def</span> <span class="nf">dummy_model_fn</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">estimator</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">Estimator</span><span class="p">(</span><span class="n">model_fn</span><span class="o">=</span><span class="n">dummy_model_fn</span><span class="p">)</span>
+</pre></div>
+
+
 <h1 id="polyaxon-model">Polyaxon Model</h1>
 <p>A <code>Model</code> is <code>GraphModule</code> subclass where we define the computation graph.</p>
 <p>A <code>Model</code> expects all information about how to construct the <code>Graph</code>, the <code>Loss</code>, the evaluation <code>Metrics</code>, the <code>Optimizer</code> and the summaries level.</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">polyaxon</span> <span class="kn">as</span> <span class="nn">plx</span>
+
+<span class="k">def</span> <span class="nf">graph_fn</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">n_units</span><span class="o">=</span><span class="mi">128</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">n_units</span><span class="o">=</span><span class="mi">64</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">n_units</span><span class="o">=</span><span class="mi">8</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">model_fn</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">LossConfig</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">OptimizerConfig</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;SGD&#39;</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">RegressorModel</span><span class="p">(</span>
+    <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;my_regressor&#39;</span><span class="p">,</span> <span class="n">graph_fn</span><span class="o">=</span><span class="n">graph_fn</span><span class="p">,</span> 
+    <span class="n">loss_config</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="n">optimizer</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+</pre></div>
                 
                   
                 

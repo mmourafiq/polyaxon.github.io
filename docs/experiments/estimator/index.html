@@ -728,8 +728,7 @@
     If mode is <code>ModeKeys.PREDICT</code>, <code>labels=None</code> will be passed.
     If the <code>model_fn</code>'s signature does not accept <code>mode</code>,
     the <code>model_fn</code> must still be able to handle <code>labels=None</code>.</li>
-<li><code>mode</code>: Optional. Specifies if this training, evaluation or prediction.
-    See <code>ModeKeys</code>.</li>
+<li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><code>params</code>: Optional <code>dict</code> of hyperparameters.  Will receive what
     is passed to Estimator in <code>params</code> parameter. This allows
     to configure Estimators from hyper parameter tuning.</li>
@@ -751,7 +750,6 @@
 </ul>
 <p>Supports next three signatures for the function:</p>
 <ul>
-<li><code>(features, labels)</code></li>
 <li><code>(features, labels, mode)</code></li>
 <li><code>(features, labels, mode, params)</code></li>
 <li><code>(features, labels, mode, params, config)</code></li>
