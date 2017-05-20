@@ -626,16 +626,33 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/models.py#L17">[source]</a></span></p>
 <h3 id="basemodel">BaseModel</h3>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">summaries</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Abstract base class for models.</p>
+<p>Base class for models.</p>
 <ul>
 <li><strong>Args</strong>:</li>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>graph_fn</strong>: Graph function. Follows the signature:<ul>
+<li>Args:</li>
+<li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><code>inputs</code>: the feature inputs.</li>
+</ul>
+</li>
 <li><strong>config</strong>: An instance of <code>ModelConfig</code>.</li>
-<li><strong>params</strong>: <code>dic</code>. A dictionary of hyperparameter values.</li>
+<li><strong>model_type</strong>: <code>str</code>, the type of this model.
+    Possible values: <code>regressor</code>, <code>classifier</code>, <code>generator</code></li>
+<li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
+    Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+<li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
+<li>
+<p><strong>params</strong>: <code>dict</code>. A dictionary of hyperparameter values.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+<code>EstimatorSpec</code></p>
+</li>
 </ul>
                 
                   
