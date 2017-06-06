@@ -460,6 +460,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#categoricalprocessor" title="CategoricalProcessor" class="md-nav__link">
+    CategoricalProcessor
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -715,6 +722,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#categoricalprocessor" title="CategoricalProcessor" class="md-nav__link">
+    CategoricalProcessor
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -741,6 +755,16 @@
 <p>Categorical variables vocabulary class.</p>
 <p>Accumulates and provides mapping from classes to indexes.
 Can be easily used for words.</p>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/categorical.py#L79">[source]</a></span></p>
+<h3 id="categoricalprocessor">CategoricalProcessor</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">categorical</span><span class="o">.</span><span class="n">CategoricalProcessor</span><span class="p">(</span><span class="n">min_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">share</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">vocabularies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Maps documents to sequences of word ids.</p>
+<p>As a common convention, Nan values are handled as unknown tokens.
+Both float('nan') and np.nan are accepted.</p>
                 
                   
                 
