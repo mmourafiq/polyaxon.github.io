@@ -409,6 +409,114 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Processing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Processing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
+      Categorical Vocabulary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
+      Vocabulary Processor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/image/" title="Image" class="md-nav__link">
+      Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/input_fn/" title="Input function" class="md-nav__link">
+      Input function
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/pipelines/" title="Pipelines" class="md-nav__link">
+      Pipelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/data_decoders/" title="Data Decoders" class="md-nav__link">
+      Data Decoders
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/data_providers/" title="Data Providers" class="md-nav__link">
+      Data Providers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../activations/" title="Activations" class="md-nav__link">
       Activations
@@ -485,13 +593,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-12">
       Libs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-12">
         Libs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -796,7 +904,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L114">[source]</a></span></p>
 <h3 id="pipelineconfig">PipelineConfig</h3>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">PipelineConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dynamic_pad</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bucket_boundaries</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">min_after_dequeue</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">num_threads</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">PipelineConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">dynamic_pad</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bucket_boundaries</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">min_after_dequeue</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">num_threads</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">allow_smaller_final_batch</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
@@ -815,7 +923,7 @@
 <li><strong>params</strong>: <code>dict</code>, extra information to pass to the pipeline.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L146">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L148">[source]</a></span></p>
 <h3 id="inputdataconfig">InputDataConfig</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="p">(</span><span class="n">input_type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pipeline_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -830,7 +938,7 @@
 <li><strong>y</strong>: The y values, only used with NUMPY and PANDAS types.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L173">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L175">[source]</a></span></p>
 <h3 id="lossconfig">LossConfig</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">LossConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -843,7 +951,7 @@
 <li><strong>params</strong>: <code>dict</code>, extra information to pass to the loss.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L185">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L187">[source]</a></span></p>
 <h3 id="metricconfig">MetricConfig</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">MetricConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -856,7 +964,7 @@
 <li><strong>params</strong>: <code>dict</code>, extra information to pass to the metric.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L197">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L199">[source]</a></span></p>
 <h3 id="optimizerconfig">OptimizerConfig</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">OptimizerConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sync_replicas</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sync_replicas_to_aggregate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -882,9 +990,9 @@
 <li><strong>params</strong>: <code>dict</code>, extra information to pass to the optimizer.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L235">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L237">[source]</a></span></p>
 <h3 id="subgraphconfig">SubGraphConfig</h3>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">SubGraphConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">SubGraphConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
@@ -897,7 +1005,7 @@
 <li><strong>kwargs</strong>: <code>list</code>. the list key word args to call each method with.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L274">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L277">[source]</a></span></p>
 <h3 id="modelconfig">ModelConfig</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ModelConfig</span><span class="p">(</span><span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="p">,</span> <span class="n">graph_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;base_model&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -916,7 +1024,7 @@
 <li><strong>params</strong>: <code>dict</code>, extra information to pass to the model.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L313">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L316">[source]</a></span></p>
 <h3 id="estimatorconfig">EstimatorConfig</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">EstimatorConfig</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;estimator&#39;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -930,7 +1038,7 @@
 <li><strong>params</strong>: <code>dict</code>, extra information to pass to the estimator.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L342">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L346">[source]</a></span></p>
 <h3 id="experimentconfig">ExperimentConfig</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ExperimentConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">run_config</span><span class="p">,</span> <span class="n">train_input_data_config</span><span class="p">,</span> <span class="n">eval_input_data_config</span><span class="p">,</span> <span class="n">estimator_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">,</span> <span class="n">train_hooks_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_hooks_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_every_n_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">train_steps</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">eval_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">eval_delay_secs</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">continuous_eval_throttle_secs</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">delay_workers_by_global_step</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">export_strategies</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">train_steps_per_iteration</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -964,6 +1072,9 @@
 <h3 id="create_run_config">create_run_config</h3>
 <div class="codehilite"><pre><span></span><span class="n">create_run_config</span><span class="p">(</span><span class="n">tf_random_seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_checkpoints_secs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_checkpoints_steps</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">keep_checkpoint_max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">keep_checkpoint_every_n_hours</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">gpu_memory_fraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">gpu_allow_growth</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">log_device_placement</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
+
+
+<p>Creates a <code>RunConfig</code> instance.</p>
                 
                   
                 
