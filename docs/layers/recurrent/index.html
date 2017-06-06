@@ -499,6 +499,114 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Processing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Processing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
+      Categorical Vocabulary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
+      Vocabulary Processor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/image/" title="Image" class="md-nav__link">
+      Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/input_fn/" title="Input function" class="md-nav__link">
+      Input function
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/pipelines/" title="Pipelines" class="md-nav__link">
+      Pipelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/data_decoders/" title="Data Decoders" class="md-nav__link">
+      Data Decoders
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/data_providers/" title="Data Providers" class="md-nav__link">
+      Data Providers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../activations/" title="Activations" class="md-nav__link">
       Activations
@@ -573,13 +681,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-12">
       Libs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-12">
         Libs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -736,7 +844,7 @@
                 
                   <h1>Recurrent Layers</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L114">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L116">[source]</a></span></p>
 <h3 id="simplernn">SimpleRNN</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">SimpleRNN</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">return_seq</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SimpleRNN&#39;</span><span class="p">)</span>
 </pre></div>
@@ -755,7 +863,7 @@ if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
 <li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'sigmoid'.</li>
-<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (input_keep_prob, output_keep_prob). The
+<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (1 - input_keep_prob, 1 - output_keep_prob). The
     input and output keep probability.</li>
 <li><strong>num_layers</strong>: <code>int</code> how many times to stack the cell.</li>
 <li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
@@ -779,7 +887,7 @@ if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
 <li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L175">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L177">[source]</a></span></p>
 <h3 id="lstm">LSTM</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">inner_activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">forget_bias</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">return_seq</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;LSTM&#39;</span><span class="p">)</span>
 </pre></div>
@@ -800,7 +908,7 @@ if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
 <li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'tanh'.</li>
 <li><strong>inner_activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>).
     LSTM inner activation. Default: 'sigmoid'.</li>
-<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (input_keep_prob, output_keep_prob). The
+<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (1 - input_keep_prob, 1 - output_keep_prob). The
     input and output keep probability.</li>
 <li><strong>num_layers</strong>: <code>int</code> how many times to stack the cell.</li>
 <li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
@@ -837,7 +945,7 @@ Neural Computation 9(8): 1735-1780, 1997.</p>
 (http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf)</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L251">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L253">[source]</a></span></p>
 <h3 id="gru">GRU</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">GRU</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">inner_activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">return_seq</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;GRU&#39;</span><span class="p">)</span>
 </pre></div>
@@ -858,7 +966,7 @@ if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
 <li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>). Default: 'tanh'.</li>
 <li><strong>inner_activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>).
     GRU inner activation. Default: 'sigmoid'.</li>
-<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (input_keep_prob, output_keep_prob). The
+<li><strong>dropout</strong>: <code>tuple</code> of <code>float</code>: (1 - input_keep_prob, 1 - output_keep_prob). The
     input and output keep probability.</li>
 <li><strong>num_layers</strong>: <code>int</code> how many times to stack the cell.</li>
 <li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
@@ -893,7 +1001,7 @@ Statistical Machine Translation, K. Cho et al., 2014.</p>
 <li>__<a href="http://arxiv.org/abs/1406.1078">http__://arxiv.org/abs/1406.1078</a></li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L323">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L325">[source]</a></span></p>
 <h3 id="bidirectionalrnn">BidirectionalRNN</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">BidirectionalRNN</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">rnncell_fw</span><span class="p">,</span> <span class="n">rnncell_bw</span><span class="p">,</span> <span class="n">return_seq</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">return_states</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">initial_state_fw</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">initial_state_bw</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;BiRNN&#39;</span><span class="p">)</span>
 </pre></div>
@@ -937,7 +1045,7 @@ if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
 <li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L444">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L446">[source]</a></span></p>
 <h3 id="basicrnncell">BasicRNNCell</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">BasicRNNCell</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;BasicRNNCell&#39;</span><span class="p">)</span>
 </pre></div>
@@ -956,7 +1064,7 @@ if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
 <li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L490">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L492">[source]</a></span></p>
 <h3 id="grucell">GRUCell</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">GRUCell</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">inner_activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;GRUCell&#39;</span><span class="p">)</span>
 </pre></div>
@@ -977,7 +1085,7 @@ if <code>return_seq</code>: 3-D Tensor [samples, timesteps, output dim].</li>
 <li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L555">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L557">[source]</a></span></p>
 <h3 id="basiclstmcell">BasicLSTMCell</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">BasicLSTMCell</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">forget_bias</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">state_is_tuple</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">,</span> <span class="n">inner_activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">batch_norm</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;BasicLSTMCell&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1010,7 +1118,7 @@ use peep-hole connections: it is the basic baseline.</p>
 <li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L675">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L677">[source]</a></span></p>
 <h3 id="dropoutwrapper">DropoutWrapper</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">DropoutWrapper</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">input_keep_prob</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">output_keep_prob</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;DropoutWrapper&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1037,7 +1145,7 @@ probability; if it is float and 1, no output dropout will be added.</li>
 <li><strong>ValueError</strong>: if keep_prob is not between 0 and 1.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L747">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/recurrent.py#L749">[source]</a></span></p>
 <h3 id="multirnncell">MultiRNNCell</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">recurrent</span><span class="o">.</span><span class="n">MultiRNNCell</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">cells</span><span class="p">,</span> <span class="n">state_is_tuple</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MultiRNNCell&#39;</span><span class="p">)</span>
 </pre></div>

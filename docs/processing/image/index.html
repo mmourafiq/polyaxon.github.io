@@ -1,0 +1,2746 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for polyaxon, a python Deep Learning library for TensorFlow.">
+      
+      
+        <link rel="canonical" href="http://polyaxon.com/processing/image/">
+      
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
+    
+    
+      
+        <title>Image - Polyaxon Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-e2807e330f.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="http://polyaxon.com" title="Polyaxon Documentation" class="md-logo md-header-nav__button">
+            <img src="../../assets/images/logo_white.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Processing
+                </span>
+              
+            
+            Image
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../assets/images/logo_white.svg">
+      </i>
+    
+    Polyaxon Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/polyaxon/polyaxon" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyaxon/polyaxon
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Experiments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Experiments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/experiment/" title="Expermient" class="md-nav__link">
+      Expermient
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/estimator/" title="Estimator" class="md-nav__link">
+      Estimator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/model/" title="Model" class="md-nav__link">
+      Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/hooks/" title="Hooks" class="md-nav__link">
+      Hooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/subgraph/" title="Subgraph" class="md-nav__link">
+      Subgraph
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/summarizer/" title="Summerizer" class="md-nav__link">
+      Summerizer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Layers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Layers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/core/" title="Core Layers" class="md-nav__link">
+      Core Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/convolutional/" title="Convolutional Layers" class="md-nav__link">
+      Convolutional Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/recurrent/" title="Recurrent Layers" class="md-nav__link">
+      Recurrent Layers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../layers/embeddings/" title="Embedding Layers" class="md-nav__link">
+      Embedding Layers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Processing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Processing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
+      Categorical Vocabulary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
+      Vocabulary Processor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Image
+      </label>
+    
+    <a href="./" title="Image" class="md-nav__link md-nav__link--active">
+      Image
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resize" title="Resize" class="md-nav__link">
+    Resize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageresizes-docstring" title="See plx.image.resize's docstring" class="md-nav__link">
+    See plx.image.resize's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#centralcrop" title="CentralCrop" class="md-nav__link">
+    CentralCrop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagecentral_crops-docstring" title="See plx.image.central_crop's docstring" class="md-nav__link">
+    See plx.image.central_crop's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#randomcrop" title="RandomCrop" class="md-nav__link">
+    RandomCrop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagerandom_crops-docstring" title="See plx.image.random_crop's docstring" class="md-nav__link">
+    See plx.image.random_crop's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extractglimpse" title="ExtractGlimpse" class="md-nav__link">
+    ExtractGlimpse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageextract_glimpses-docstring" title="See plx.image.extract_glimpse's docstring" class="md-nav__link">
+    See plx.image.extract_glimpse's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toboundingbox" title="ToBoundingBox" class="md-nav__link">
+    ToBoundingBox
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageto_bounding_boxs-docstring" title="See plx.image.to_bounding_box's docstring" class="md-nav__link">
+    See plx.image.to_bounding_box's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flip" title="Flip" class="md-nav__link">
+    Flip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageflips-docstring" title="See plx.image.flip's docstring" class="md-nav__link">
+    See plx.image.flip's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transpose" title="Transpose" class="md-nav__link">
+    Transpose
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagetransposes-docstring" title="See plx.image.transpose's docstring" class="md-nav__link">
+    See plx.image.transpose's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotate90" title="Rotate90" class="md-nav__link">
+    Rotate90
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagerotate90s-docstring" title="See plx.image.rotate90's docstring" class="md-nav__link">
+    See plx.image.rotate90's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convertcolorspace" title="ConvertColorSpace" class="md-nav__link">
+    ConvertColorSpace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageconvert_color_spaces-docstring" title="See plx.image.convert_color_space's docstring" class="md-nav__link">
+    See plx.image.convert_color_space's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjusthue" title="AdjustHue" class="md-nav__link">
+    AdjustHue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_hues-docstring" title="See plx.image.adjust_hue's docstring" class="md-nav__link">
+    See plx.image.adjust_hue's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convertimagesdtype" title="ConvertImagesDtype" class="md-nav__link">
+    ConvertImagesDtype
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageconvert_images_dtypes-docstring" title="See plx.image.convert_images_dtype's docstring" class="md-nav__link">
+    See plx.image.convert_images_dtype's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustbrightness" title="AdjustBrightness" class="md-nav__link">
+    AdjustBrightness
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_brightnesss-docstring" title="See plx.image.adjust_brightness's docstring" class="md-nav__link">
+    See plx.image.adjust_brightness's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustcontrast" title="AdjustContrast" class="md-nav__link">
+    AdjustContrast
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_contrasts-docstring" title="See plx.image.adjust_contrast's docstring" class="md-nav__link">
+    See plx.image.adjust_contrast's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustsaturation" title="AdjustSaturation" class="md-nav__link">
+    AdjustSaturation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_saturations-docstring" title="See plx.image.adjust_saturation's docstring" class="md-nav__link">
+    See plx.image.adjust_saturation's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustgamma" title="AdjustGamma" class="md-nav__link">
+    AdjustGamma
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_gammas-docstring" title="See plx.image.adjust_gamma's docstring" class="md-nav__link">
+    See plx.image.adjust_gamma's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standardization" title="Standardization" class="md-nav__link">
+    Standardization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagestandardizes-docstring" title="See plx.image.standardize's docstring" class="md-nav__link">
+    See plx.image.standardize's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drawboundingboxes" title="DrawBoundingBoxes" class="md-nav__link">
+    DrawBoundingBoxes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagedraw_bounding_boxess-docstring" title="See plx.image.draw_bounding_boxes's docstring" class="md-nav__link">
+    See plx.image.draw_bounding_boxes's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#totalvariation" title="TotalVariation" class="md-nav__link">
+    TotalVariation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagetotal_variations-docstring" title="See plx.image.total_variation's docstring" class="md-nav__link">
+    See plx.image.total_variation's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resize_1" title="resize" class="md-nav__link">
+    resize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#central_crop" title="central_crop" class="md-nav__link">
+    central_crop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random_crop" title="random_crop" class="md-nav__link">
+    random_crop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_glimpse" title="extract_glimpse" class="md-nav__link">
+    extract_glimpse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_bounding_box" title="to_bounding_box" class="md-nav__link">
+    to_bounding_box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flip_1" title="flip" class="md-nav__link">
+    flip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transpose_1" title="transpose" class="md-nav__link">
+    transpose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotate90_1" title="rotate90" class="md-nav__link">
+    rotate90
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert_color_space" title="convert_color_space" class="md-nav__link">
+    convert_color_space
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert_images_dtype" title="convert_images_dtype" class="md-nav__link">
+    convert_images_dtype
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_brightness" title="adjust_brightness" class="md-nav__link">
+    adjust_brightness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_contrast" title="adjust_contrast" class="md-nav__link">
+    adjust_contrast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_hue" title="adjust_hue" class="md-nav__link">
+    adjust_hue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_saturation" title="adjust_saturation" class="md-nav__link">
+    adjust_saturation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_gamma" title="adjust_gamma" class="md-nav__link">
+    adjust_gamma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standardize" title="standardize" class="md-nav__link">
+    standardize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw_bounding_boxes" title="draw_bounding_boxes" class="md-nav__link">
+    draw_bounding_boxes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non_max_suppression" title="non_max_suppression" class="md-nav__link">
+    non_max_suppression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample_distorted_bounding_box" title="sample_distorted_bounding_box" class="md-nav__link">
+    sample_distorted_bounding_box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total_variation" title="total_variation" class="md-nav__link">
+    total_variation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../input_fn/" title="Input function" class="md-nav__link">
+      Input function
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pipelines/" title="Pipelines" class="md-nav__link">
+      Pipelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data_decoders/" title="Data Decoders" class="md-nav__link">
+      Data Decoders
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data_providers/" title="Data Providers" class="md-nav__link">
+      Data Providers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../activations/" title="Activations" class="md-nav__link">
+      Activations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../losses/" title="Losses" class="md-nav__link">
+      Losses
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics/" title="Metrics" class="md-nav__link">
+      Metrics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../optimizers/" title="Optimizers" class="md-nav__link">
+      Optimizers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../initializations/" title="Initializations" class="md-nav__link">
+      Initializations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../regularizations/" title="Regularizations" class="md-nav__link">
+      Regularizations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Libs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Libs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/configs/" title="Configs" class="md-nav__link">
+      Configs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/getters/" title="Getters" class="md-nav__link">
+      Getters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../libs/utils/" title="Utils" class="md-nav__link">
+      Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resize" title="Resize" class="md-nav__link">
+    Resize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageresizes-docstring" title="See plx.image.resize's docstring" class="md-nav__link">
+    See plx.image.resize's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#centralcrop" title="CentralCrop" class="md-nav__link">
+    CentralCrop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagecentral_crops-docstring" title="See plx.image.central_crop's docstring" class="md-nav__link">
+    See plx.image.central_crop's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#randomcrop" title="RandomCrop" class="md-nav__link">
+    RandomCrop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagerandom_crops-docstring" title="See plx.image.random_crop's docstring" class="md-nav__link">
+    See plx.image.random_crop's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extractglimpse" title="ExtractGlimpse" class="md-nav__link">
+    ExtractGlimpse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageextract_glimpses-docstring" title="See plx.image.extract_glimpse's docstring" class="md-nav__link">
+    See plx.image.extract_glimpse's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toboundingbox" title="ToBoundingBox" class="md-nav__link">
+    ToBoundingBox
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageto_bounding_boxs-docstring" title="See plx.image.to_bounding_box's docstring" class="md-nav__link">
+    See plx.image.to_bounding_box's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flip" title="Flip" class="md-nav__link">
+    Flip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageflips-docstring" title="See plx.image.flip's docstring" class="md-nav__link">
+    See plx.image.flip's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transpose" title="Transpose" class="md-nav__link">
+    Transpose
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagetransposes-docstring" title="See plx.image.transpose's docstring" class="md-nav__link">
+    See plx.image.transpose's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotate90" title="Rotate90" class="md-nav__link">
+    Rotate90
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagerotate90s-docstring" title="See plx.image.rotate90's docstring" class="md-nav__link">
+    See plx.image.rotate90's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convertcolorspace" title="ConvertColorSpace" class="md-nav__link">
+    ConvertColorSpace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageconvert_color_spaces-docstring" title="See plx.image.convert_color_space's docstring" class="md-nav__link">
+    See plx.image.convert_color_space's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjusthue" title="AdjustHue" class="md-nav__link">
+    AdjustHue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_hues-docstring" title="See plx.image.adjust_hue's docstring" class="md-nav__link">
+    See plx.image.adjust_hue's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convertimagesdtype" title="ConvertImagesDtype" class="md-nav__link">
+    ConvertImagesDtype
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageconvert_images_dtypes-docstring" title="See plx.image.convert_images_dtype's docstring" class="md-nav__link">
+    See plx.image.convert_images_dtype's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustbrightness" title="AdjustBrightness" class="md-nav__link">
+    AdjustBrightness
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_brightnesss-docstring" title="See plx.image.adjust_brightness's docstring" class="md-nav__link">
+    See plx.image.adjust_brightness's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustcontrast" title="AdjustContrast" class="md-nav__link">
+    AdjustContrast
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_contrasts-docstring" title="See plx.image.adjust_contrast's docstring" class="md-nav__link">
+    See plx.image.adjust_contrast's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustsaturation" title="AdjustSaturation" class="md-nav__link">
+    AdjustSaturation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_saturations-docstring" title="See plx.image.adjust_saturation's docstring" class="md-nav__link">
+    See plx.image.adjust_saturation's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adjustgamma" title="AdjustGamma" class="md-nav__link">
+    AdjustGamma
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximageadjust_gammas-docstring" title="See plx.image.adjust_gamma's docstring" class="md-nav__link">
+    See plx.image.adjust_gamma's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standardization" title="Standardization" class="md-nav__link">
+    Standardization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagestandardizes-docstring" title="See plx.image.standardize's docstring" class="md-nav__link">
+    See plx.image.standardize's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drawboundingboxes" title="DrawBoundingBoxes" class="md-nav__link">
+    DrawBoundingBoxes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagedraw_bounding_boxess-docstring" title="See plx.image.draw_bounding_boxes's docstring" class="md-nav__link">
+    See plx.image.draw_bounding_boxes's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#totalvariation" title="TotalVariation" class="md-nav__link">
+    TotalVariation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-plximagetotal_variations-docstring" title="See plx.image.total_variation's docstring" class="md-nav__link">
+    See plx.image.total_variation's docstring
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resize_1" title="resize" class="md-nav__link">
+    resize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#central_crop" title="central_crop" class="md-nav__link">
+    central_crop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random_crop" title="random_crop" class="md-nav__link">
+    random_crop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extract_glimpse" title="extract_glimpse" class="md-nav__link">
+    extract_glimpse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_bounding_box" title="to_bounding_box" class="md-nav__link">
+    to_bounding_box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flip_1" title="flip" class="md-nav__link">
+    flip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transpose_1" title="transpose" class="md-nav__link">
+    transpose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotate90_1" title="rotate90" class="md-nav__link">
+    rotate90
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert_color_space" title="convert_color_space" class="md-nav__link">
+    convert_color_space
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert_images_dtype" title="convert_images_dtype" class="md-nav__link">
+    convert_images_dtype
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_brightness" title="adjust_brightness" class="md-nav__link">
+    adjust_brightness
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_contrast" title="adjust_contrast" class="md-nav__link">
+    adjust_contrast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_hue" title="adjust_hue" class="md-nav__link">
+    adjust_hue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_saturation" title="adjust_saturation" class="md-nav__link">
+    adjust_saturation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust_gamma" title="adjust_gamma" class="md-nav__link">
+    adjust_gamma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standardize" title="standardize" class="md-nav__link">
+    standardize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw_bounding_boxes" title="draw_bounding_boxes" class="md-nav__link">
+    draw_bounding_boxes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non_max_suppression" title="non_max_suppression" class="md-nav__link">
+    non_max_suppression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample_distorted_bounding_box" title="sample_distorted_bounding_box" class="md-nav__link">
+    sample_distorted_bounding_box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total_variation" title="total_variation" class="md-nav__link">
+    total_variation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Image</h1>
+                
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L64">[source]</a></span></p>
+<h3 id="resize">Resize</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">align_corners</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Resize&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageresizes-docstring">See <code>plx.image.resize</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L116">[source]</a></span></p>
+<h3 id="centralcrop">CentralCrop</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">CentralCrop</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">central_fraction</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;CentralCrop&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximagecentral_crops-docstring">See <code>plx.image.central_crop</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L152">[source]</a></span></p>
+<h3 id="randomcrop">RandomCrop</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;RandomCrop&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximagerandom_crops-docstring">See <code>plx.image.random_crop</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L215">[source]</a></span></p>
+<h3 id="extractglimpse">ExtractGlimpse</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">ExtractGlimpse</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">centered</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">uniform_noise</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ExtractGlimpse&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageextract_glimpses-docstring">See <code>plx.image.extract_glimpse</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L286">[source]</a></span></p>
+<h3 id="toboundingbox">ToBoundingBox</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">ToBoundingBox</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">offset_height</span><span class="p">,</span> <span class="n">offset_width</span><span class="p">,</span> <span class="n">target_height</span><span class="p">,</span> <span class="n">target_width</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;crop&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ToBoundingBox&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageto_bounding_boxs-docstring">See <code>plx.image.to_bounding_box</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L350">[source]</a></span></p>
+<h3 id="flip">Flip</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">Flip</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Flip&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageflips-docstring">See <code>plx.image.flip</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L389">[source]</a></span></p>
+<h3 id="transpose">Transpose</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">Transpose</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Transpose&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximagetransposes-docstring">See <code>plx.image.transpose</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L432">[source]</a></span></p>
+<h3 id="rotate90">Rotate90</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">Rotate90</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Rotate90&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximagerotate90s-docstring">See <code>plx.image.rotate90</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L504">[source]</a></span></p>
+<h3 id="convertcolorspace">ConvertColorSpace</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">ConvertColorSpace</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">from_space</span><span class="p">,</span> <span class="n">to_space</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ConvertColorSpace&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageconvert_color_spaces-docstring">See <code>plx.image.convert_color_space</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L707">[source]</a></span></p>
+<h3 id="adjusthue">AdjustHue</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AdjustHue</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AdjustHue&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageadjust_hues-docstring">See <code>plx.image.adjust_hue</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L556">[source]</a></span></p>
+<h3 id="convertimagesdtype">ConvertImagesDtype</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">ConvertImagesDtype</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">saturate</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ConvertImagesDtype&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageconvert_images_dtypes-docstring">See <code>plx.image.convert_images_dtype</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L600">[source]</a></span></p>
+<h3 id="adjustbrightness">AdjustBrightness</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AdjustBrightness</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AdjustBrightness&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageadjust_brightnesss-docstring">See <code>plx.image.adjust_brightness</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L658">[source]</a></span></p>
+<h3 id="adjustcontrast">AdjustContrast</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AdjustContrast</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">contrast_factor</span><span class="p">,</span> <span class="n">contrast_factor_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AdjustContrast&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageadjust_contrasts-docstring">See <code>plx.image.adjust_contrast</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L764">[source]</a></span></p>
+<h3 id="adjustsaturation">AdjustSaturation</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AdjustSaturation</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">saturation_factor</span><span class="p">,</span> <span class="n">saturation_factor_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AdjustSaturation&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageadjust_saturations-docstring">See <code>plx.image.adjust_saturation</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L807">[source]</a></span></p>
+<h3 id="adjustgamma">AdjustGamma</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AdjustGamma</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AdjustGamma&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximageadjust_gammas-docstring">See <code>plx.image.adjust_gamma</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L849">[source]</a></span></p>
+<h3 id="standardization">Standardization</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">Standardization</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Standardization&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximagestandardizes-docstring">See <code>plx.image.standardize</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L889">[source]</a></span></p>
+<h3 id="drawboundingboxes">DrawBoundingBoxes</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">DrawBoundingBoxes</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">boxes</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;DrawBoundingBoxes&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximagedraw_bounding_boxess-docstring">See <code>plx.image.draw_bounding_boxes</code>'s docstring</h2>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/image.py#L1080">[source]</a></span></p>
+<h3 id="totalvariation">TotalVariation</h3>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">TotalVariation</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;TotalVariation&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="see-plximagetotal_variations-docstring">See <code>plx.image.total_variation</code>'s docstring</h2>
+<h3 id="resize_1">resize</h3>
+<div class="codehilite"><pre><span></span><span class="n">resize</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">align_corners</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Resize <code>images</code> to <code>size</code> using the specified <code>method</code>.
+(A mirror to tf.image resize_images and resize_image_with_crop_or_pad)</p>
+<ul>
+<li>
+<p>If method is None: Resizes an image to a target width and height by either centrally
+cropping the image or padding it evenly with zeros.
+If <code>width</code> or <code>height</code> is greater than the specified <code>target_width</code> or
+<code>target_height</code> respectively, this op centrally crops along that dimension.
+If <code>width</code> or <code>height</code> is smaller than the specified <code>target_width</code> or
+<code>target_height</code> respectively, this op centrally pads with 0 along that dimension.</p>
+</li>
+<li>
+<p>If method is not None: the resized images will be distorted if their original aspect
+ratio is not the same as <code>size</code>.</p>
+</li>
+</ul>
+<p><code>method</code> can be one of:</p>
+<ul>
+<li><b><code>None</code> no distortion.</li>
+<li><b><code>ResizeMethod.BILINEAR</code></b>: <a href="https://en.wikipedia.org/wiki/Bilinear_interpolation">Bilinear interpolation.</a></li>
+<li><b><code>ResizeMethod.NEAREST_NEIGHBOR</code></b>: <a href="https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation">Nearest neighbor interpolation.</a></li>
+<li><b><code>ResizeMethod.BICUBIC</code></b>: <a href="https://en.wikipedia.org/wiki/Bicubic_interpolation">Bicubic interpolation.</a></li>
+<li>
+<p><b><code>ResizeMethod.AREA</code></b>: Area interpolation.</p>
+</li>
+<li>
+<p><strong>Args</strong>:</p>
+</li>
+<li><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+3-D Tensor of shape <code>[height, width, channels]</code>.</li>
+<li><strong>height</strong>: int32 Target height.</li>
+<li><strong>width</strong>: int32 Target width.</li>
+<li><strong>method</strong>: ResizeMethod.  Defaults to <code>ResizeMethod.BILINEAR</code>.
+Possible values: BILINEAR, NEAREST_NEIGHBOR, BICUBIC, AREA</li>
+<li>
+<p><strong>align_corners</strong>: bool. If true, exactly align all 4 corners of the input and output.
+Only used if method is not None. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if the shape of <code>images</code> is incompatible with the
+shape arguments to this function.</li>
+<li><strong>ValueError</strong>: if <code>size</code> has invalid shape or type.</li>
+<li>
+<p><strong>ValueError</strong>: if an unsupported resize method is specified.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+If <code>images</code> was 4-D, a 4-D float Tensor of shape
+<code>[batch, new_height, new_width, channels]</code>.
+If <code>images</code> was 3-D, a 3-D float Tensor of shape
+<code>[new_height, new_width, channels]</code>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="central_crop">central_crop</h3>
+<div class="codehilite"><pre><span></span><span class="n">central_crop</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">central_fraction</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Crop the central region of the image.
+(A mirror to tf.image central_crop)</p>
+<p>Remove the outer parts of an image but retain the central region of the image
+along each dimension. If we specify central_fraction = 0.5, this function
+returns the region marked with "X" in the below diagram.</p>
+<hr />
+<p>||
+|  XXXX  |
+|  XXXX  |
+||   where "X" is the central 50% of the image.</p>
+<hr />
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+3-D Tensor of shape <code>[height, width, channels]</code>.</li>
+<li>
+<p><strong>central_fraction</strong>: float (0, 1], fraction of size to crop</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li>
+<p><strong>ValueError</strong>: if central_crop_fraction is not within (0, 1].</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+If <code>images</code> was 4-D, a 4-D float Tensor of shape
+<code>[batch, new_height, new_width, channels]</code>.
+If <code>images</code> was 3-D, a 3-D float Tensor of shape
+<code>[new_height, new_width, channels]</code>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="random_crop">random_crop</h3>
+<div class="codehilite"><pre><span></span><span class="n">random_crop</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Randomly crops an image/images to a given size.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+3-D Tensor of shape <code>[height, width, channels]</code>.</li>
+<li><strong>height</strong>: <code>float</code>. The height to crop to.</li>
+<li>
+<p><strong>width</strong>: <code>float</code>. The width to crop to.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+If <code>images</code> was 4-D, a 4-D float Tensor of shape
+<code>[batch, new_height, new_width, channels]</code>.
+If <code>images</code> was 3-D, a 3-D float Tensor of shape
+<code>[new_height, new_width, channels]</code>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="extract_glimpse">extract_glimpse</h3>
+<div class="codehilite"><pre><span></span><span class="n">extract_glimpse</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">centered</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">uniform_noise</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Extracts a glimpse from the input tensor.
+(A mirror to tf.image extract_glimpse)</p>
+<p>Returns a set of windows called glimpses extracted at location <code>offsets</code>
+from the input tensor. If the windows only partially overlaps the inputs,
+the non overlapping areas will be filled with random noise.</p>
+<p>The result is a 4-D tensor of shape <code>[batch_size, glimpse_height,
+glimpse_width, channels]</code>. The channels and batch dimensions are the
+same as that of the input tensor. The height and width of the output
+windows are specified in the <code>size</code> parameter.</p>
+<p>The argument <code>normalized</code> and <code>centered</code> controls how the windows are built:</p>
+<ul>
+<li>If the coordinates are normalized but not centered, 0.0 and 1.0
+correspond to the minimum and maximum of each height and width
+dimension.</li>
+<li>If the coordinates are both normalized and centered, they range from -1.0 to 1.0.
+The coordinates (-1.0, -1.0) correspond to the upper left corner, the lower right
+corner is located at (1.0, 1.0) and the center is at (0, 0).</li>
+<li>
+<p>If the coordinates are not normalized they are interpreted as numbers of pixels.</p>
+</li>
+<li>
+<p><strong>Args</strong>:</p>
+</li>
+<li><strong>images</strong>: A <code>Tensor</code> of type <code>float32</code>.
+A 4-D float tensor of shape <code>[batch_size, height, width, channels]</code>.</li>
+<li><strong>size</strong>: A <code>Tensor</code> of type <code>int32</code>.
+A 1-D tensor of 2 elements containing the size of the glimpses to extract.
+The glimpse height must be specified first, following by the glimpse width.</li>
+<li><strong>offsets</strong>: A <code>Tensor</code> of type <code>float32</code>.
+A 2-D integer tensor of shape <code>[batch_size, 2]</code> containing
+the y, x locations of the center of each window.</li>
+<li><strong>centered</strong>: An optional <code>bool</code>. Defaults to <code>True</code>.
+indicates if the offset coordinates are centered relative to the image,
+in which case the (0, 0) offset is relative to the center of the input images.
+If false, the (0,0) offset corresponds to the upper left corner of the input images.</li>
+<li><strong>normalized</strong>: An optional <code>bool</code>. Defaults to <code>True</code>.
+indicates if the offset coordinates are normalized.</li>
+<li><strong>uniform_noise</strong>: An optional <code>bool</code>. Defaults to <code>True</code>.
+indicates if the noise should be generated using a
+uniform distribution or a Gaussian distribution.</li>
+<li>
+<p><strong>name</strong>: A name for the operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A <code>Tensor</code> of type <code>float32</code>.
+A tensor representing the glimpses <code>[batch_size, glimpse_height, glimpse_width, channels]</code>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="to_bounding_box">to_bounding_box</h3>
+<div class="codehilite"><pre><span></span><span class="n">to_bounding_box</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">offset_height</span><span class="p">,</span> <span class="n">offset_width</span><span class="p">,</span> <span class="n">target_height</span><span class="p">,</span> <span class="n">target_width</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;crop&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Pad/Crop <code>image</code> with zeros to the specified <code>height</code> and <code>width</code>.
+(A mirror to tf.image pad_to_bounding_box and crop_to_bounding_box)</p>
+<p>If method == 'pad':
+Adds <code>offset_height</code> rows of zeros on top, <code>offset_width</code> columns of
+zeros on the left, and then pads the image on the bottom and right
+with zeros until it has dimensions <code>target_height</code>, <code>target_width</code>.</p>
+<p>This op does nothing if <code>offset_*</code> is zero and the image already has size
+<code>target_height</code> by <code>target_width</code>.</p>
+<p>If method == 'crop':
+Crops an image to a specified bounding box.</p>
+<p>This op cuts a rectangular part out of <code>image</code>. The top-left corner of the
+returned image is at <code>offset_height, offset_width</code> in <code>image</code>, and its
+lower-right corner is at <code>offset_height + target_height, offset_width + target_width</code>.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+   3-D Tensor of shape <code>[height, width, channels]</code>.</li>
+<li><strong>offset_height</strong>:</li>
+<li>pad: Number of rows of zeros to add on top.</li>
+<li>crop: Vertical coordinate of the top-left corner of the result the input.</li>
+<li><strong>offset_width</strong>:</li>
+<li>pad: Number of columns of zeros to add on the left.</li>
+<li>crop: Horizontal coordinate of the top-left corner of the result in the input.</li>
+<li><strong>target_height</strong>: Height of output image.</li>
+<li><strong>target_width</strong>: Width of output image.</li>
+<li>
+<p><strong>method</strong>: <code>crop</code> or <code>pad</code></p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+If <code>image</code> was 4-D, a 4-D float Tensor of shape
+<code>[batch, target_height, target_width, channels]</code>
+If <code>image</code> was 3-D, a 3-D float Tensor of shape
+<code>[target_height, target_width, channels]</code></p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: If the shape of <code>image</code> is incompatible with the <code>offset_*</code> or
+<code>target_*</code> arguments, or either <code>offset_height</code> or <code>offset_width</code> is negative.</li>
+</ul>
+<hr />
+<h3 id="flip_1">flip</h3>
+<div class="codehilite"><pre><span></span><span class="n">flip</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Flip (randomly) an image/images.
+(A mirror to tf.image flip_left_right, flip_up_down, random_flip_left_right, and
+random_flip_up_down)</p>
+<p>if axis is 0:
+<em> flip horizontally (left to right)
+ if axis is 1:
+</em> vertically (upside down).</p>
+<p>Outputs the contents of <code>images</code> flipped along the given axis.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+3-D Tensor of shape <code>[height, width, channels]</code>.</li>
+<li><strong>axis</strong>: <code>int</code>. 0 for horizontal, 1 for vertical</li>
+<li><strong>is_random</strong>: <code>bool</code>, If True, flip randomly.</li>
+<li>
+<p><strong>seed</strong>: A Python integer. Used to create a random seed. See @{tf.set_random_seed}.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+If <code>image</code> was 4-D, a 4-D float Tensor of shape
+<code>[batch, target_height, target_width, channels]</code>
+If <code>image</code> was 3-D, a 3-D float Tensor of shape
+`[target_height, target_width, channels]</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if the shape of <code>image</code> not supported.</li>
+</ul>
+<hr />
+<h3 id="transpose_1">transpose</h3>
+<div class="codehilite"><pre><span></span><span class="n">transpose</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Transpose an image/images by swapping the first and second dimension.
+(A mirror to tf.image transpose_image)</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li>
+<p><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+3-D Tensor of shape <code>[height, width, channels]</code>.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+If <code>image</code> was 4-D, a 4-D float Tensor of shape
+<code>[batch, target_height, target_width, channels]</code>
+If <code>image</code> was 3-D, a 3-D float Tensor of shape
+`[target_height, target_width, channels]</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if the shape of <code>image</code> not supported.</li>
+</ul>
+<hr />
+<h3 id="rotate90_1">rotate90</h3>
+<div class="codehilite"><pre><span></span><span class="n">rotate90</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Rotate (randomly) images counter-clockwise by 90 degrees.
+(A mirror to tf.image rot90)</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+3-D Tensor of shape <code>[height, width, channels]</code>.</li>
+<li><strong>k</strong>: A scalar integer. The number of times the image is rotated by 90 degrees.</li>
+<li><strong>is_random</strong>: <code>bool</code>, If True, adjust randomly.</li>
+<li><strong>seed</strong>: A Python integer. Used to create a random seed. See @{tf.set_random_seed}.</li>
+<li>
+<p><strong>name</strong>: A name for this operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+If <code>image</code> was 4-D, a 4-D float Tensor of shape
+<code>[batch, target_height, target_width, channels]</code>
+If <code>image</code> was 3-D, a 3-D float Tensor of shape
+`[target_height, target_width, channels]</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if the shape of <code>image</code> not supported.</li>
+</ul>
+<hr />
+<h3 id="convert_color_space">convert_color_space</h3>
+<div class="codehilite"><pre><span></span><span class="n">convert_color_space</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">from_space</span><span class="p">,</span> <span class="n">to_space</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Converts one or more images from RGB to Grayscale.
+(A mirror to tf.image rgb_to_grayscale, rgb_to_hsv, grayscale_to_rgb, and hsv_to_rgb)</p>
+<p>Outputs a tensor of the same <code>DType</code> and rank as <code>images</code>.</p>
+<p>Possible conversions:
+<em> rgb_to_grayscale: The size of the last dimension of the output is 1,
+containing the Grayscale value of the pixels.
+</em> grayscale_to_rgb: The size of the last dimension of the output is 3,
+containing the RGB value of the pixels.
+<em> hsv_to_rgb: The output is only well defined if the value in <code>images</code> are in <code>[0,1]</code>.
+</em> rgb_to_hsv: The output is only well defined if the value in <code>images</code> are in <code>[0,1]</code>.
+<code>output[..., 0]</code> contains hue, <code>output[..., 1]</code> contains saturation, and
+<code>output[..., 2]</code> contains value. All HSV values are in <code>[0,1]</code>. A hue of 0
+corresponds to pure red, hue 1/3 is pure green, and 2/3 is pure blue.
+<em> grayscale_to_hsv: grayscale_to_rgb then rgb_to_hsv
+</em> hsv_to_grayscale: hsv_to_rgb then rgb_to_grayscale.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code></li>
+<li><strong>from_space</strong>: The color to convert from.</li>
+<li><strong>to_space</strong>: The color space to convert to.</li>
+<li>
+<p><strong>name</strong>: A name for the operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The converted image(s).</p>
+</li>
+</ul>
+<hr />
+<h3 id="convert_images_dtype">convert_images_dtype</h3>
+<div class="codehilite"><pre><span></span><span class="n">convert_images_dtype</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">saturate</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Convert image(s) to <code>dtype</code>, scaling its values if needed.
+(A mirror to tf.image convert_image_dtype)</p>
+<p>Images that are represented using floating point values are expected to have
+  values in the range [0,1). Image data stored in integer data types are
+  expected to have values in the range <code>[0,MAX]</code>, where <code>MAX</code> is the largest
+  positive representable number for the data type.</p>
+<p>This op converts between data types, scaling the values appropriately before
+  casting.</p>
+<p>Note that converting from floating point inputs to integer types may lead to
+  over/underflow problems. Set saturate to <code>True</code> to avoid such problem in
+  problematic conversions. If enabled, saturation will clip the output into the
+  allowed range before performing a potentially dangerous cast (and only before
+  performing such a cast, i.e., when casting from a floating point to an integer
+  type, and when casting from a signed to an unsigned type; <code>saturate</code> has no
+  effect on casts between floats, or on casts that increase the type's range).</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: An image.</li>
+<li><strong>dtype</strong>: A <code>DType</code> to convert <code>image</code> to.</li>
+<li><strong>saturate</strong>: If <code>True</code>, clip the input before casting (if necessary).</li>
+<li>
+<p><strong>name</strong>: A name for this operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+<code>image</code>, converted to <code>dtype</code>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="adjust_brightness">adjust_brightness</h3>
+<div class="codehilite"><pre><span></span><span class="n">adjust_brightness</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adjust (randomly) the brightness of RGB or Grayscale images.
+(A mirror to tf.image adjust_brightness, random_birightness)</p>
+<p>This is a convenience method that converts an RGB image to float
+representation, adjusts its brightness, and then converts it back to the
+original data type. If several adjustments are chained it is advisable to
+minimize the number of redundant conversions.</p>
+<p>The value <code>delta</code> is added to all components of the tensor <code>image</code>. Both
+<code>image</code> and <code>delta</code> are converted to <code>float</code> before adding (and <code>image</code> is
+scaled appropriately if it is in fixed-point representation). For regular
+images, <code>delta</code> should be in the range <code>[0,1)</code>, as it is added to the image in
+floating point representation, where pixel values are in the <code>[0,1)</code> range.</p>
+<p>If <code>is_random</code> is <code>True</code>, adjust brightness using a value randomly picked in the
+interval <code>[-delta, delta)</code>.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: A tensor.</li>
+<li><strong>delta</strong>: <code>float</code>. Amount to add to the pixel values.</li>
+<li><strong>is_random</strong>: <code>bool</code>, If True, adjust randomly.</li>
+<li>
+<p><strong>seed</strong>: A Python integer. Used to create a random seed. See @{tf.set_random_seed}.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A brightness-adjusted tensor of the same shape and type as <code>images</code>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="adjust_contrast">adjust_contrast</h3>
+<div class="codehilite"><pre><span></span><span class="n">adjust_contrast</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">contrast_factor</span><span class="p">,</span> <span class="n">contrast_factor_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adjust (randomly) the contrast of RGB or grayscale images by contrast factor.
+(A mirror to tf.image adjust_contrast, random_contrast)</p>
+<p>This is a convenience method that converts an RGB image to float
+representation, adjusts its contrast, and then converts it back to the
+original data type. If several adjustments are chained it is advisable to
+minimize the number of redundant conversions.</p>
+<p><code>images</code> is a tensor of at least 3 dimensions.  The last 3 dimensions are
+interpreted as <code>[height, width, channels]</code>.  The other dimensions only
+represent a collection of images, such as <code>[batch, height, width, channels].</code></p>
+<p>Contrast is adjusted independently for each channel of each image.</p>
+<p>For each channel, this Op computes the mean of the image pixels in the
+channel and then adjusts each component <code>x</code> of each pixel to
+<code>(x - mean) * contrast_factor + mean</code>.</p>
+<p>If <code>is_random</code> is <code>True</code>: Equivalent to <code>adjust_contrast()</code> but the value is
+randomly picked in the interval <code>[contrast_factor, contrast_factor_max]</code>.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: <code>tensor</code>. images tensor with 3 or more dimensions.</li>
+<li><strong>contrast_factor</strong>: <code>float</code>.  Lower bound for the random contrast factor.</li>
+<li><strong>contrast_factor_max</strong>: <code>float</code>.  Upper bound for the random contrast factor.
+Used for random adjustment.</li>
+<li><strong>is_random</strong>: <code>bool</code>, If True, adjust randomly.</li>
+<li>
+<p><strong>seed</strong>: A Python integer. Used to create a random seed. See @{tf.set_random_seed}.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The contrast-adjusted tensor.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if <code>contrast_factor_max &lt;= contrast_factor</code>
+    if <code>contrast_factor &lt; 0</code>
+    if <code>contrast_factor_max</code> is None (for random.)</li>
+</ul>
+<hr />
+<h3 id="adjust_hue">adjust_hue</h3>
+<div class="codehilite"><pre><span></span><span class="n">adjust_hue</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adjust (randomly) hue of an RGB images.
+(A mirror to tf.image adjust_hue, random_hue)</p>
+<p>This is a convenience method that converts an RGB image to float
+representation, converts it to HSV, add an offset to the hue channel, converts
+back to RGB and then back to the original data type. If several adjustments
+are chained it is advisable to minimize the number of redundant conversions.</p>
+<p><code>image</code> is an RGB image.  The image hue is adjusted by converting the
+image to HSV and rotating the hue channel (H) by <code>delta</code>.
+The image is then converted back to RGB.</p>
+<p><code>delta</code> must be in the interval <code>[-1, 1]</code>.</p>
+<p>If <code>is_random</code> is <code>True</code> adjust hue but uses a value randomly picked in
+the interval <code>[-delta, delta]</code>.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: RGB image or images. Size of the last dimension must be 3.</li>
+<li><strong>delta</strong>: float.  How much to add to the hue channel.</li>
+<li><strong>is_random</strong>: <code>bool</code>, If True, adjust randomly.</li>
+<li><strong>seed</strong>: A Python integer. Used to create a random seed. See @{tf.set_random_seed}.</li>
+<li>
+<p><strong>name</strong>: A name for this operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+Adjusted image(s), same shape and DType as <code>image</code>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="adjust_saturation">adjust_saturation</h3>
+<div class="codehilite"><pre><span></span><span class="n">adjust_saturation</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">saturation_factor</span><span class="p">,</span> <span class="n">saturation_factor_max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">is_random</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adjust (randomly) saturation of RGB images.
+(A mirror to tf.image adjust_saturation, random_saturation)</p>
+<p>This is a convenience method that converts an RGB image to float
+representation, converts it to HSV, add an offset to the saturation channel,
+converts back to RGB and then back to the original data type. If several
+adjustments are chained it is advisable to minimize the number of redundant
+conversions.</p>
+<p>The image saturation is adjusted by converting the images to HSV and
+multiplying the saturation (S) channel by <code>saturation_factor</code> and clipping.
+The images is then converted back to RGB.</p>
+<p>If <code>is_random</code> is <code>True</code> adjust saturation but uses a value randomly picked in
+the interval <code>[saturation_factor, saturation_factor_max]</code>.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: RGB image or images. Size of the last dimension must be 3.</li>
+<li><strong>saturation_factor</strong>: float.  Lower bound for the random saturation factor.</li>
+<li><strong>saturation_factor_max</strong>: float.  Upper bound for the random saturation factor.</li>
+<li><strong>is_random</strong>: <code>bool</code>, If True, adjust randomly.</li>
+<li><strong>seed</strong>: An operation-specific seed. It will be used in conjunction
+  with the graph-level seed to determine the real seeds that will be
+  used in this operation. Please see the documentation of
+  set_random_seed for its interaction with the graph-level random seed.</li>
+<li>
+<p><strong>name</strong>: A name for this operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+Adjusted image(s), same shape and DType as <code>image</code>.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li>
+<p><strong>ValueError</strong>: if <code>saturation_factor_max &lt;= saturation_factor</code>
+    if <code>saturation_factor &lt; 0</code>
+    if <code>saturation_factor_max is None (for random.)</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="adjust_gamma">adjust_gamma</h3>
+<div class="codehilite"><pre><span></span><span class="n">adjust_gamma</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Performs Gamma Correction on the input image.
+Also known as Power Law Transform. This function transforms the
+input image pixelwise according to the equation Out = In**gamma
+after scaling each pixel to the range 0 to 1.
+(A mirror to tf.image adjust_gamma)</p>
+<ul>
+<li>
+<p><strong>Args</strong>:
+image : A Tensor.
+gamma : A scalar. Non negative real number.
+gain  : A scalar. The constant multiplier.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A Tensor. Gamma corrected output image.</p>
+</li>
+<li>
+<p><strong>Notes</strong>:
+For gamma greater than 1, the histogram will shift towards left and
+the output image will be darker than the input image.
+For gamma less than 1, the histogram will shift towards right and
+the output image will be brighter than the input image.</p>
+</li>
+<li>
+<p><strong>References</strong>:
+[1] http://en.wikipedia.org/wiki/Gamma_correction</p>
+</li>
+</ul>
+<hr />
+<h3 id="standardize">standardize</h3>
+<div class="codehilite"><pre><span></span><span class="n">standardize</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Linearly scales <code>image</code> to have zero mean and unit norm.
+(A mirror to tf.image per_image_standardization)</p>
+<p>This op computes <code>(x - mean) / adjusted_stddev</code>, where <code>mean</code> is the average
+of all values in image, and
+<code>adjusted_stddev = max(stddev, 1.0/sqrt(image.NumElements()))</code>.</p>
+<p><code>stddev</code> is the standard deviation of all values in <code>image</code>. It is capped
+away from zero to protect against division by 0 when handling uniform images.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li>
+<p><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+    3-D Tensor of shape <code>[height, width, channels]</code>.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The standardized image with same shape as <code>image</code>.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li><strong>ValueError</strong>: if the shape of 'image' is incompatible with this function.</li>
+</ul>
+<hr />
+<h3 id="draw_bounding_boxes">draw_bounding_boxes</h3>
+<div class="codehilite"><pre><span></span><span class="n">draw_bounding_boxes</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">boxes</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Draw bounding boxes on a batch of images.
+(A mirror to tf.image draw_bounding_boxes)</p>
+<p>Outputs a copy of <code>images</code> but draws on top of the pixels zero or more bounding
+boxes specified by the locations in <code>boxes</code>. The coordinates of the each
+bounding box in <code>boxes</code> are encoded as <code>[y_min, x_min, y_max, x_max]</code>. The
+bounding box coordinates are floats in <code>[0.0, 1.0]</code> relative to the width and
+height of the underlying image.</p>
+<p>For example, if an image is 100 x 200 pixels and the bounding box is
+<code>[0.1, 0.2, 0.5, 0.9]</code>, the bottom-left and upper-right coordinates of the
+bounding box will be <code>(10, 40)</code> to <code>(50, 180)</code>.</p>
+<p>Parts of the bounding box may fall outside the image.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>images</strong>: A <code>Tensor</code>. Must be one of the following types: <code>float32</code>, <code>half</code>.
+4-D with shape <code>[batch, height, width, depth]</code>. A batch of images.</li>
+<li><strong>boxes</strong>: A <code>Tensor</code> of type <code>float32</code>.
+3-D with shape <code>[batch, num_bounding_boxes, 4]</code> containing bounding boxes.</li>
+<li>
+<p><strong>name</strong>: A name for the operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A <code>Tensor</code>. Has the same type as <code>images</code>.
+4-D with the same shape as <code>images</code>. The batch of input images with
+bounding boxes drawn on the images.</p>
+</li>
+</ul>
+<hr />
+<h3 id="non_max_suppression">non_max_suppression</h3>
+<div class="codehilite"><pre><span></span><span class="n">non_max_suppression</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">max_output_size</span><span class="p">,</span> <span class="n">iou_threshold</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Greedily selects a subset of bounding boxes in descending order of score,
+pruning away boxes that have high intersection-over-union (IOU) overlap
+with previously selected boxes.  Bounding boxes are supplied as
+[y1, x1, y2, x2], where (y1, x1) and (y2, x2) are the coordinates of any
+diagonal pair of box corners and the coordinates can be provided as normalized
+(i.e., lying in the interval [0, 1]) or absolute.  Note that this algorithm
+is agnostic to where the origin is in the coordinate system.  Note that this
+algorithm is invariant to orthogonal transformations and translations
+of the coordinate system; thus translating or reflections of the coordinate
+system result in the same boxes being selected by the algorithm.</p>
+<p>(A mirror to tf.image non_max_suppression)</p>
+<p>The output of this operation is a set of integers indexing into the input
+collection of bounding boxes representing the selected boxes.  The bounding
+box coordinates corresponding to the selected indices can then be obtained
+using the <code>tf.gather operation</code>.  For example:</p>
+<ul>
+<li><strong>Examples</strong>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">selected_indices</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">non_max_suppression</span><span class="p">(</span>
+<span class="o">...</span> <span class="n">boxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">max_output_size</span><span class="p">,</span> <span class="n">iou_threshold</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">selected_boxes</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">selected_indices</span><span class="p">)</span>
+</pre></div>
+
+
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>boxes</strong>: A <code>Tensor</code> of type <code>float32</code>.
+A 2-D float tensor of shape <code>[num_boxes, 4]</code>.</li>
+<li><strong>scores</strong>: A <code>Tensor</code> of type <code>float32</code>.
+A 1-D float tensor of shape <code>[num_boxes]</code> representing a single
+score corresponding to each box (each row of boxes).</li>
+<li><strong>max_output_size</strong>: A <code>Tensor</code> of type <code>int32</code>.
+A scalar integer tensor representing the maximum number of
+boxes to be selected by non max suppression.</li>
+<li><strong>iou_threshold</strong>: An optional <code>float</code>. Defaults to <code>0.5</code>.
+A float representing the threshold for deciding whether boxes
+overlap too much with respect to IOU.</li>
+<li>
+<p><strong>name</strong>: A name for the operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A <code>Tensor</code> of type <code>int32</code>.
+A 1-D integer tensor of shape <code>[M]</code> representing the selected
+indices from the boxes tensor, where <code>M &lt;= max_output_size</code>.</p>
+</li>
+</ul>
+<hr />
+<h3 id="sample_distorted_bounding_box">sample_distorted_bounding_box</h3>
+<div class="codehilite"><pre><span></span><span class="n">sample_distorted_bounding_box</span><span class="p">(</span><span class="n">image_size</span><span class="p">,</span> <span class="n">bounding_boxes</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">seed2</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">min_object_covered</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">aspect_ratio_range</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">area_range</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">max_attempts</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_image_if_no_bounding_boxes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Generate a single randomly distorted bounding box for an image.</p>
+<p>Bounding box annotations are often supplied in addition to ground-truth labels
+in image recognition or object localization tasks. A common technique for
+training such a system is to randomly distort an image while preserving
+its content, i.e. <em>data augmentation</em>. This Op outputs a randomly distorted
+localization of an object, i.e. bounding box, given an <code>image_size</code>,
+<code>bounding_boxes</code> and a series of constraints.</p>
+<p>(A mirror to tf.image sample_distorted_bounding_box)</p>
+<p>The output of this Op is a single bounding box that may be used to crop the
+original image. The output is returned as 3 tensors: <code>begin</code>, <code>size</code> and
+<code>bboxes</code>. The first 2 tensors can be fed directly into <code>tf.slice</code> to crop the
+image. The latter may be supplied to <code>tf.image.draw_bounding_boxes</code> to visualize
+what the bounding box looks like.</p>
+<p>Bounding boxes are supplied and returned as <code>[y_min, x_min, y_max, x_max]</code>. The
+bounding box coordinates are floats in <code>[0.0, 1.0]</code> relative to the width and
+height of the underlying image.</p>
+<p>Examples</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="c1"># Generate a single distorted bounding box.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">begin</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">bbox_for_draw</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">sample_distorted_bounding_box</span><span class="p">(</span>
+<span class="o">...</span> <span class="n">tf</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">image</span><span class="p">),</span> <span class="n">bounding_boxes</span><span class="o">=</span><span class="n">bounding_boxes</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># Draw the bounding box in an image summary.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">image_with_box</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">draw_bounding_boxes</span><span class="p">(</span>
+<span class="o">...</span> <span class="n">tf</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">bbox_for_draw</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tf</span><span class="o">.</span><span class="n">image_summary</span><span class="p">(</span><span class="s1">&#39;images_with_box&#39;</span><span class="p">,</span> <span class="n">image_with_box</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># Employ the bounding box to distort the image.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">distorted_image</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Note that if no bounding box information is available, setting
+<code>use_image_if_no_bounding_boxes = true</code> will assume there is a single implicit
+bounding box covering the whole image. If <code>use_image_if_no_bounding_boxes</code> is
+false and no bounding boxes are supplied, an error is raised.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>image_size</strong>: A <code>Tensor</code>. Must be one of the following types:
+<code>uint8</code>, <code>int8</code>, <code>int16</code>, <code>int32</code>, <code>int64</code>.
+1-D, containing <code>[height, width, channels]</code>.</li>
+<li><strong>bounding_boxes</strong>: A <code>Tensor</code> of type <code>float32</code>.
+3-D with shape <code>[batch, N, 4]</code> describing the N bounding boxes
+associated with the image.</li>
+<li><strong>seed</strong>: An optional <code>int</code>. Defaults to <code>0</code>.
+If either <code>seed</code> or <code>seed2</code> are set to non-zero, the random number
+generator is seeded by the given <code>seed</code>.  Otherwise, it is seeded by a random seed.</li>
+<li><strong>seed2</strong>: An optional <code>int</code>. Defaults to <code>0</code>. A second seed to avoid seed collision.</li>
+<li><strong>min_object_covered</strong>: An optional <code>float</code>. Defaults to <code>0.1</code>.
+The cropped area of the image must contain at least this
+fraction of any bounding box supplied. The value of this parameter should be
+non-negative. In the case of 0, the cropped area does not need to overlap
+any of the bounding boxes supplied.</li>
+<li><strong>aspect_ratio_range</strong>: An optional list of <code>floats</code>. Defaults to <code>[0.75, 1.33]</code>.
+The cropped area of the image must have an aspect ratio =
+width / height within this range.</li>
+<li><strong>area_range</strong>: An optional list of <code>floats</code>. Defaults to <code>[0.05, 1]</code>.
+The cropped area of the image must contain a fraction of the
+supplied image within in this range.</li>
+<li><strong>max_attempts</strong>: An optional <code>int</code>. Defaults to <code>100</code>.
+Number of attempts at generating a cropped region of the image
+of the specified constraints. After <code>max_attempts</code> failures, return the entire image.</li>
+<li><strong>use_image_if_no_bounding_boxes</strong>: An optional <code>bool</code>. Defaults to <code>False</code>.
+Controls behavior if no bounding boxes supplied.
+If true, assume an implicit bounding box covering the whole input. If false,
+raise an error.</li>
+<li>
+<p><strong>name</strong>: A name for the operation (optional).</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+A tuple of <code>Tensor</code> objects (begin, size, bboxes).</p>
+</li>
+<li><strong>begin</strong>: A <code>Tensor</code>. Has the same type as <code>image_size</code>. 1-D, containing
+<code>[offset_height, offset_width, 0]</code>. Provide as input to <code>tf.slice</code>.</li>
+<li><strong>size</strong>: A <code>Tensor</code>. Has the same type as <code>image_size</code>. 1-D, containing
+<code>[target_height, target_width, -1]</code>. Provide as input to <code>tf.slice</code>.</li>
+<li><strong>bboxes</strong>: A <code>Tensor</code> of type <code>float32</code>. 3-D with shape <code>[1, 1, 4]</code> containing
+the distorted bounding box. Provide as input to <code>tf.image.draw_bounding_boxes</code>.</li>
+</ul>
+<hr />
+<h3 id="total_variation">total_variation</h3>
+<div class="codehilite"><pre><span></span><span class="n">total_variation</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Calculate and return the total variation for one or more images.</p>
+<p>(A mirror to tf.image total_variation)</p>
+<p>The total variation is the sum of the absolute differences for neighboring
+pixel-values in the input images. This measures how much noise is in the
+images.</p>
+<p>This can be used as a loss-function during optimization so as to suppress
+noise in images. If you have a batch of images, then you should calculate
+the scalar loss-value as the sum:
+<code>loss = tf.reduce_sum(tf.image.total_variation(images))</code></p>
+<p>This implements the anisotropic 2-D version of the formula described here:</p>
+<ul>
+<li>
+<p><strong>https</strong>://en.wikipedia.org/wiki/Total_variation_denoising</p>
+</li>
+<li>
+<p><strong>Args</strong>:</p>
+</li>
+<li>
+<p><strong>images</strong>: 4-D Tensor of shape <code>[batch, height, width, channels]</code> or
+    3-D Tensor of shape <code>[height, width, channels]</code>.</p>
+</li>
+<li>
+<p><strong>name</strong>: A name for the operation (optional).</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+</li>
+<li>
+<p><strong>ValueError</strong>: if images.shape is not a 3-D or 4-D vector.</p>
+</li>
+<li>
+<p><strong>Returns</strong>:
+The total variation of <code>images</code>.</p>
+</li>
+</ul>
+<p>If <code>images</code> was 4-D, return a 1-D float Tensor of shape <code>[batch]</code> with the
+total variation for each image in the batch.
+If <code>images</code> was 3-D, return a scalar float with the total variation for
+that image.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../vocabulary_processor/" title="Vocabulary Processor" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Vocabulary Processor
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../input_fn/" title="Input function" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Input function
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/polyaxon" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/polyaxonai" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-6b599127bc.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-89493331-1","polyaxon.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

@@ -405,6 +405,114 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Processing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Processing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../processing/categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
+      Categorical Vocabulary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../processing/vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
+      Vocabulary Processor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../processing/image/" title="Image" class="md-nav__link">
+      Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../processing/input_fn/" title="Input function" class="md-nav__link">
+      Input function
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../processing/pipelines/" title="Pipelines" class="md-nav__link">
+      Pipelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../processing/data_decoders/" title="Data Decoders" class="md-nav__link">
+      Data Decoders
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../processing/data_providers/" title="Data Providers" class="md-nav__link">
+      Data Providers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../activations/" title="Activations" class="md-nav__link">
       Activations
@@ -465,15 +573,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sgd" title="sgd" class="md-nav__link">
-    sgd
+  <a href="#create_learning_rate_decay_fn" title="create_learning_rate_decay_fn" class="md-nav__link">
+    create_learning_rate_decay_fn
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create_learning_rate_decay_fn" title="create_learning_rate_decay_fn" class="md-nav__link">
-    create_learning_rate_decay_fn
+  <a href="#sgd" title="sgd" class="md-nav__link">
+    sgd
   </a>
   
 </li>
@@ -567,13 +675,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-12">
       Libs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-12">
         Libs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -651,15 +759,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sgd" title="sgd" class="md-nav__link">
-    sgd
+  <a href="#create_learning_rate_decay_fn" title="create_learning_rate_decay_fn" class="md-nav__link">
+    create_learning_rate_decay_fn
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create_learning_rate_decay_fn" title="create_learning_rate_decay_fn" class="md-nav__link">
-    create_learning_rate_decay_fn
+  <a href="#sgd" title="sgd" class="md-nav__link">
+    sgd
   </a>
   
 </li>
@@ -730,28 +838,7 @@
                 
                   <h1>Optimizers</h1>
                 
-                <h3 id="sgd">sgd</h3>
-<div class="codehilite"><pre><span></span><span class="n">sgd</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SGD&#39;</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Optimizer that implements the gradient descent algorithm.</p>
-<ul>
-<li><strong>Args</strong>:</li>
-<li><strong>learning_rate</strong>: A Tensor or a floating point value. The learning rate to use.</li>
-<li><strong>decay_type</strong>: A decay function name defined in <code>tf.train</code></li>
-<li><strong>decay_rate</strong>: <code>float</code>. The learning rate decay to apply.</li>
-<li><strong>decay_steps</strong>: <code>int</code>. Apply decay every provided steps.</li>
-<li><strong>start_decay_at</strong>: <code>int</code>. Don't decay before this step.</li>
-<li><strong>stop_decay_at</strong>: <code>int</code>. Don't decay after this step.</li>
-<li><strong>min_learning_rate</strong>: <code>float</code>. Don't decay below this number.</li>
-<li><strong>staircase</strong>: <code>bool</code>. It <code>True</code> decay learning rate at discrete intervals.</li>
-<li><strong>global_step</strong>: Scalar int <code>Tensor</code>, step counter for each update.</li>
-<li><strong>use_locking</strong>: If True use locks for update operations.</li>
-<li><strong>name</strong>: Optional name prefix for the operations created when applying gradients.</li>
-</ul>
-<hr />
-<h3 id="create_learning_rate_decay_fn">create_learning_rate_decay_fn</h3>
+                <h3 id="create_learning_rate_decay_fn">create_learning_rate_decay_fn</h3>
 <div class="codehilite"><pre><span></span><span class="n">create_learning_rate_decay_fn</span><span class="p">(</span><span class="n">learning_rate</span><span class="p">,</span> <span class="n">decay_type</span><span class="p">,</span> <span class="n">decay_steps</span><span class="p">,</span> <span class="n">decay_rate</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mf">1000000000.0</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
@@ -782,6 +869,27 @@ A function that takes (learning_rate, global_step) as inputs
 and returns the learning rate for the given step.
 Returns <code>None</code> if decay_type is empty or None.</p>
 </li>
+</ul>
+<hr />
+<h3 id="sgd">sgd</h3>
+<div class="codehilite"><pre><span></span><span class="n">sgd</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SGD&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Optimizer that implements the gradient descent algorithm.</p>
+<ul>
+<li><strong>Args</strong>:</li>
+<li><strong>learning_rate</strong>: A Tensor or a floating point value. The learning rate to use.</li>
+<li><strong>decay_type</strong>: A decay function name defined in <code>tf.train</code></li>
+<li><strong>decay_rate</strong>: <code>float</code>. The learning rate decay to apply.</li>
+<li><strong>decay_steps</strong>: <code>int</code>. Apply decay every provided steps.</li>
+<li><strong>start_decay_at</strong>: <code>int</code>. Don't decay before this step.</li>
+<li><strong>stop_decay_at</strong>: <code>int</code>. Don't decay after this step.</li>
+<li><strong>min_learning_rate</strong>: <code>float</code>. Don't decay below this number.</li>
+<li><strong>staircase</strong>: <code>bool</code>. It <code>True</code> decay learning rate at discrete intervals.</li>
+<li><strong>global_step</strong>: Scalar int <code>Tensor</code>, step counter for each update.</li>
+<li><strong>use_locking</strong>: If True use locks for update operations.</li>
+<li><strong>name</strong>: Optional name prefix for the operations created when applying gradients.</li>
 </ul>
 <hr />
 <h3 id="momentum">momentum</h3>

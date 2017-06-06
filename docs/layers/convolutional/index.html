@@ -569,6 +569,114 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Processing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Processing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
+      Categorical Vocabulary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
+      Vocabulary Processor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/image/" title="Image" class="md-nav__link">
+      Image
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/input_fn/" title="Input function" class="md-nav__link">
+      Input function
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/pipelines/" title="Pipelines" class="md-nav__link">
+      Pipelines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/data_decoders/" title="Data Decoders" class="md-nav__link">
+      Data Decoders
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../processing/data_providers/" title="Data Providers" class="md-nav__link">
+      Data Providers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../activations/" title="Activations" class="md-nav__link">
       Activations
@@ -643,13 +751,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-11">
+    <label class="md-nav__link" for="nav-12">
       Libs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
+      <label class="md-nav__title" for="nav-12">
         Libs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -876,7 +984,7 @@
                 
                   <h1>Convolutional Layers</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L24">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L25">[source]</a></span></p>
 <h3 id="conv2d">Conv2d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_filter</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;uniform_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Conv2D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -930,7 +1038,7 @@ the convolution operation.</p>
 <li><strong>b</strong>: <code>Variable</code>. Variable representing biases.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L120">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L121">[source]</a></span></p>
 <h3 id="conv2dtranspose">Conv2dTranspose</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">Conv2dTranspose</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_filter</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;uniform_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Conv2DTranspose&#39;</span><span class="p">)</span>
 </pre></div>
@@ -988,7 +1096,7 @@ deconvolution.</p>
 <li><strong>b</strong>: <code>Variable</code>. Variable representing biases.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L254">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L256">[source]</a></span></p>
 <h3 id="maxpool2d">MaxPool2d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MaxPool2D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1010,7 +1118,7 @@ deconvolution.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'MaxPool2D'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L283">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L285">[source]</a></span></p>
 <h3 id="avgpool2d">AvgPool2d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">AvgPool2d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AvgPool2D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1032,7 +1140,7 @@ deconvolution.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'AvgPool2D'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L312">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L314">[source]</a></span></p>
 <h3 id="upsample2d">Upsample2d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">Upsample2d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;UpSample2D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1046,7 +1154,7 @@ deconvolution.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'UpSample2D'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L1213">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L1218">[source]</a></span></p>
 <h3 id="highwayconv2d">HighwayConv2d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">HighwayConv2d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_filter</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;uniform_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;HighwayConv2D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1098,7 +1206,7 @@ deconvolution.</p>
 <li><strong>b_t</strong>: <code>Variable</code>. Variable representing gate biases.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L343">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L345">[source]</a></span></p>
 <h3 id="upscore">Upscore</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">Upscore</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Upscore&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1133,7 +1241,7 @@ The upscore layer is initialized as bilinear upsampling filter.</p>
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L434">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L436">[source]</a></span></p>
 <h3 id="conv1d">Conv1d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">Conv1d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_filter</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;uniform_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Conv1D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1184,7 +1292,7 @@ The upscore layer is initialized as bilinear upsampling filter.</p>
 <li><strong>b</strong>: <code>Variable</code>. Variable representing biases.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L554">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L557">[source]</a></span></p>
 <h3 id="maxpool1d">MaxPool1d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">MaxPool1d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MaxPool1D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1206,7 +1314,7 @@ The upscore layer is initialized as bilinear upsampling filter.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'MaxPool1D'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L583">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L586">[source]</a></span></p>
 <h3 id="avgpool1d">AvgPool1d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">AvgPool1d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AvgPool1D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1228,7 +1336,7 @@ The upscore layer is initialized as bilinear upsampling filter.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'AvgPool1D'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L1328">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L1334">[source]</a></span></p>
 <h3 id="highwayconv1d">HighwayConv1d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">HighwayConv1d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_filter</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;uniform_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;HighwayConv1D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1280,7 +1388,7 @@ The upscore layer is initialized as bilinear upsampling filter.</p>
 <li><strong>b_t</strong>: <code>Variable</code>. Variable representing gate biases.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L612">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L615">[source]</a></span></p>
 <h3 id="conv3d">Conv3d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">Conv3d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_filter</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;uniform_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Conv3D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1331,7 +1439,7 @@ The upscore layer is initialized as bilinear upsampling filter.</p>
 <li><strong>b</strong>: <code>Variable</code>. Variable representing biases.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L706">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L710">[source]</a></span></p>
 <h3 id="conv3dtranspose">Conv3dTranspose</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">Conv3dTranspose</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_filter</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;uniform_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Conv3DTranspose&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1390,7 +1498,7 @@ deconvolution.</p>
 <li><strong>b</strong>: <code>Variable</code>. Variable representing biases.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L842">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L847">[source]</a></span></p>
 <h3 id="maxpool3d">MaxPool3d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">MaxPool3d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MaxPool3D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1414,7 +1522,7 @@ deconvolution.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'MaxPool3D'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L873">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L878">[source]</a></span></p>
 <h3 id="avgpool3d">AvgPool3d</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">AvgPool3d</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">,</span> <span class="n">strides</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;SAME&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AvgPool3D&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1438,7 +1546,7 @@ deconvolution.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'AvgPool3D'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L916">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L921">[source]</a></span></p>
 <h3 id="globalmaxpool">GlobalMaxPool</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">GlobalMaxPool</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;GlobalMaxPool&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1451,7 +1559,7 @@ deconvolution.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'GlobalMaxPool'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L937">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L942">[source]</a></span></p>
 <h3 id="globalavgpool">GlobalAvgPool</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">GlobalAvgPool</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;GlobalAvgPool&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1464,7 +1572,7 @@ deconvolution.</p>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'GlobalAvgPool'.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L958">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L963">[source]</a></span></p>
 <h3 id="residualblock">ResidualBlock</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">ResidualBlock</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">nb_blocks</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">downsample</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">downsample_strides</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">batch_norm</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;variance_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="s1">&#39;L2&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ResidualBlock&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1525,7 +1633,7 @@ Full pre-activation architecture is used here.</p>
     (https://arxiv.org/pdf/1603.05027v2.pdf)</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L1080">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/convolutional.py#L1085">[source]</a></span></p>
 <h3 id="residualbottleneck">ResidualBottleneck</h3>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">convolutional</span><span class="o">.</span><span class="n">ResidualBottleneck</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">nb_blocks</span><span class="p">,</span> <span class="n">bottleneck_size</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">downsample</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">downsample_strides</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">batch_norm</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;variance_scaling&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="s1">&#39;L2&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ResidualBottleneck&#39;</span><span class="p">)</span>
 </pre></div>
