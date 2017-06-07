@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -469,6 +481,54 @@
   <a href="#vocabularyprocessor" title="VocabularyProcessor" class="md-nav__link">
     VocabularyProcessor
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fit" title="fit" class="md-nav__link">
+    fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform" title="transform" class="md-nav__link">
+    transform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit_transform" title="fit_transform" class="md-nav__link">
+    fit_transform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse" title="reverse" class="md-nav__link">
+    reverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save" title="save" class="md-nav__link">
+    save
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore" title="restore" class="md-nav__link">
+    restore
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -713,6 +773,54 @@
     VocabularyProcessor
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fit" title="fit" class="md-nav__link">
+    fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform" title="transform" class="md-nav__link">
+    transform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit_transform" title="fit_transform" class="md-nav__link">
+    fit_transform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse" title="reverse" class="md-nav__link">
+    reverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save" title="save" class="md-nav__link">
+    save
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore" title="restore" class="md-nav__link">
+    restore
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -733,7 +841,7 @@
                   <h1>Vocabulary Processor</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/text.py#L7">[source]</a></span></p>
-<h3 id="vocabularyprocessor">VocabularyProcessor</h3>
+<h2 id="vocabularyprocessor">VocabularyProcessor</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">VocabularyProcessor</span><span class="p">(</span><span class="n">max_document_length</span><span class="p">,</span> <span class="n">min_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vocabulary</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">tokenizer_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
@@ -741,17 +849,143 @@
 <p>A mirror to tf.contrib.learn VocabularyProcessor.</p>
 <p>Maps documents to sequences of word ids.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>max_document_length</strong>: Maximum length of documents.
     if documents are longer, they will be trimmed, if shorter - padded.</li>
 <li><strong>min_frequency</strong>: Minimum frequency of words in the vocabulary.</li>
-<li>
-<p><strong>vocabulary</strong>: CategoricalVocabulary object.</p>
+<li><strong>vocabulary</strong>: CategoricalVocabulary object.</li>
+</ul>
 </li>
 <li>
 <p><strong>Attributes</strong>:</p>
-</li>
+<ul>
 <li><strong>vocabulary</strong>: CategoricalVocabulary object.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="fit">fit</h3>
+<div class="codehilite"><pre><span></span><span class="n">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_documents</span><span class="p">,</span> <span class="n">unused_y</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>fit.</p>
+<p>Learn a vocabulary dictionary of all tokens in the raw documents.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>raw_documents</strong>: An iterable which yield either str or unicode.</li>
+<li><strong>unused_y</strong>: to match fit format signature of estimators.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    self</p>
+</li>
+</ul>
+<hr />
+<h3 id="transform">transform</h3>
+<div class="codehilite"><pre><span></span><span class="n">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_documents</span><span class="p">)</span>
+</pre></div>
+
+
+<p>transform.</p>
+<p>Transform documents to word-id matrix.</p>
+<p>Convert words to ids with vocabulary fitted with fit or the one
+provided in the constructor.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>raw_documents</strong>: An iterable which yield either str or unicode.</li>
+</ul>
+</li>
+<li>
+<p><strong>Yields</strong>:</p>
+<ul>
+<li><strong>X</strong>: iterable, [n_samples, max_document_length] Word-id matrix.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="fit_transform">fit_transform</h3>
+<div class="codehilite"><pre><span></span><span class="n">fit_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_documents</span><span class="p">,</span> <span class="n">unused_y</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>fit_transform.</p>
+<p>Learn the vocabulary dictionary and return indexies of words.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>raw_documents</strong>: An iterable which yield either str or unicode.</li>
+<li><strong>unused_y</strong>: to match fit_transform signature of estimators.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><strong>X</strong>: iterable, [n_samples, max_document_length] Word-id matrix.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="reverse">reverse</h3>
+<div class="codehilite"><pre><span></span><span class="n">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">documents</span><span class="p">)</span>
+</pre></div>
+
+
+<p>reverse.</p>
+<p>Reverses output of vocabulary mapping to words.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>documents</strong>: iterable, list of class ids.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    Iterator over mapped in words documents.</p>
+</li>
+</ul>
+<hr />
+<h3 id="save">save</h3>
+<div class="codehilite"><pre><span></span><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+
+
+<p>save.</p>
+<p>Saves vocabulary processor into given file.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>filename</strong>: Path to output file.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="restore">restore</h3>
+<div class="codehilite"><pre><span></span><span class="n">restore</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+
+
+<p>restore.</p>
+<p>Restores vocabulary processor from given file.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>filename</strong>: Path to file to load from.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    VocabularyProcessor object.</p>
+</li>
 </ul>
                 
                   

@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -789,7 +801,7 @@
                   <h1>Pipelines</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L19">[source]</a></span></p>
-<h3 id="pipeline">Pipeline</h3>
+<h2 id="pipeline">Pipeline</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
@@ -798,16 +810,18 @@
 An InputPipeline defines how data is read, parsed, and separated into
 features and labels.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: <code>str</code>, name to give for this pipeline.</li>
 <li><strong>subgraphs_by_features</strong>: <code>dict</code>, list of modules to call for each feature to be processed.</li>
 <li><strong>shuffle</strong>: If true, shuffle the data.</li>
 <li><strong>num_epochs</strong>: Number of times to iterate through the dataset. If None, iterate forever.</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L73">[source]</a></span></p>
-<h3 id="tfrecordimagepipeline">TFRecordImagePipeline</h3>
+<h2 id="tfrecordimagepipeline">TFRecordImagePipeline</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">TFRecordImagePipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">meta_data_file</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
@@ -816,23 +830,25 @@ features and labels.</p>
 An InputPipeline defines how data is read, parsed, and separated into
 features and labels.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: <code>str</code>, name to give for this pipeline.</li>
 <li><strong>subgraphs_by_features</strong>: <code>dict</code>, list of modules to call for each feature to be processed</li>
 <li><strong>shuffle</strong>: If true, shuffle the data.</li>
 <li><strong>num_epochs</strong>: Number of times to iterate through the dataset. If None, iterate forever.</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L148">[source]</a></span></p>
-<h3 id="paralleltextpipeline">ParallelTextPipeline</h3>
+<h2 id="paralleltextpipeline">ParallelTextPipeline</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">ParallelTextPipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">target_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">target_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>An input pipeline that reads two parallel (line-by-line aligned) text files.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: <code>str</code>, name to give for this pipeline.</li>
 <li><strong>subgraphs_by_features</strong>: <code>dict</code>, list of modules to call for each feature to be processed</li>
@@ -846,16 +862,18 @@ features and labels.</p>
   empty string.</li>
 <li><strong>target_delimiter</strong>: Same as <code>source_delimiter</code> but for the target text.</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L226">[source]</a></span></p>
-<h3 id="tfrecordsourcesequencepipeline">TFRecordSourceSequencePipeline</h3>
+<h2 id="tfrecordsourcesequencepipeline">TFRecordSourceSequencePipeline</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">TFRecordSourceSequencePipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_field</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">target_field</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="n">source_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">target_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>An input pipeline that reads a TFRecords containing both source and target sequences.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: <code>str</code>, name to give for this pipeline.</li>
 <li><strong>subgraphs_by_features</strong>: <code>dict</code>, list of modules to call for each feature to be processed</li>
@@ -869,16 +887,18 @@ features and labels.</p>
   empty string.</li>
 <li><strong>target_delimiter</strong>: Same as <code>source_delimiter</code> but for the target text.</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L315">[source]</a></span></p>
-<h3 id="imagecaptioningpipeline">ImageCaptioningPipeline</h3>
+<h2 id="imagecaptioningpipeline">ImageCaptioningPipeline</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">ImageCaptioningPipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">image_field</span><span class="o">=</span><span class="s1">&#39;image/data&#39;</span><span class="p">,</span> <span class="n">image_format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="n">caption_ids_field</span><span class="o">=</span><span class="s1">&#39;image/caption_ids&#39;</span><span class="p">,</span> <span class="n">caption_tokens_field</span><span class="o">=</span><span class="s1">&#39;image/caption&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>An input pipeline that reads a TFRecords containing both source and target sequences.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: <code>str</code>, name to give for this pipeline.</li>
 <li><strong>subgraphs_by_features</strong>: <code>dict</code>, list of modules to call for each feature to be processed</li>
@@ -889,6 +909,8 @@ features and labels.</p>
 <li><strong>image_format</strong>: The images extensions.</li>
 <li><strong>caption_ids_field</strong>: The caption ids field.</li>
 <li><strong>caption_tokens_field</strong>: the caption tokends field.</li>
+</ul>
+</li>
 </ul>
                 
                   

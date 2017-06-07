@@ -269,8 +269,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -782,35 +794,37 @@
                 
                   <h1>Metrics</h1>
                 
-                <h3 id="check_metric_data">check_metric_data</h3>
+                <h2 id="check_metric_data">check_metric_data</h2>
 <div class="codehilite"><pre><span></span><span class="n">check_metric_data</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="built_metric">built_metric</h3>
+<h2 id="built_metric">built_metric</h2>
 <div class="codehilite"><pre><span></span><span class="n">built_metric</span><span class="p">(</span><span class="n">fct</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">scope</span><span class="p">,</span> <span class="n">collect</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Builds the metric function.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>fct</strong>: the metric function to build.</li>
 <li><strong>name</strong>: operation name.</li>
 <li><strong>scope</strong>: operation scope.</li>
 <li><strong>collect</strong>: whether to collect this metric under the metric collection.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="accuracy">accuracy</h3>
+<h2 id="accuracy">accuracy</h2>
 <div class="codehilite"><pre><span></span><span class="n">accuracy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Computes the accuracy.</p>
 <p>An op that calculates mean accuracy:
-<em> y_pred are y_True are both one-hot encoded. (categorical accuracy)
-</em> y_pred are logits are binary encoded (and represented as int32). (binary accuracy)</p>
+    * y_pred are y_True are both one-hot encoded. (categorical accuracy)
+    * y_pred are logits are binary encoded (and represented as int32). (binary accuracy)</p>
 <ul>
 <li><strong>Examples</strong>:</li>
 </ul>
@@ -824,19 +838,21 @@
 
 
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>scope</strong>: scope to add the op to.</li>
 <li><strong>name</strong>: name of the op.</li>
-<li>
-<p><strong>collect</strong>: add to metrics collection.</p>
+<li><strong>collect</strong>: add to metrics collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-<code>Float</code>. The mean accuracy.</p>
+    <code>Float</code>. The mean accuracy.</p>
 </li>
 </ul>
 <hr />
-<h3 id="top_k">top_k</h3>
+<h2 id="top_k">top_k</h2>
 <div class="codehilite"><pre><span></span><span class="n">top_k</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;TopK&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
@@ -857,20 +873,22 @@
 
 
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>k</strong>: <code>int</code>. Number of top elements to look at for computing precision.</li>
 <li><strong>scope</strong>: scope to add the op to.</li>
 <li><strong>name</strong>: name of the op.</li>
-<li>
-<p><strong>collect</strong>: add to metrics collection.</p>
+<li><strong>collect</strong>: add to metrics collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-<code>Float</code>. The top-k mean accuracy.</p>
+    <code>Float</code>. The top-k mean accuracy.</p>
 </li>
 </ul>
 <hr />
-<h3 id="std_error">std_error</h3>
+<h2 id="std_error">std_error</h2>
 <div class="codehilite"><pre><span></span><span class="n">std_error</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;StandardError&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
@@ -891,15 +909,17 @@
 
 
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>scope</strong>: scope to add the op to.</li>
 <li><strong>name</strong>: name of the op.</li>
-<li>
-<p><strong>collect</strong>: add to metrics collection.</p>
+<li><strong>collect</strong>: add to metrics collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-<code>Float</code>. The standard error.</p>
+    <code>Float</code>. The standard error.</p>
 </li>
 </ul>
                 

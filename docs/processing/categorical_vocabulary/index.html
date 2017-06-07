@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -458,12 +470,46 @@
     CategoricalVocabulary
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#categoricalprocessor" title="CategoricalProcessor" class="md-nav__link">
-    CategoricalProcessor
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#freeze" title="freeze" class="md-nav__link">
+    freeze
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" title="get" class="md-nav__link">
+    get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" title="add" class="md-nav__link">
+    add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trim" title="trim" class="md-nav__link">
+    trim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse" title="reverse" class="md-nav__link">
+    reverse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -720,12 +766,46 @@
     CategoricalVocabulary
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#categoricalprocessor" title="CategoricalProcessor" class="md-nav__link">
-    CategoricalProcessor
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#freeze" title="freeze" class="md-nav__link">
+    freeze
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" title="get" class="md-nav__link">
+    get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" title="add" class="md-nav__link">
+    add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trim" title="trim" class="md-nav__link">
+    trim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse" title="reverse" class="md-nav__link">
+    reverse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -747,7 +827,7 @@
                   <h1>Categorical Vocabulary</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/categorical.py#L7">[source]</a></span></p>
-<h3 id="categoricalvocabulary">CategoricalVocabulary</h3>
+<h2 id="categoricalvocabulary">CategoricalVocabulary</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">categorical</span><span class="o">.</span><span class="n">CategoricalVocabulary</span><span class="p">(</span><span class="n">unknown_token</span><span class="o">=</span><span class="s1">&#39;&lt;UNK&gt;&#39;</span><span class="p">,</span> <span class="n">support_reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
@@ -756,15 +836,94 @@
 <p>Accumulates and provides mapping from classes to indexes.
 Can be easily used for words.</p>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/categorical.py#L79">[source]</a></span></p>
-<h3 id="categoricalprocessor">CategoricalProcessor</h3>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">categorical</span><span class="o">.</span><span class="n">CategoricalProcessor</span><span class="p">(</span><span class="n">min_frequency</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">share</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">vocabularies</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<h3 id="freeze">freeze</h3>
+<div class="codehilite"><pre><span></span><span class="n">freeze</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">freeze</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Maps documents to sequences of word ids.</p>
-<p>As a common convention, Nan values are handled as unknown tokens.
-Both float('nan') and np.nan are accepted.</p>
+<p>Freezes the vocabulary, after which new words return unknown token id.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>freeze</strong>: True to freeze, False to unfreeze.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="get">get</h3>
+<div class="codehilite"><pre><span></span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns word's id in the vocabulary.</p>
+<p>If category is new, creates a new id for it.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>category</strong>: string or integer to lookup in vocabulary.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    interger, id in the vocabulary.</p>
+</li>
+</ul>
+<hr />
+<h3 id="add">add</h3>
+<div class="codehilite"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adds count of the category to the frequency table.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>category</strong>: string or integer, category to add frequency to.</li>
+<li><strong>count</strong>: optional integer, how many to add.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="trim">trim</h3>
+<div class="codehilite"><pre><span></span><span class="n">trim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_frequency</span><span class="p">,</span> <span class="n">max_frequency</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Trims vocabulary for minimum frequency.</p>
+<p>Remaps ids from 1..n in sort frequency order.
+where n - number of elements left.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>min_frequency</strong>: minimum frequency to keep.</li>
+<li><strong>max_frequency</strong>: optional, maximum frequency to keep.
+Useful to remove very frequent categories (like stop words).</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="reverse">reverse</h3>
+<div class="codehilite"><pre><span></span><span class="n">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">class_id</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Given class id reverse to original class name.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>class_id</strong>: Id of the class.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    Class name.</p>
+</li>
+<li>
+<p><strong>Raises</strong>:</p>
+<ul>
+<li><strong>ValueError</strong>: if this vocabulary wasn't initialized with support_reverse.</li>
+</ul>
+</li>
+</ul>
                 
                   
                 

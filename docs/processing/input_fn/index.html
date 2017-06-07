@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -732,7 +744,7 @@
                 
                   <h1>Input function</h1>
                 
-                <h3 id="create_input_data_fn">create_input_data_fn</h3>
+                <h2 id="create_input_data_fn">create_input_data_fn</h2>
 <div class="codehilite"><pre><span></span><span class="n">create_input_data_fn</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">pipeline_config</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">input_type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
@@ -740,23 +752,19 @@
 <p>Creates an input data function that can be used with estimators.
 Note that you must pass "factory functions" for both the data provider and
 featurizer to ensure that everything will be created in  the same graph.</p>
-<ul>
-<li><strong>Args</strong>:</li>
-<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
-<li><strong>pipeline_config</strong>: the configuration to create a Pipeline instance.</li>
-<li><strong>scope</strong>: <code>str</code>. scope to use for this input data block.</li>
-<li><strong>input_type</strong>: <code>str</code>. The type of the input, values: <code>NUMPY</code>, <code>PANDAS</code>.
-        If <code>None</code>, will create a function based on the pipeline config.</li>
-<li><strong>x</strong>: <code>np.ndarray</code> or <code>np.Dataframe</code> or <code>None</code>.</li>
-<li>
-<p><strong>y</strong>: <code>np.ndarray</code> or <code>None</code>.</p>
-</li>
-<li>
-<p><strong>Returns</strong>:
-An input function that returns <code>(feature_batch, labels_batch)</code>
-tuples when called.</p>
-</li>
-</ul>
+<div class="codehilite"><pre><span></span>- __Args__:
+- __mode__: `str`, Specifies if this training, evaluation or prediction. See `ModeKeys`.
+- __pipeline_config__: the configuration to create a Pipeline instance.
+- __scope__: `str`. scope to use for this input data block.
+- __input_type__: `str`. The type of the input, values: `NUMPY`, `PANDAS`.
+        If `None`, will create a function based on the pipeline config.
+- __x__: `np.ndarray` or `np.Dataframe` or `None`.
+- __y__: `np.ndarray` or `None`.
+
+- __Returns__:
+An input function that returns `(feature_batch, labels_batch)`
+tuples when called.
+</pre></div>
                 
                   
                 

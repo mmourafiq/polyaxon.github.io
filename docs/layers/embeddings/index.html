@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -733,14 +745,14 @@
                   <h1>Embedding Layers</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/embedding.py#L13">[source]</a></span></p>
-<h3 id="embedding">Embedding</h3>
+<h2 id="embedding">Embedding</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">embedding</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">,</span> <span class="n">validate_indices</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;truncated_normal&#39;</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Embedding&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Embedding layer for a sequence of integer ids or floats.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>input_dim</strong>: list of <code>int</code>. Vocabulary size (number of ids).</li>
 <li><strong>output_dim</strong>: list of <code>int</code>. Embedding size.</li>
@@ -753,6 +765,8 @@
 <li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when
     loading a model.</li>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'Embedding'.</li>
+</ul>
+</li>
 </ul>
                 
                   

@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -709,36 +721,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creates-the-graph-operations" title="Creates the graph operations." class="md-nav__link">
-    Creates the graph operations.
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#get_model_fn" title="get_model_fn" class="md-nav__link">
     get_model_fn
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#get_estimator" title="get_estimator" class="md-nav__link">
     get_estimator
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#get_hooks" title="get_hooks" class="md-nav__link">
     get_hooks
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -862,36 +861,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creates-the-graph-operations" title="Creates the graph operations." class="md-nav__link">
-    Creates the graph operations.
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#get_model_fn" title="get_model_fn" class="md-nav__link">
     get_model_fn
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#get_estimator" title="get_estimator" class="md-nav__link">
     get_estimator
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#get_hooks" title="get_hooks" class="md-nav__link">
     get_hooks
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -912,73 +898,74 @@
                 
                   <h1>Getters</h1>
                 
-                <h3 id="get_optimizer">get_optimizer</h3>
+                <h2 id="get_optimizer">get_optimizer</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_optimizer</span><span class="p">(</span><span class="n">optimizer</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_activation">get_activation</h3>
+<h2 id="get_activation">get_activation</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_activation</span><span class="p">(</span><span class="n">activation</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_initializer">get_initializer</h3>
+<h2 id="get_initializer">get_initializer</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_initializer</span><span class="p">(</span><span class="n">initializer</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_regularizer">get_regularizer</h3>
+<h2 id="get_regularizer">get_regularizer</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_regularizer</span><span class="p">(</span><span class="n">regularizer</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_metric">get_metric</h3>
+<h2 id="get_metric">get_metric</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_metric</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="n">incoming</span><span class="p">,</span> <span class="n">outputs</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_eval_metric">get_eval_metric</h3>
+<h2 id="get_eval_metric">get_eval_metric</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_eval_metric</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_loss">get_loss</h3>
+<h2 id="get_loss">get_loss</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_loss</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_pipeline">get_pipeline</h3>
+<h2 id="get_pipeline">get_pipeline</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_pipeline</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">shuffle</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">,</span> <span class="n">subgraph_configs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_graph_fn">get_graph_fn</h3>
+<h2 id="get_graph_fn">get_graph_fn</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_graph_fn</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </pre></div>
 
 
-<h2 id="creates-the-graph-operations">Creates the graph operations.</h2>
-<h3 id="get_model_fn">get_model_fn</h3>
+<p>Creates the graph operations.</p>
+<hr />
+<h2 id="get_model_fn">get_model_fn</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_model_fn</span><span class="p">(</span><span class="n">model_config</span><span class="p">,</span> <span class="n">graph_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_estimator">get_estimator</h3>
+<h2 id="get_estimator">get_estimator</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_estimator</span><span class="p">(</span><span class="n">estimator_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">,</span> <span class="n">run_config</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="get_hooks">get_hooks</h3>
+<h2 id="get_hooks">get_hooks</h2>
 <div class="codehilite"><pre><span></span><span class="n">get_hooks</span><span class="p">(</span><span class="n">hooks_config</span><span class="p">)</span>
 </pre></div>
                 

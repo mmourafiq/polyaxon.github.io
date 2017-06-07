@@ -269,8 +269,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -810,7 +822,7 @@
                 
                   <h1>Initializations</h1>
                 
-                <h3 id="zeros">zeros</h3>
+                <h2 id="zeros">zeros</h2>
 <div class="codehilite"><pre><span></span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -818,19 +830,21 @@
 <p>Zeros.</p>
 <p>Initialize a tensor with all elements set to zero.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
 <li><strong>dtype</strong>: The tensor data type.</li>
-<li>
-<p><strong>name</strong>: name of the op.</p>
+<li><strong>name</strong>: name of the op.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The Initializer, or an initialized <code>Tensor</code> if a shape is specified.</p>
+    The Initializer, or an initialized <code>Tensor</code> if a shape is specified.</p>
 </li>
 </ul>
 <hr />
-<h3 id="uniform">uniform</h3>
+<h2 id="uniform">uniform</h2>
 <div class="codehilite"><pre><span></span><span class="n">uniform</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">minval</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxval</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Uniform&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -847,20 +861,22 @@ must be specified explicitly.</p>
 <code>maxval - minval</code> significantly smaller than the range of the output (either
 <code>2**32</code> or <code>2**64</code>).</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
 <li><strong>dtype</strong>: The tensor data type. Only float are supported.</li>
 <li><strong>seed</strong>: <code>int</code>. Used to create a random seed for the distribution.</li>
-<li>
-<p><strong>name</strong>: name of the op.</p>
+<li><strong>name</strong>: name of the op.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
+    The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
 </li>
 </ul>
 <hr />
-<h3 id="uniform_scaling">uniform_scaling</h3>
+<h2 id="uniform_scaling">uniform_scaling</h2>
 <div class="codehilite"><pre><span></span><span class="n">uniform_scaling</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;UniformScaling&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -882,22 +898,24 @@ See <a href="https://arxiv.org/abs/1412.6558">Sussillo et al., 2014</a>
 and the calculation of constants. In section 2.3 there, the constants were
 numerically computed: for a linear layer it's 1.0, relu: ~1.43, tanh: ~1.15.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
 <li><strong>factor</strong>: <code>float</code>. A multiplicative factor by which the values will be
 scaled.</li>
 <li><strong>dtype</strong>: The tensor data type. Only float are supported.</li>
 <li><strong>seed</strong>: <code>int</code>. Used to create a random seed for the distribution.</li>
-<li>
-<p><strong>name</strong>: name of the op.</p>
+<li><strong>name</strong>: name of the op.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
+    The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
 </li>
 </ul>
 <hr />
-<h3 id="normal">normal</h3>
+<h2 id="normal">normal</h2>
 <div class="codehilite"><pre><span></span><span class="n">normal</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Normal&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -905,7 +923,9 @@ The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p
 <p>Normal.</p>
 <p>Initialization with random values from a normal distribution.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
 <li><strong>mean</strong>: Same as <code>dtype</code>. The mean of the truncated normal distribution.</li>
 <li><strong>stddev</strong>: Same as <code>dtype</code>. The standard deviation of the truncated
@@ -913,16 +933,16 @@ normal distribution.</li>
 <li><strong>dtype</strong>: The tensor data type.</li>
 <li><strong>seed</strong>: <code>int</code>. Used to create a random seed for the distribution.</li>
 <li><strong>scope</strong>: scope to add the op to.</li>
-<li>
-<p><strong>name</strong>: name of the op.</p>
+<li><strong>name</strong>: name of the op.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
+    The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
 </li>
 </ul>
 <hr />
-<h3 id="truncated_normal">truncated_normal</h3>
+<h2 id="truncated_normal">truncated_normal</h2>
 <div class="codehilite"><pre><span></span><span class="n">truncated_normal</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;TruncatedNormal&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -933,23 +953,25 @@ The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p
 standard deviation, except that values whose magnitude is more than 2 standard
 deviations from the mean are dropped and re-picked.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>shape</strong>: List of <code>int</code>. A shape to initialize a Tensor (optional).</li>
 <li><strong>mean</strong>: Same as <code>dtype</code>. The mean of the truncated normal distribution.</li>
 <li><strong>stddev</strong>: Same as <code>dtype</code>. The standard deviation of the truncated
 normal distribution.</li>
 <li><strong>dtype</strong>: The tensor data type.</li>
 <li><strong>seed</strong>: <code>int</code>. Used to create a random seed for the distribution.</li>
-<li>
-<p><strong>name</strong>: name of the op.</p>
+<li><strong>name</strong>: name of the op.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
+    The Initializer, or an initialized <code>Tensor</code> if shape is specified.</p>
 </li>
 </ul>
 <hr />
-<h3 id="xavier">xavier</h3>
+<h2 id="xavier">xavier</h2>
 <div class="codehilite"><pre><span></span><span class="n">xavier</span><span class="p">(</span><span class="n">uniform</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Xavier&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -961,33 +983,37 @@ same in all layers. In uniform distribution this ends up being the range:
 <code>x = sqrt(6. / (in + out)); [-x, x]</code> and for normal distribution a standard
 deviation of <code>sqrt(3. / (in + out))</code> is used.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>uniform</strong>: Whether to use uniform or normal distributed random
 initialization.</li>
 <li><strong>seed</strong>: A Python integer. Used to create random seeds. See
 <code>set_random_seed</code> for behavior.</li>
 <li><strong>dtype</strong>: The data type. Only floating point types are supported.</li>
-<li>
-<p><strong>name</strong>: name of the op.</p>
+<li><strong>name</strong>: name of the op.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-An initializer for a weight matrix.</p>
+    An initializer for a weight matrix.</p>
 </li>
 <li>
 <p><strong>References</strong>:
-Understanding the difficulty of training deep feedforward neural
-networks. International conference on artificial intelligence and
-statistics. Xavier Glorot and Yoshua Bengio (2010).</p>
+    Understanding the difficulty of training deep feedforward neural
+    networks. International conference on artificial intelligence and
+    statistics. Xavier Glorot and Yoshua Bengio (2010).</p>
 </li>
 <li>
 <p><strong>Links</strong>:</p>
-</li>
+<ul>
 <li><strong>[http</strong>://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf]
 (http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf)</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="variance_scaling">variance_scaling</h3>
+<h2 id="variance_scaling">variance_scaling</h2>
 <div class="codehilite"><pre><span></span><span class="n">variance_scaling</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;FAN_IN&#39;</span><span class="p">,</span> <span class="n">uniform</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=&lt;</span><span class="n">dtype</span><span class="p">:</span> <span class="s1">&#39;float32&#39;</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Xavier&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -1018,7 +1044,9 @@ elif mode=&#39;FAN_AVG&#39;: # Average number of inputs and output connections.
 - factor=1.0 mode='FAN_AVG' uniform=True.
 - factor=1.0 mode='FAN_AVG' uniform=False.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>factor</strong>: Float.  A multiplicative factor.</li>
 <li><strong>mode</strong>: String.  'FAN_IN', 'FAN_OUT', 'FAN_AVG'.</li>
 <li><strong>uniform</strong>: Whether to use uniform or normal distributed random
@@ -1026,18 +1054,20 @@ initialization.</li>
 <li><strong>seed</strong>: A Python integer. Used to create random seeds. See
 <code>set_random_seed</code> for behavior.</li>
 <li><strong>dtype</strong>: The data type. Only floating point types are supported.</li>
-<li>
-<p><strong>name</strong>: name of the op.</p>
+<li><strong>name</strong>: name of the op.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-An initializer that generates tensors with unit variance.</p>
+    An initializer that generates tensors with unit variance.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: if <code>dtype</code> is not a floating point type.</li>
 <li><strong>TypeError</strong>: if <code>mode</code> is not in ['FAN_IN', 'FAN_OUT', 'FAN_AVG'].</li>
+</ul>
+</li>
 </ul>
                 
                   

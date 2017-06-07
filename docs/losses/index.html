@@ -269,8 +269,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -838,7 +850,7 @@
                 
                   <h1>Losses</h1>
                 
-                <h3 id="absolute_difference">absolute_difference</h3>
+                <h2 id="absolute_difference">absolute_difference</h2>
 <div class="codehilite"><pre><span></span><span class="n">absolute_difference</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AbsoluteDifference&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
@@ -852,52 +864,58 @@ rescaled by the corresponding element in the <code>weights</code> vector. If the
 measurable element of <code>predictions</code> is scaled by the corresponding value of
 <code>weights</code>.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>weights</strong>: Optional <code>Tensor</code> whose rank is either 0, or the same rank as
 <code>labels</code>, and must be broadcastable to <code>labels</code> (i.e., all dimensions must
 be either <code>1</code>, or the same as the corresponding <code>losses</code> dimension).</li>
 <li><strong>name</strong>: operation name.</li>
 <li><strong>scope</strong>: operation scope.</li>
-<li>
-<p><strong>collect</strong>: whether to collect this metric under the metric collection.</p>
+<li><strong>collect</strong>: whether to collect this metric under the metric collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A scalar <code>Tensor</code> representing the loss value.</p>
+    A scalar <code>Tensor</code> representing the loss value.</p>
 </li>
 </ul>
 <hr />
-<h3 id="log_loss">log_loss</h3>
+<h2 id="log_loss">log_loss</h2>
 <div class="codehilite"><pre><span></span><span class="n">log_loss</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-07</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;LogLoss&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<h3 id="mean_squared_error">mean_squared_error</h3>
+<h2 id="mean_squared_error">mean_squared_error</h2>
 <div class="codehilite"><pre><span></span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MeanSquaredError&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Computes Mean Square Loss.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
 <li><strong>scope</strong>: scope to add the op to.</li>
 <li><strong>name</strong>: name of the op.</li>
-<li>
-<p><strong>collect</strong>: add to losses collection.</p>
+<li><strong>collect</strong>: add to losses collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A scalar <code>Tensor</code> representing the loss value.</p>
+    A scalar <code>Tensor</code> representing the loss value.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="softmax_cross_entropy">softmax_cross_entropy</h3>
+<h2 id="softmax_cross_entropy">softmax_cross_entropy</h2>
 <div class="codehilite"><pre><span></span><span class="n">softmax_cross_entropy</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">label_smoothing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SoftmaxCrossEntropy&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
@@ -919,25 +937,29 @@ and the same dtype (either <code>float32</code> or <code>float64</code>). It is 
 that <code>y_true</code> (labels) are binary arrays (For example, class 2 out of a
 total of 5 different classes, will be define as [0., 1., 0., 0., 0.])</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
 <li><strong>label_smoothing</strong>: If greater than <code>0</code> then smooth the labels.</li>
 <li><strong>scope</strong>: scope to add the op to.</li>
 <li><strong>name</strong>: name of the op.</li>
-<li>
-<p><strong>collect</strong>: add to losses collection.</p>
+<li><strong>collect</strong>: add to losses collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A scalar <code>Tensor</code> representing the loss value.</p>
+    A scalar <code>Tensor</code> representing the loss value.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="sigmoid_cross_entropy">sigmoid_cross_entropy</h3>
+<h2 id="sigmoid_cross_entropy">sigmoid_cross_entropy</h2>
 <div class="codehilite"><pre><span></span><span class="n">sigmoid_cross_entropy</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">label_smoothing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SigmoidCrossEntropy&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
@@ -955,49 +977,57 @@ both an elephant and a dog at the same time.</p>
 <p>max(x, 0) - x * z + log(1 + exp(-abs(x)))</p>
 <p><code>y_pred</code> and <code>y_true</code> must have the same type and shape.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
 <li><strong>label_smoothing</strong>: If greater than <code>0</code> then smooth the labels.</li>
 <li><strong>scope</strong>: scope to add the op to.</li>
 <li><strong>name</strong>: name of the op.</li>
-<li>
-<p><strong>collect</strong>: add to losses collection.</p>
+<li><strong>collect</strong>: add to losses collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A scalar <code>Tensor</code> representing the loss value.</p>
+    A scalar <code>Tensor</code> representing the loss value.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="hinge_loss">hinge_loss</h3>
+<h2 id="hinge_loss">hinge_loss</h2>
 <div class="codehilite"><pre><span></span><span class="n">hinge_loss</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;HingeLoss&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Hinge Loss.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
 <li><strong>name</strong>: name of the op.</li>
 <li><strong>scope</strong>: The scope for the operations performed in computing the loss.</li>
-<li>
-<p><strong>collect</strong>: add to losses collection.</p>
+<li><strong>collect</strong>: add to losses collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A scalar <code>Tensor</code> representing the loss value.</p>
+    A scalar <code>Tensor</code> representing the loss value.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="cosine_distance">cosine_distance</h3>
+<h2 id="cosine_distance">cosine_distance</h2>
 <div class="codehilite"><pre><span></span><span class="n">cosine_distance</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;CosineDistance&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
@@ -1014,68 +1044,78 @@ do not rely on the current behavior for anything but the shapes documented for
 </li>
 <li>
 <p><strong>Args</strong>:</p>
-</li>
+<ul>
 <li><strong>dim</strong>: The dimension along which the cosine distance is computed.</li>
 <li><strong>weights</strong>: Coefficients for the loss a <code>scalar</code>.</li>
 <li><strong>name</strong>: name of the op.</li>
 <li><strong>scope</strong>: The scope for the operations performed in computing the loss.</li>
-<li>
-<p><strong>collect</strong>: add to losses collection.</p>
+<li><strong>collect</strong>: add to losses collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A scalar <code>Tensor</code> representing the loss value.</p>
+    A scalar <code>Tensor</code> representing the loss value.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="kullback_leibler_divergence">kullback_leibler_divergence</h3>
+<h2 id="kullback_leibler_divergence">kullback_leibler_divergence</h2>
 <div class="codehilite"><pre><span></span><span class="n">kullback_leibler_divergence</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;KullbackLeiberDivergence&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Adds a Kullback leiber diverenge loss to the training procedure.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>name</strong>: name of the op.</li>
 <li><strong>scope</strong>: The scope for the operations performed in computing the loss.</li>
-<li>
-<p><strong>collect</strong>: add to losses collection.</p>
+<li><strong>collect</strong>: add to losses collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A scalar <code>Tensor</code> representing the loss value.</p>
+    A scalar <code>Tensor</code> representing the loss value.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="poisson_loss">poisson_loss</h3>
+<h2 id="poisson_loss">poisson_loss</h2>
 <div class="codehilite"><pre><span></span><span class="n">poisson_loss</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;PoissonLoss&#39;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Adds a poisson loss to the training procedure.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>name</strong>: name of the op.</li>
 <li><strong>scope</strong>: The scope for the operations performed in computing the loss.</li>
-<li>
-<p><strong>collect</strong>: add to losses collection.</p>
+<li><strong>collect</strong>: add to losses collection.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A scalar <code>Tensor</code> representing the loss value.</p>
+    A scalar <code>Tensor</code> representing the loss value.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: If <code>predictions</code> shape doesn't match <code>labels</code> shape, or <code>weights</code> is <code>None</code>.</li>
+</ul>
+</li>
 </ul>
                 
                   
