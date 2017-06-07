@@ -278,29 +278,22 @@
     Experiment
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#reset_export_strategies" title="reset_export_strategies" class="md-nav__link">
     reset_export_strategies
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#extend_eval_hooks" title="extend_eval_hooks" class="md-nav__link">
     extend_eval_hooks
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#extends-the-hooks-for-training" title="Extends the hooks for training." class="md-nav__link">
-    Extends the hooks for training.
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#extend_eval_hooks_1" title="extend_eval_hooks" class="md-nav__link">
@@ -308,19 +301,6 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extends-the-hooks-for-training_1" title="Extends the hooks for training." class="md-nav__link">
-    Extends the hooks for training.
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#train" title="train" class="md-nav__link">
@@ -378,22 +358,22 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create_experiment" title="create_experiment" class="md-nav__link">
     create_experiment
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run_experiment" title="run_experiment" class="md-nav__link">
     run_experiment
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -424,8 +404,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -830,29 +822,22 @@
     Experiment
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#reset_export_strategies" title="reset_export_strategies" class="md-nav__link">
     reset_export_strategies
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#extend_eval_hooks" title="extend_eval_hooks" class="md-nav__link">
     extend_eval_hooks
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#extends-the-hooks-for-training" title="Extends the hooks for training." class="md-nav__link">
-    Extends the hooks for training.
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#extend_eval_hooks_1" title="extend_eval_hooks" class="md-nav__link">
@@ -860,19 +845,6 @@
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extends-the-hooks-for-training_1" title="Extends the hooks for training." class="md-nav__link">
-    Extends the hooks for training.
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#train" title="train" class="md-nav__link">
@@ -930,22 +902,22 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create_experiment" title="create_experiment" class="md-nav__link">
     create_experiment
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run_experiment" title="run_experiment" class="md-nav__link">
     run_experiment
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -967,7 +939,7 @@
                   <h1>Expermient</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/experiment.py#L25">[source]</a></span></p>
-<h3 id="experiment">Experiment</h3>
+<h2 id="experiment">Experiment</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">experiment</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">train_input_fn</span><span class="p">,</span> <span class="n">eval_input_fn</span><span class="p">,</span> <span class="n">train_steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">train_hooks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_hooks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_delay_secs</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">continuous_eval_throttle_secs</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">eval_every_n_steps</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">delay_workers_by_global_step</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">export_strategies</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">train_steps_per_iteration</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 
@@ -979,7 +951,9 @@ and eval loops in a sensible fashion for distributed training.</p>
 <p>None of the functions passed to this constructor are executed at construction time.
 They are stored and used when a method is executed which requires it.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>estimator</strong>: Object implementing Estimator interface.</li>
 <li><strong>train_input_fn</strong>: function, returns features and labels for training.</li>
 <li><strong>eval_input_fn</strong>: function, returns features and labels for evaluation. If
@@ -1000,18 +974,20 @@ They are stored and used when a method is executed which requires it.</p>
 <li><strong>delay_workers_by_global_step</strong>: if <code>True</code> delays training workers based on global step
     instead of time.</li>
 <li><strong>export_strategies</strong>: A list of <code>ExportStrategy</code>s, or a single one, or None.</li>
-<li>
-<p><strong>train_steps_per_iteration</strong>: (applies only to continuous_train_and_evaluate).
+<li><strong>train_steps_per_iteration</strong>: (applies only to continuous_train_and_evaluate).
     Perform this many (integer) number of train steps for each training-evaluation
     iteration. With a small value, the model will be evaluated more frequently
     with more checkpoints saved. If <code>None</code>, will use a default value
-    (which is smaller than <code>train_steps</code> if provided).</p>
+    (which is smaller than <code>train_steps</code> if provided).</li>
+</ul>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: if <code>estimator</code> does not implement Estimator interface,
         or if export_strategies has the wrong type.</li>
+</ul>
+</li>
 </ul>
 <hr />
 <h3 id="reset_export_strategies">reset_export_strategies</h3>
@@ -1021,14 +997,16 @@ They are stored and used when a method is executed which requires it.</p>
 
 <p>Resets the export strategies with the <code>new_export_strategies</code>.</p>
 <ul>
-<li><strong>Args</strong>:</li>
 <li>
-<p><strong>new_export_strategies</strong>: A new list of <code>ExportStrategy</code>s, or a single one,
-or None.</p>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>new_export_strategies</strong>: A new list of <code>ExportStrategy</code>s, or a single one,
+or None.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The old export strategies.</p>
+    The old export strategies.</p>
 </li>
 </ul>
 <hr />
@@ -1037,13 +1015,15 @@ The old export strategies.</p>
 </pre></div>
 
 
-<h2 id="extends-the-hooks-for-training">Extends the hooks for training.</h2>
+<p>Extends the hooks for training.</p>
+<hr />
 <h3 id="extend_eval_hooks_1">extend_eval_hooks</h3>
 <div class="codehilite"><pre><span></span><span class="n">extend_eval_hooks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">additional_hooks</span><span class="p">)</span>
 </pre></div>
 
 
-<h2 id="extends-the-hooks-for-training_1">Extends the hooks for training.</h2>
+<p>Extends the hooks for training.</p>
+<hr />
 <h3 id="train">train</h3>
 <div class="codehilite"><pre><span></span><span class="n">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delay_secs</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1053,13 +1033,15 @@ The old export strategies.</p>
 <p>Train the estimator for <code>self._train_steps</code> steps, after waiting for <code>delay_secs</code> seconds.
 If <code>self._train_steps</code> is <code>None</code>, train forever.</p>
 <ul>
-<li><strong>Args</strong>:</li>
 <li>
-<p><strong>delay_secs</strong>: Start training after this many seconds.</p>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>delay_secs</strong>: Start training after this many seconds.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The trained estimator.</p>
+    The trained estimator.</p>
 </li>
 </ul>
 <hr />
@@ -1075,14 +1057,16 @@ exhausted or another exception is raised. Start the evaluation after
 <code>delay_secs</code> seconds, or if it's <code>None</code>, defaults to using
 <code>self._eval_delay_secs</code> seconds.</p>
 <ul>
-<li><strong>Args</strong>:</li>
 <li>
-<p><strong>delay_secs</strong>: Start evaluating after this many seconds. If <code>None</code>, defaults to using
-    <code>self._eval_delays_secs</code>.</p>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>delay_secs</strong>: Start evaluating after this many seconds. If <code>None</code>, defaults to using
+<code>self._eval_delays_secs</code>.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The result of the <code>evaluate</code> call to the <code>Estimator</code>.</p>
+    The result of the <code>evaluate</code> call to the <code>Estimator</code>.</p>
 </li>
 </ul>
 <hr />
@@ -1118,8 +1102,8 @@ Participating in training as the supervisor allows such a task to accomplish
 the first and last items, while performing evaluation allows for the second.</p>
 <ul>
 <li><strong>Returns</strong>:
-The result of the <code>evaluate</code> call to the <code>Estimator</code> as well as the
-export results using the specified <code>ExportStrategy</code>.</li>
+    The result of the <code>evaluate</code> call to the <code>Estimator</code> as well as the
+    export results using the specified <code>ExportStrategy</code>.</li>
 </ul>
 <hr />
 <h3 id="continuous_train_and_evaluate">continuous_train_and_evaluate</h3>
@@ -1132,28 +1116,29 @@ export results using the specified <code>ExportStrategy</code>.</li>
 (via constructor). The model will be first trained for
 <code>train_steps_per_iteration</code>, and then be evaluated in turns.</p>
 <p>This differs from <code>train_and_evaluate</code> as follows:
-1. The procedure will have train and evaluation in turns. The model
-will be trained for a number of steps (usuallly smaller than <code>train_steps</code>
-if provided) and then be evaluated.  <code>train_and_evaluate</code> will train the
-model for <code>train_steps</code> (no small training iteraions).</p>
-<ol>
-<li>
-<p>Due to the different approach this schedule takes, it leads to two
+    1. The procedure will have train and evaluation in turns. The model
+    will be trained for a number of steps (usuallly smaller than <code>train_steps</code>
+    if provided) and then be evaluated.  <code>train_and_evaluate</code> will train the
+    model for <code>train_steps</code> (no small training iteraions).</p>
+<div class="codehilite"><pre><span></span>2. Due to the different approach this schedule takes, it leads to two
 differences in resource control. First, the resources (e.g., memory) used
-by training will be released before evaluation (<code>train_and_evaluate</code> takes
+by training will be released before evaluation (`train_and_evaluate` takes
 double resources). Second, more checkpoints will be saved as a checkpoint
-is generated at the end of each small trainning iteration.</p>
-</li>
+is generated at the end of each small trainning iteration.
+</pre></div>
+
+
+<ul>
 <li>
 <p><strong>Args</strong>:</p>
-</li>
-<li>
-<p><strong>continuous_eval_predicate_fn</strong>: A predicate function determining whether to
+<ul>
+<li><strong>continuous_eval_predicate_fn</strong>: A predicate function determining whether to
 continue after each iteration. <code>predicate_fn</code> takes the evaluation
 results as its arguments. At the beginning of evaluation, the passed
 eval results will be None so it's expected that the predicate function
 handles that gracefully. When <code>predicate_fn</code> is not specified, this will
-run in an infinite loop or exit when global_step reaches <code>train_steps</code>.</p>
+run in an infinite loop or exit when global_step reaches <code>train_steps</code>.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
@@ -1162,9 +1147,11 @@ run in an infinite loop or exit when global_step reaches <code>train_steps</code
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: if <code>continuous_eval_predicate_fn</code> is neither None norcallable.</li>
-</ol>
+</ul>
+</li>
+</ul>
 <hr />
 <h3 id="run_std_server">run_std_server</h3>
 <div class="codehilite"><pre><span></span><span class="n">run_std_server</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -1174,9 +1161,11 @@ run in an infinite loop or exit when global_step reaches <code>train_steps</code
 <p>Starts a TensorFlow server and joins the serving thread.</p>
 <p>Typically used for parameter servers.</p>
 <ul>
-<li><strong>Raises</strong>:</li>
+<li><strong>Raises</strong>:<ul>
 <li><strong>ValueError</strong>: if not enough information is available in the estimator's
 config to create a server.</li>
+</ul>
+</li>
 </ul>
 <hr />
 <h3 id="test">test</h3>
@@ -1187,21 +1176,23 @@ config to create a server.</li>
 <p>Tests training, evaluating and exporting the estimator for a single step.</p>
 <ul>
 <li><strong>Returns</strong>:
-The result of the <code>evaluate</code> call to the <code>Estimator</code>.</li>
+    The result of the <code>evaluate</code> call to the <code>Estimator</code>.</li>
 </ul>
 <hr />
-<h3 id="create_experiment">create_experiment</h3>
+<h2 id="create_experiment">create_experiment</h2>
 <div class="codehilite"><pre><span></span><span class="n">create_experiment</span><span class="p">(</span><span class="n">experiment_config</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Creates a new <code>Experiment</code> instance.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>experiment_config</strong>: the config to use for creating the experiment.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="run_experiment">run_experiment</h3>
+<h2 id="run_experiment">run_experiment</h2>
 <div class="codehilite"><pre><span></span><span class="n">run_experiment</span><span class="p">(</span><span class="n">experiment_fn</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">schedule</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
@@ -1223,9 +1214,9 @@ is raised.</p>
 </ul>
 <div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">_create_my_experiment</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">estimator</span><span class="o">=</span><span class="n">my_estimator</span><span class="p">(</span><span class="n">model_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">),</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">train_input_fn</span><span class="o">=</span><span class="n">my_train_input</span><span class="p">,</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">eval_input_fn</span><span class="o">=</span><span class="n">my_eval_input</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="n">estimator</span><span class="o">=</span><span class="n">my_estimator</span><span class="p">(</span><span class="n">model_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">),</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="n">train_input_fn</span><span class="o">=</span><span class="n">my_train_input</span><span class="p">,</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="n">eval_input_fn</span><span class="o">=</span><span class="n">my_eval_input</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">run</span><span class="p">(</span><span class="n">experiment_fn</span><span class="o">=</span><span class="n">_create_my_experiment</span><span class="p">,</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;some/output/dir&quot;</span><span class="p">,</span>
@@ -1234,26 +1225,30 @@ is raised.</p>
 
 
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>experiment_fn</strong>: A function that creates an <code>Experiment</code>. It should accept an
   argument <code>output_dir</code> which should be used to create the <code>Estimator</code>
   (passed as <code>model_dir</code> to its constructor). It must return an
   <code>Experiment</code>.</li>
 <li><strong>output_dir</strong>: Base output directory.</li>
-<li>
-<p><strong>schedule</strong>: The name of the  method in the <code>Experiment</code> to run.</p>
+<li><strong>schedule</strong>: The name of the  method in the <code>Experiment</code> to run.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The return value of function <code>schedule</code>.</p>
+    The return value of function <code>schedule</code>.</p>
 </li>
 <li>
 <p><strong>Raises</strong>:</p>
-</li>
+<ul>
 <li><strong>ValueError</strong>: If <code>output_dir</code> is empty, <code>schedule</code> is None but no task
   type is set in the built experiment's config, the task type has no
   default, or <code>schedule</code> doesn't reference a member of <code>Experiment</code>.</li>
 <li><strong>TypeError</strong>: <code>schedule</code> references non-callable member.</li>
+</ul>
+</li>
 </ul>
                 
                   

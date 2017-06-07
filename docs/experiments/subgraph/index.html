@@ -275,8 +275,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -733,20 +745,22 @@
                   <h1>Subgraph</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/subgraph.py#L16">[source]</a></span></p>
-<h3 id="subgraph">SubGraph</h3>
+<h2 id="subgraph">SubGraph</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">subgraph</span><span class="o">.</span><span class="n">SubGraph</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
 <p>The <code>SubGraph</code> is a class that represents the flow of layers.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>. Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: <code>str</code>. The name of this subgraph, used for creating the scope.</li>
 <li><strong>modules</strong>: <code>list</code>.  The modules to connect inside this subgraph, e.g. layers</li>
 <li><strong>kwargs</strong>: <code>list</code>. The list key word args to call each method with.</li>
 <li><strong>features</strong>: <code>list</code>. The list of features keys to extract and use in this subgraph.
     If <code>None</code>, all features will be used.</li>
+</ul>
+</li>
 </ul>
                 
                   

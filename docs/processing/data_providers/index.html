@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -533,36 +545,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#represents-a-dataset-specification" title="Represents a Dataset specification." class="md-nav__link">
-    Represents a Dataset specification.
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#dataprovider" title="DataProvider" class="md-nav__link">
     DataProvider
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#datasetdataprovider" title="DatasetDataProvider" class="md-nav__link">
     DatasetDataProvider
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#paralleldatasetprovider" title="ParallelDatasetProvider" class="md-nav__link">
     ParallelDatasetProvider
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -750,36 +749,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#represents-a-dataset-specification" title="Represents a Dataset specification." class="md-nav__link">
-    Represents a Dataset specification.
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#dataprovider" title="DataProvider" class="md-nav__link">
     DataProvider
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#datasetdataprovider" title="DatasetDataProvider" class="md-nav__link">
     DatasetDataProvider
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#paralleldatasetprovider" title="ParallelDatasetProvider" class="md-nav__link">
     ParallelDatasetProvider
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -801,14 +787,29 @@
                   <h1>Data Providers</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_providers.py#L15">[source]</a></span></p>
-<h3 id="dataset">Dataset</h3>
+<h2 id="dataset">Dataset</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">data_sources</span><span class="p">,</span> <span class="n">reader</span><span class="p">,</span> <span class="n">decoder</span><span class="p">,</span> <span class="n">num_samples</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">items_to_descriptions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">meta_data</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
-<h2 id="represents-a-dataset-specification">Represents a Dataset specification.</h2>
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_providers.py#L43">[source]</a></span></p>
-<h3 id="dataprovider">DataProvider</h3>
+<p>Represents a Dataset specification.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>data_sources</strong>: A list of files that make up the dataset.</li>
+<li><strong>reader</strong>: The reader class, a subclass of BaseReader, e.g. TFRecordReader.</li>
+<li><strong>decoder</strong>: An instance of a data_decoder.</li>
+<li><strong>num_samples</strong>: The number of samples in the dataset.</li>
+<li><strong>items_to_descriptions</strong>: A map from the items that the dataset provides to
+    the descriptions of those items.</li>
+<li><strong>meta_data</strong>: extra information about the current dataset, e.g. num_samples, channels ...
+    Generally read from the meta_data.json file</li>
+<li><strong>**kwargs</strong>: Any remaining dataset-specific fields.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_providers.py#L42">[source]</a></span></p>
+<h2 id="dataprovider">DataProvider</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">DataProvider</span><span class="p">(</span><span class="n">items_to_tensors</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">)</span>
 </pre></div>
 
@@ -818,16 +819,44 @@
 <p>All data providers must inherit from DataProvider and implement the Get
 method which returns arbitrary types of data. No assumption is made about the
 source of the data nor the mechanism for providing it.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>items_to_tensors</strong>: a dictionary of names to tensors.</li>
+<li><strong>num_samples</strong>: the number of samples in the dataset being provided.</li>
+</ul>
+</li>
+</ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_providers.py#L118">[source]</a></span></p>
-<h3 id="datasetdataprovider">DatasetDataProvider</h3>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_providers.py#L115">[source]</a></span></p>
+<h2 id="datasetdataprovider">DatasetDataProvider</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">DatasetDataProvider</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">num_readers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">common_queue_capacity</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">common_queue_min</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">record_key</span><span class="o">=</span><span class="s1">&#39;__record_key__&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
+<p>Creates a DatasetDataProvider.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>dataset</strong>: An instance of the Dataset class.</li>
+<li><strong>num_readers</strong>: The number of parallel readers to use.</li>
+<li><strong>reader_kwargs</strong>: An optional dict of kwargs for the reader.</li>
+<li><strong>shuffle</strong>: Whether to shuffle the data sources and common queue when reading.</li>
+<li><strong>num_epochs</strong>: The number of times each data source is read. If left as None,
+    the data will be cycled through indefinitely.</li>
+<li><strong>common_queue_capacity</strong>: The capacity of the common queue.</li>
+<li><strong>common_queue_min</strong>: The minimum number of elements in the common queue after a dequeue.</li>
+<li><strong>record_key</strong>: The item name to use for the dataset record keys in the provided tensors.</li>
+<li><strong>seed</strong>: The seed to use if shuffling.</li>
+<li><strong>scope</strong>: Optional name scope for the ops.</li>
+</ul>
+</li>
+<li><strong>Raises</strong>:<ul>
+<li><strong>ValueError</strong>: If <code>record_key</code> matches one of the items in the dataset.</li>
+</ul>
+</li>
+</ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_providers.py#L164">[source]</a></span></p>
-<h3 id="paralleldatasetprovider">ParallelDatasetProvider</h3>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_providers.py#L161">[source]</a></span></p>
+<h2 id="paralleldatasetprovider">ParallelDatasetProvider</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">data_providers</span><span class="o">.</span><span class="n">ParallelDatasetProvider</span><span class="p">(</span><span class="n">dataset_source</span><span class="p">,</span> <span class="n">dataset_target</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">common_queue_capacity</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">common_queue_min</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
@@ -838,7 +867,7 @@ in parallel, keeping them aligned.</p>
 <li><strong>Args</strong>:<ul>
 <li><strong>dataset_source</strong>: The first dataset. An instance of the Dataset class.</li>
 <li><strong>dataset_target</strong>: The second dataset. An instance of the Dataset class.
-Can be None. If None, only <code>dataset1</code> is read.</li>
+    Can be None. If None, only <code>dataset1</code> is read.</li>
 <li><strong>shuffle</strong>: Whether to shuffle the data sources and common queue when
   reading.</li>
 <li><strong>num_epochs</strong>: The number of times each data source is read. If left as None,

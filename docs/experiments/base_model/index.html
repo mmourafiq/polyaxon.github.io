@@ -9,26 +9,26 @@
         <meta name="description" content="Documentation for polyaxon, a python Deep Learning library for TensorFlow.">
       
       
-        <link rel="canonical" href="http://polyaxon.com/regularizations/">
+        <link rel="canonical" href="http://polyaxon.com/experiments/base_model/">
       
       
       
-        <link rel="shortcut icon" href="../images/favicon.ico">
+        <link rel="shortcut icon" href="../../images/favicon.ico">
       
       <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.2">
     
     
       
-        <title>Regularizations - Polyaxon Documentation</title>
+        <title>Base Model - Polyaxon Documentation</title>
       
     
     
-      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application-e2807e330f.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-f78e5cb881.palette.css">
       
     
     
@@ -68,7 +68,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         
           <a href="http://polyaxon.com" title="Polyaxon Documentation" class="md-logo md-header-nav__button">
-            <img src="../assets/images/logo_white.svg" width="24" height="24">
+            <img src="../../assets/images/logo_white.svg" width="24" height="24">
           </a>
         
       </div>
@@ -80,8 +80,12 @@
           
             
               
+                <span class="md-header-nav__parent">
+                  Experiments
+                </span>
+              
             
-            Regularizations
+            Base Model
           
         </span>
       </div>
@@ -154,7 +158,7 @@
   <label class="md-nav__title md-nav__title--site" for="drawer">
     
       <i class="md-logo md-nav__button">
-        <img src="../assets/images/logo_white.svg">
+        <img src="../../assets/images/logo_white.svg">
       </i>
     
     Polyaxon Documentation
@@ -190,7 +194,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -202,7 +206,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../getting_started/" title="Getting started" class="md-nav__link">
+    <a href="../../getting_started/" title="Getting started" class="md-nav__link">
       Getting started
     </a>
   </li>
@@ -212,10 +216,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Experiments
@@ -233,7 +239,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -245,7 +251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/experiment/" title="Expermient" class="md-nav__link">
+    <a href="../experiment/" title="Expermient" class="md-nav__link">
       Expermient
     </a>
   </li>
@@ -257,7 +263,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/estimator/" title="Estimator" class="md-nav__link">
+    <a href="../estimator/" title="Estimator" class="md-nav__link">
       Estimator
     </a>
   </li>
@@ -267,11 +273,119 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../experiments/base_model/" title="Base Model" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Base Model
+      </label>
+    
+    <a href="./" title="Base Model" class="md-nav__link md-nav__link--active">
       Base Model
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basemodel" title="BaseModel" class="md-nav__link">
+    BaseModel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_clip_gradients_fn" title="_clip_gradients_fn" class="md-nav__link">
+    _clip_gradients_fn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_create_optimizer" title="_create_optimizer" class="md-nav__link">
+    _create_optimizer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_summary_op" title="_build_summary_op" class="md-nav__link">
+    _build_summary_op
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_loss" title="_build_loss" class="md-nav__link">
+    _build_loss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_eval_metrics" title="_build_eval_metrics" class="md-nav__link">
+    _build_eval_metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_train_op" title="_build_train_op" class="md-nav__link">
+    _build_train_op
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_preprocess" title="_preprocess" class="md-nav__link">
+    _preprocess
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_predictions" title="_build_predictions" class="md-nav__link">
+    _build_predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build" title="_build" class="md-nav__link">
+    _build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch_size" title="batch_size" class="md-nav__link">
+    batch_size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -281,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/models/" title="Models" class="md-nav__link">
+    <a href="../models/" title="Models" class="md-nav__link">
       Models
     </a>
   </li>
@@ -293,7 +407,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/hooks/" title="Hooks" class="md-nav__link">
+    <a href="../hooks/" title="Hooks" class="md-nav__link">
       Hooks
     </a>
   </li>
@@ -305,7 +419,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/subgraph/" title="Subgraph" class="md-nav__link">
+    <a href="../subgraph/" title="Subgraph" class="md-nav__link">
       Subgraph
     </a>
   </li>
@@ -317,7 +431,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/summarizer/" title="Summerizer" class="md-nav__link">
+    <a href="../summarizer/" title="Summerizer" class="md-nav__link">
       Summerizer
     </a>
   </li>
@@ -353,7 +467,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../layers/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../layers/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -365,7 +479,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../layers/core/" title="Core Layers" class="md-nav__link">
+    <a href="../../layers/core/" title="Core Layers" class="md-nav__link">
       Core Layers
     </a>
   </li>
@@ -377,7 +491,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../layers/convolutional/" title="Convolutional Layers" class="md-nav__link">
+    <a href="../../layers/convolutional/" title="Convolutional Layers" class="md-nav__link">
       Convolutional Layers
     </a>
   </li>
@@ -389,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../layers/recurrent/" title="Recurrent Layers" class="md-nav__link">
+    <a href="../../layers/recurrent/" title="Recurrent Layers" class="md-nav__link">
       Recurrent Layers
     </a>
   </li>
@@ -401,7 +515,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../layers/embeddings/" title="Embedding Layers" class="md-nav__link">
+    <a href="../../layers/embeddings/" title="Embedding Layers" class="md-nav__link">
       Embedding Layers
     </a>
   </li>
@@ -437,7 +551,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../processing/categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
+    <a href="../../processing/categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
       Categorical Vocabulary
     </a>
   </li>
@@ -449,7 +563,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../processing/vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
+    <a href="../../processing/vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
       Vocabulary Processor
     </a>
   </li>
@@ -461,7 +575,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../processing/image/" title="Image" class="md-nav__link">
+    <a href="../../processing/image/" title="Image" class="md-nav__link">
       Image
     </a>
   </li>
@@ -473,7 +587,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../processing/input_fn/" title="Input function" class="md-nav__link">
+    <a href="../../processing/input_fn/" title="Input function" class="md-nav__link">
       Input function
     </a>
   </li>
@@ -485,7 +599,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../processing/pipelines/" title="Pipelines" class="md-nav__link">
+    <a href="../../processing/pipelines/" title="Pipelines" class="md-nav__link">
       Pipelines
     </a>
   </li>
@@ -497,7 +611,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../processing/data_decoders/" title="Data Decoders" class="md-nav__link">
+    <a href="../../processing/data_decoders/" title="Data Decoders" class="md-nav__link">
       Data Decoders
     </a>
   </li>
@@ -509,7 +623,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../processing/data_providers/" title="Data Providers" class="md-nav__link">
+    <a href="../../processing/data_providers/" title="Data Providers" class="md-nav__link">
       Data Providers
     </a>
   </li>
@@ -526,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../activations/" title="Activations" class="md-nav__link">
+    <a href="../../activations/" title="Activations" class="md-nav__link">
       Activations
     </a>
   </li>
@@ -538,7 +652,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../losses/" title="Losses" class="md-nav__link">
+    <a href="../../losses/" title="Losses" class="md-nav__link">
       Losses
     </a>
   </li>
@@ -550,7 +664,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../metrics/" title="Metrics" class="md-nav__link">
+    <a href="../../metrics/" title="Metrics" class="md-nav__link">
       Metrics
     </a>
   </li>
@@ -562,7 +676,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../optimizers/" title="Optimizers" class="md-nav__link">
+    <a href="../../optimizers/" title="Optimizers" class="md-nav__link">
       Optimizers
     </a>
   </li>
@@ -574,7 +688,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../initializations/" title="Initializations" class="md-nav__link">
+    <a href="../../initializations/" title="Initializations" class="md-nav__link">
       Initializations
     </a>
   </li>
@@ -584,64 +698,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Regularizations
-      </label>
-    
-    <a href="./" title="Regularizations" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../regularizations/" title="Regularizations" class="md-nav__link">
       Regularizations
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#built_regularizer" title="built_regularizer" class="md-nav__link">
-    built_regularizer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l2_regularizer" title="l2_regularizer" class="md-nav__link">
-    l2_regularizer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l1_regularizer" title="l1_regularizer" class="md-nav__link">
-    l1_regularizer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l2_l1_regularizer" title="l2_l1_regularizer" class="md-nav__link">
-    l2_l1_regularizer
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -670,7 +731,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../libs/configs/" title="Configs" class="md-nav__link">
+    <a href="../../libs/configs/" title="Configs" class="md-nav__link">
       Configs
     </a>
   </li>
@@ -682,7 +743,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../libs/getters/" title="Getters" class="md-nav__link">
+    <a href="../../libs/getters/" title="Getters" class="md-nav__link">
       Getters
     </a>
   </li>
@@ -694,7 +755,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../libs/utils/" title="Utils" class="md-nav__link">
+    <a href="../../libs/utils/" title="Utils" class="md-nav__link">
       Utils
     </a>
   </li>
@@ -711,7 +772,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+    <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -736,30 +797,85 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#built_regularizer" title="built_regularizer" class="md-nav__link">
-    built_regularizer
+  <a href="#basemodel" title="BaseModel" class="md-nav__link">
+    BaseModel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_clip_gradients_fn" title="_clip_gradients_fn" class="md-nav__link">
+    _clip_gradients_fn
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#l2_regularizer" title="l2_regularizer" class="md-nav__link">
-    l2_regularizer
+        
+          <li class="md-nav__item">
+  <a href="#_create_optimizer" title="_create_optimizer" class="md-nav__link">
+    _create_optimizer
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#l1_regularizer" title="l1_regularizer" class="md-nav__link">
-    l1_regularizer
+        
+          <li class="md-nav__item">
+  <a href="#_build_summary_op" title="_build_summary_op" class="md-nav__link">
+    _build_summary_op
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#l2_l1_regularizer" title="l2_l1_regularizer" class="md-nav__link">
-    l2_l1_regularizer
+        
+          <li class="md-nav__item">
+  <a href="#_build_loss" title="_build_loss" class="md-nav__link">
+    _build_loss
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_eval_metrics" title="_build_eval_metrics" class="md-nav__link">
+    _build_eval_metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_train_op" title="_build_train_op" class="md-nav__link">
+    _build_train_op
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_preprocess" title="_preprocess" class="md-nav__link">
+    _preprocess
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_predictions" title="_build_predictions" class="md-nav__link">
+    _build_predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build" title="_build" class="md-nav__link">
+    _build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch_size" title="batch_size" class="md-nav__link">
+    batch_size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -778,89 +894,125 @@
               
                 
                 
-                  <h1>Regularizations</h1>
+                  <h1>Base Model</h1>
                 
-                <h2 id="built_regularizer">built_regularizer</h2>
-<div class="codehilite"><pre><span></span><span class="n">built_regularizer</span><span class="p">(</span><span class="n">fct</span><span class="p">,</span> <span class="n">collect</span><span class="p">)</span>
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/models.py#L22">[source]</a></span></p>
+<h2 id="basemodel">BaseModel</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Builds the regularizer function.</p>
+<p>Base class for models.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>graph_fn</strong>: Graph function. Follows the signature:<ul>
+<li>Args:</li>
+<li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><code>inputs</code>: the feature inputs.</li>
+</ul>
+</li>
+<li><strong>graph_fn</strong>: An instance of <code>GraphConfig</code>.</li>
+<li><strong>loss_config</strong>: An instance of <code>LossConfig</code>.</li>
+<li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adam</code>.</li>
+<li><strong>model_type</strong>: <code>str</code>, the type of this model.
+    Possible values: <code>regressor</code>, <code>classifier</code>, <code>generator</code></li>
+<li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
+    Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+<li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
+<li><strong>params</strong>: <code>dict</code>. A dictionary of hyperparameter values.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    <code>EstimatorSpec</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="_clip_gradients_fn">_clip_gradients_fn</h3>
+<div class="codehilite"><pre><span></span><span class="n">_clip_gradients_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grads_and_vars</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Clips gradients by global norm.</p>
+<hr />
+<h3 id="_create_optimizer">_create_optimizer</h3>
+<div class="codehilite"><pre><span></span><span class="n">_create_optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the optimizer</p>
+<hr />
+<h3 id="_build_summary_op">_build_summary_op</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_summary_op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Builds summaries for this model.</p>
+<p>The summaries are one value (or more) of:
+    * (<code>ACTIVATIONS</code>, <code>VARIABLES</code>, <code>GRADIENTS</code>, <code>LOSS</code>, <code>LEARNING_RATE</code>)</p>
+<hr />
+<h3 id="_build_loss">_build_loss</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the loss operation</p>
+<p>Returns a tuple <code>(losses, loss)</code>:
+    <code>losses</code> are the per-batch losses.
+    <code>loss</code> is a single scalar tensor to minimize.</p>
+<hr />
+<h3 id="_build_eval_metrics">_build_eval_metrics</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_eval_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the loss operation</p>
+<p>Returns a tuple <code>(losses, loss)</code>:
+    <code>losses</code> are the per-batch losses.
+    <code>loss</code> is a single scalar tensor to minimize.</p>
+<hr />
+<h3 id="_build_train_op">_build_train_op</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_train_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the training operation</p>
+<hr />
+<h3 id="_preprocess">_preprocess</h3>
+<div class="codehilite"><pre><span></span><span class="n">_preprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Model specific preprocessing.</p>
+<hr />
+<h3 id="_build_predictions">_build_predictions</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_predictions</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">losses</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the dictionary of predictions that is returned by the model.</p>
+<hr />
+<h3 id="_build">_build</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Build the different operation of the model.</p>
+<hr />
+<h3 id="batch_size">batch_size</h3>
+<div class="codehilite"><pre><span></span><span class="n">batch_size</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the batch size of the curren batch based on the passed features.</p>
 <ul>
 <li><strong>Args</strong>:<ul>
-<li><strong>fct</strong>: the metric function to build.</li>
-<li><strong>collect</strong>: whether to collect this metric under the metric collection.</li>
+<li><strong>features</strong>: The features.</li>
+<li><strong>labels</strong>: The labels</li>
 </ul>
-</li>
-</ul>
-<hr />
-<h2 id="l2_regularizer">l2_regularizer</h2>
-<div class="codehilite"><pre><span></span><span class="n">l2_regularizer</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;l2Regularizer&#39;</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Returns a function that can be used to apply L2 regularization to a tensor.</p>
-<p>Computes half the L2 norm of a tensor without the <code>sqrt</code>:</p>
-<p>output = sum(t ** 2) / 2 * wd</p>
-<ul>
-<li>
-<p><strong>Args</strong>:</p>
-<ul>
-<li><strong>x</strong>: <code>Tensor</code>. The tensor to apply regularization.</li>
-<li><strong>scale</strong>: <code>float</code>. A scalar multiplier <code>Tensor</code>. 0.0 disables the regularizer.</li>
-<li><strong>name</strong>: <code>str</code> name of the app.</li>
-<li><strong>collect</strong>: add to regularization losses</li>
-</ul>
-</li>
-<li>
-<p><strong>Returns</strong>:
-    The regularization <code>Tensor</code>.</p>
-</li>
-</ul>
-<hr />
-<h2 id="l1_regularizer">l1_regularizer</h2>
-<div class="codehilite"><pre><span></span><span class="n">l1_regularizer</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;l1Regularizer&#39;</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Returns a function that can be used to apply L1 regularization to a tensor.</p>
-<p>Computes the L1 norm of a tensor:</p>
-<p>output = sum(|t|) * scale</p>
-<ul>
-<li>
-<p><strong>Args</strong>:</p>
-<ul>
-<li><strong>scale</strong>: <code>float</code>. A scalar multiplier <code>Tensor</code>. 0.0 disables the regularizer.</li>
-<li><strong>name</strong>: name of the app.</li>
-<li><strong>collect</strong>: add to regularization losses</li>
-</ul>
-</li>
-<li>
-<p><strong>Returns</strong>:
-    The regularization <code>Tensor</code>.</p>
-</li>
-</ul>
-<hr />
-<h2 id="l2_l1_regularizer">l2_l1_regularizer</h2>
-<div class="codehilite"><pre><span></span><span class="n">l2_l1_regularizer</span><span class="p">(</span><span class="n">scale_l1</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">scale_l2</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;l2l1Regularizer&#39;</span><span class="p">,</span> <span class="n">collect</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Returns a function that can be used to apply L2 L1 regularization to a tensor.</p>
-<p>Computes the L2 and L1 norm of a tensor:</p>
-<ul>
-<li>
-<p><strong>Args</strong>:</p>
-<ul>
-<li><strong>scale_l1</strong>: <code>float</code>. A scalar multiplier <code>Tensor</code>. 0.0 disables the regularizer.</li>
-<li><strong>scale_l2</strong>: <code>float</code>. A scalar multiplier <code>Tensor</code>. 0.0 disables the regularizer.</li>
-<li><strong>name</strong>: name of the app.</li>
-<li><strong>collect</strong>: add to regularization losses</li>
-</ul>
-</li>
-<li>
-<p><strong>Returns</strong>:
-    The regularization <code>Tensor</code>.</p>
 </li>
 </ul>
                 
@@ -881,7 +1033,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../initializations/" title="Initializations" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../estimator/" title="Estimator" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -890,19 +1042,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Initializations
+                Estimator
               </span>
             </div>
           </a>
         
         
-          <a href="../libs/configs/" title="Configs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../models/" title="Models" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Configs
+                Models
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -942,8 +1094,8 @@
       
     </div>
     
-      <script src="../assets/javascripts/application-6b599127bc.js"></script>
-      <script>app.initialize({url:{base:".."}})</script>
+      <script src="../../assets/javascripts/application-6b599127bc.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
       
     
     

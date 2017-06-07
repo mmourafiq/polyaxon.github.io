@@ -275,8 +275,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -817,91 +829,99 @@
                   <h1>Summerizer</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/summarizer.py#L14">[source]</a></span></p>
-<h3 id="summaryoptions">SummaryOptions</h3>
+<h2 id="summaryoptions">SummaryOptions</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">summarizer</span><span class="o">.</span><span class="n">SummaryOptions</span><span class="p">()</span>
 </pre></div>
 
 
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/summarizer.py#L41">[source]</a></span></p>
-<h3 id="summarytypes">SummaryTypes</h3>
+<h2 id="summarytypes">SummaryTypes</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">summarizer</span><span class="o">.</span><span class="n">SummaryTypes</span><span class="p">()</span>
 </pre></div>
 
 
 <hr />
-<h3 id="add_learning_rate_summaries">add_learning_rate_summaries</h3>
+<h2 id="add_learning_rate_summaries">add_learning_rate_summaries</h2>
 <div class="codehilite"><pre><span></span><span class="n">add_learning_rate_summaries</span><span class="p">()</span>
 </pre></div>
 
 
 <hr />
-<h3 id="add_loss_summaries">add_loss_summaries</h3>
+<h2 id="add_loss_summaries">add_loss_summaries</h2>
 <div class="codehilite"><pre><span></span><span class="n">add_loss_summaries</span><span class="p">(</span><span class="n">total_loss</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Adds loss scalar summaries.</p>
 <ul>
-<li><strong>Args</strong>:</li>
-<li><strong>total_loss</strong>: <code>Tensor</code>. The total loss (Regression loss + regularization losses).</li>
 <li>
-<p><strong>loss</strong>: <code>Tensor</code>. Regression loss.</p>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>total_loss</strong>: <code>Tensor</code>. The total loss (Regression loss + regularization losses).</li>
+<li><strong>loss</strong>: <code>Tensor</code>. Regression loss.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The list of created loss summaries.</p>
+    The list of created loss summaries.</p>
 </li>
 </ul>
 <hr />
-<h3 id="add_activations_summary">add_activations_summary</h3>
+<h2 id="add_activations_summary">add_activations_summary</h2>
 <div class="codehilite"><pre><span></span><span class="n">add_activations_summary</span><span class="p">(</span><span class="n">activation_ops</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Adds histogram and scalar summary for given activations.</p>
 <ul>
-<li><strong>Args</strong>:</li>
 <li>
-<p><strong>activation_ops</strong>: A list of <code>Tensor</code>. The activations to summarize.</p>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>activation_ops</strong>: A list of <code>Tensor</code>. The activations to summarize.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The list of created activation summaries.</p>
+    The list of created activation summaries.</p>
 </li>
 </ul>
 <hr />
-<h3 id="add_gradients_summary">add_gradients_summary</h3>
+<h2 id="add_gradients_summary">add_gradients_summary</h2>
 <div class="codehilite"><pre><span></span><span class="n">add_gradients_summary</span><span class="p">(</span><span class="n">grads</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Add histogram summary for given gradients and scalar summary for clipped gradients.</p>
 <ul>
-<li><strong>Args</strong>:</li>
 <li>
-<p><strong>grads</strong>: A list of <code>Tensor</code>. The gradients to summarize.</p>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>grads</strong>: A list of <code>Tensor</code>. The gradients to summarize.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The list of created gradient summaries.</p>
+    The list of created gradient summaries.</p>
 </li>
 </ul>
 <hr />
-<h3 id="add_trainable_vars_summary">add_trainable_vars_summary</h3>
+<h2 id="add_trainable_vars_summary">add_trainable_vars_summary</h2>
 <div class="codehilite"><pre><span></span><span class="n">add_trainable_vars_summary</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Adds histogram summary for given variables weights.</p>
 <ul>
-<li><strong>Args</strong>:</li>
 <li>
-<p><strong>variables</strong>: A list of <code>Variable</code>. The variables to summarize.</p>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>variables</strong>: A list of <code>Variable</code>. The variables to summarize.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-The list of created weights summaries.</p>
+    The list of created weights summaries.</p>
 </li>
 </ul>
                 

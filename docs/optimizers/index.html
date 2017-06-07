@@ -269,8 +269,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -838,14 +850,16 @@
                 
                   <h1>Optimizers</h1>
                 
-                <h3 id="create_learning_rate_decay_fn">create_learning_rate_decay_fn</h3>
+                <h2 id="create_learning_rate_decay_fn">create_learning_rate_decay_fn</h2>
 <div class="codehilite"><pre><span></span><span class="n">create_learning_rate_decay_fn</span><span class="p">(</span><span class="n">learning_rate</span><span class="p">,</span> <span class="n">decay_type</span><span class="p">,</span> <span class="n">decay_steps</span><span class="p">,</span> <span class="n">decay_rate</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mf">1000000000.0</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Creates a function that decays the learning rate.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>learning_rate</strong>: A Tensor or a floating point value. The learning rate to use.</li>
 <li><strong>decay_steps</strong>: How often to apply decay.</li>
 <li><strong>decay_rate</strong>: A Python number. The decay rate.</li>
@@ -857,28 +871,28 @@ possible Values: exponential_decay, inverse_time_decay, natural_exp_decay,
          piecewise_constant, polynomial_decay.</li>
 <li><strong>staircase</strong>: Whether to apply decay in a discrete staircase,
 as opposed to continuous, fashion.</li>
-<li>
-<p><strong>global_step</strong>: Scalar int <code>Tensor</code>, step counter for each update. If not supplied,
+<li><strong>global_step</strong>: Scalar int <code>Tensor</code>, step counter for each update. If not supplied,
 it will be fetched from the default graph (see <code>tf.contrib.framework.get_global_step</code>
 for details). If it's not been created, no step will be incremented with each weight
-update. <code>learning_rate_decay_fn</code> requires <code>global_step</code>.</p>
+update. <code>learning_rate_decay_fn</code> requires <code>global_step</code>.</li>
+</ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-A function that takes (learning_rate, global_step) as inputs
-and returns the learning rate for the given step.
-Returns <code>None</code> if decay_type is empty or None.</p>
+    A function that takes (learning_rate, global_step) as inputs
+    and returns the learning rate for the given step.
+    Returns <code>None</code> if decay_type is empty or None.</p>
 </li>
 </ul>
 <hr />
-<h3 id="sgd">sgd</h3>
+<h2 id="sgd">sgd</h2>
 <div class="codehilite"><pre><span></span><span class="n">sgd</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SGD&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Optimizer that implements the gradient descent algorithm.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>learning_rate</strong>: A Tensor or a floating point value. The learning rate to use.</li>
 <li><strong>decay_type</strong>: A decay function name defined in <code>tf.train</code></li>
 <li><strong>decay_rate</strong>: <code>float</code>. The learning rate decay to apply.</li>
@@ -891,8 +905,10 @@ Returns <code>None</code> if decay_type is empty or None.</p>
 <li><strong>use_locking</strong>: If True use locks for update operations.</li>
 <li><strong>name</strong>: Optional name prefix for the operations created when applying gradients.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="momentum">momentum</h3>
+<h2 id="momentum">momentum</h2>
 <div class="codehilite"><pre><span></span><span class="n">momentum</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Momentum&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -907,7 +923,7 @@ computed as:</p>
 
 
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>learning_rate</strong>: <code>float</code>. Learning rate.</li>
 <li><strong>momentum</strong>: <code>float</code>. Momentum.</li>
 <li><strong>decay_type</strong>: A decay function name defined in <code>tf.train</code></li>
@@ -921,8 +937,10 @@ computed as:</p>
 <li><strong>use_locking</strong>: If True use locks for update operations.</li>
 <li><strong>name</strong>: <code>str</code>. Optional name prefix for the operations created when applying gradients.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="nesterov">nesterov</h3>
+<h2 id="nesterov">nesterov</h2>
 <div class="codehilite"><pre><span></span><span class="n">nesterov</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Momentum&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -935,7 +953,7 @@ See <a href="http://jmlr.org/proceedings/papers/v28/sutskever13.pdf">Sutskever e
 
 
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>learning_rate</strong>: <code>float</code>. Learning rate.</li>
 <li><strong>momentum</strong>: <code>float</code>. Momentum.</li>
 <li><strong>decay_type</strong>: A decay function name defined in <code>tf.train</code></li>
@@ -949,8 +967,10 @@ See <a href="http://jmlr.org/proceedings/papers/v28/sutskever13.pdf">Sutskever e
 <li><strong>use_locking</strong>: If True use locks for update operations.</li>
 <li><strong>name</strong>: <code>str</code>. Optional name prefix for the operations created when applying gradients.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="rmsprop">rmsprop</h3>
+<h2 id="rmsprop">rmsprop</h2>
 <div class="codehilite"><pre><span></span><span class="n">rmsprop</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;RMSProp&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -959,7 +979,7 @@ See <a href="http://jmlr.org/proceedings/papers/v28/sutskever13.pdf">Sutskever e
 <p>Maintain a moving (discounted) average of the square of gradients.
 Divide gradient by the root of this average.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>learning_rate</strong>: <code>float</code>. learning rate.</li>
 <li><strong>decay</strong>: <code>float</code>. Discounting factor for the history/coming gradient.</li>
 <li><strong>momentum</strong>: <code>float</code>. Momentum.</li>
@@ -975,8 +995,10 @@ Divide gradient by the root of this average.</p>
 <li><strong>use_locking</strong>: If True use locks for update operations.</li>
 <li><strong>name</strong>: Optional name prefix for the operations created when applying gradients.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="adam">adam</h3>
+<h2 id="adam">adam</h2>
 <div class="codehilite"><pre><span></span><span class="n">adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">beta1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">beta2</span><span class="o">=</span><span class="mf">0.999</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-08</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Adam&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -986,7 +1008,7 @@ Divide gradient by the root of this average.</p>
 general. For example, when training an Inception network on ImageNet a
 current good choice is 1.0 or 0.1.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>learning_rate</strong>: <code>float</code>. learning rate.</li>
 <li><strong>beta1</strong>: <code>float</code>. The exponential decay rate for the 1st moment estimates.</li>
 <li><strong>beta2</strong>: <code>float</code>. The exponential decay rate for the 2nd moment estimates.</li>
@@ -1003,15 +1025,17 @@ current good choice is 1.0 or 0.1.</p>
 <li><strong>use_locking</strong>: If True use locks for update operations.</li>
 <li><strong>name</strong>: <code>str</code>. Optional name prefix for the operations created when applying gradients.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="adagrad">adagrad</h3>
+<h2 id="adagrad">adagrad</h2>
 <div class="codehilite"><pre><span></span><span class="n">adagrad</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">initial_accumulator_value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AdaGrad&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Optimizer that implements AdaGrad.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>learning_rate</strong>: <code>float</code>. Learning rate.</li>
 <li><strong>initial_accumulator_value</strong>: <code>float</code>. Starting value for the
 accumulators, must be positive.</li>
@@ -1026,8 +1050,10 @@ accumulators, must be positive.</li>
 <li><strong>use_locking</strong>: If True use locks for update operations.</li>
 <li><strong>name</strong>: <code>str</code>. Optional name prefix for the operations created when applying gradients.</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="ftrl">ftrl</h3>
+<h2 id="ftrl">ftrl</h2>
 <div class="codehilite"><pre><span></span><span class="n">ftrl</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">learning_rate_power</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">initial_accumulator_value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">l1_regularization_strength</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">l2_regularization_strength</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ftrl&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -1040,7 +1066,7 @@ is described in the paper below.</p>
 Adagrad with <code>learning_rate_power=-0.5</code>, or like gradient descent with
 <code>learning_rate_power=0.0</code>.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>learning_rate</strong>: <code>float</code>. Learning rate.</li>
 <li><strong>learning_rate_power</strong>: <code>float</code>. Must be less or equal to zero.</li>
 <li><strong>initial_accumulator_value</strong>: <code>float</code>. The starting value for accumulators.
@@ -1058,15 +1084,17 @@ Only positive values are allowed.</li>
 <li><strong>use_locking</strong>: If True use locks for update operations.</li>
 <li><strong>name</strong>: <code>str</code>. Optional name prefix for the operations created when applying gradients..</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="adadelta">adadelta</h3>
+<h2 id="adadelta">adadelta</h2>
 <div class="codehilite"><pre><span></span><span class="n">adadelta</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-08</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">use_locking</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;AdaDelta&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Optimizer that implements AdaDelta.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>learning_rate</strong>: A <code>Tensor</code> or a floating point value. The learning rate.</li>
 <li><strong>rho</strong>: A <code>Tensor</code> or a floating point value. The decay rate.</li>
 <li><strong>epsilon</strong>: A <code>Tensor</code> or a floating point value.  A constant epsilon used to better
@@ -1081,6 +1109,8 @@ conditioning the grad update.</li>
 <li><strong>global_step</strong>: Scalar int <code>Tensor</code>, step counter for each update.</li>
 <li><strong>use_locking</strong>: If True use locks for update operations.</li>
 <li><strong>name</strong>: Optional name prefix for the operations created when applying gradients.</li>
+</ul>
+</li>
 </ul>
                 
                   

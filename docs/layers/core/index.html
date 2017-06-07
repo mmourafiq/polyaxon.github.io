@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -845,7 +857,7 @@
                   <h1>Core Layers</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L19">[source]</a></span></p>
-<h3 id="fullyconnected">FullyConnected</h3>
+<h2 id="fullyconnected">FullyConnected</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;truncated_normal&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;FullyConnected&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -861,7 +873,7 @@ prior to the initial matrix multiply by <code>weights</code>.</p>
 </li>
 <li>
 <p><strong>Args</strong>:</p>
-</li>
+<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
 <li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>).<ul>
@@ -886,18 +898,20 @@ prior to the initial matrix multiply by <code>weights</code>.</p>
 <li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
 <li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when
     loading a model.</li>
-<li>
-<p><strong>name</strong>: A name for this layer (optional). Default: 'FullyConnected'.</p>
+<li><strong>name</strong>: A name for this layer (optional). Default: 'FullyConnected'.</li>
+</ul>
 </li>
 <li>
 <p><strong>Attributes</strong>:</p>
-</li>
+<ul>
 <li><strong>w</strong>: <code>Tensor</code>. Variable representing units weights.</li>
 <li><strong>b</strong>: <code>Tensor</code>. Variable representing biases.</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L126">[source]</a></span></p>
-<h3 id="dropout">Dropout</h3>
+<h2 id="dropout">Dropout</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">noise_shape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Dropout&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -912,32 +926,34 @@ example, if shape(x) = [k, l, m, n] and noise_shape = [k, 1, 1, n], each
 batch and channel component will be kept independently and each row and column
 will be kept or not kept together.</p>
 <ul>
-<li><strong>Args</strong>:</li>
 <li>
-<p><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.
 keep_prob : A float representing the probability that each element
     is kept.
 noise_shape : A 1-D Tensor of type int32, representing the shape for
     randomly generated keep/drop flags.
-name : A name for this layer (optional).</p>
+name : A name for this layer (optional).</li>
+</ul>
 </li>
 <li>
 <p><strong>References</strong>:</p>
-</li>
-<li>
-<p><strong>Dropout</strong>: A Simple Way to Prevent Neural Networks from Overfitting.
+<ul>
+<li><strong>Dropout</strong>: A Simple Way to Prevent Neural Networks from Overfitting.
 N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
-(2014), Journal of Machine Learning Research, 5(Jun)(2), 1929-1958.</p>
+(2014), Journal of Machine Learning Research, 5(Jun)(2), 1929-1958.</li>
+</ul>
 </li>
 <li>
 <p><strong>Links</strong>:</p>
 </li>
 <li><strong>[https</strong>://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf]
-(https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)</li>
+    (https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)</li>
 </ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L190">[source]</a></span></p>
-<h3 id="reshape">Reshape</h3>
+<h2 id="reshape">Reshape</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Reshape</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">new_shape</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Reshape&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -945,52 +961,60 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 <p>Reshape.</p>
 <p>A layer that reshape the incoming layer tensor output to the desired shape.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>new_shape</strong>: A list of <code>int</code>. The desired shape.</li>
 <li><strong>name</strong>: A name for this layer (optional).</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L218">[source]</a></span></p>
-<h3 id="flatten">Flatten</h3>
+<h2 id="flatten">Flatten</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Flatten&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Flatten the incoming Tensor.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: A name for this layer (optional).</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L244">[source]</a></span></p>
-<h3 id="singleunit">SingleUnit</h3>
+<h2 id="singleunit">SingleUnit</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">SingleUnit</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Linear&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Adds a Single Unit Layer.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>activation</strong>: <code>str</code> (name) or <code>function</code>. Activation applied to this layer. Default: 'linear'.</li>
 <li><strong>bias</strong>: <code>bool</code>. If True, a bias is used.</li>
 <li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
 <li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when
     loading a model.</li>
-<li>
-<p><strong>name</strong>: A name for this layer (optional). Default: 'Linear'.</p>
+<li><strong>name</strong>: A name for this layer (optional). Default: 'Linear'.</li>
+</ul>
 </li>
 <li>
 <p><strong>Attributes</strong>:</p>
-</li>
+<ul>
 <li><strong>W</strong>: <code>Tensor</code>. Variable representing weight.</li>
 <li><strong>b</strong>: <code>Tensor</code>. Variable representing bias.</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L314">[source]</a></span></p>
-<h3 id="highway">Highway</h3>
+<h2 id="highway">Highway</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Highway</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">transform_dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;truncated_normal&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;FullyConnectedHighway&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -999,7 +1023,9 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 <p>A fully connected highway network layer, with some inspiration from
 - __<a href="https://github.com/fomorians/highway-fcn">https__://github.com/fomorians/highway-fcn</a>.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>num_units</strong>: <code>int</code>, number of units for this layer.</li>
 <li><strong>activation</strong>: <code>str</code> (name) or <code>function</code> (returning a <code>Tensor</code>).<ul>
@@ -1023,49 +1049,53 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 <li><strong>trainable</strong>: <code>bool</code>. If True, weights will be trainable.</li>
 <li><strong>restore</strong>: <code>bool</code>. If True, this layer weights will be restored when
     loading a model.</li>
-<li>
-<p><strong>name</strong>: A name for this layer (optional). Default: 'FullyConnectedHighway'.</p>
+<li><strong>name</strong>: A name for this layer (optional). Default: 'FullyConnectedHighway'.</li>
+</ul>
 </li>
 <li>
 <p><strong>Attributes</strong>:</p>
-</li>
+<ul>
 <li><strong>W</strong>: <code>Tensor</code>. Variable representing units weights.</li>
 <li><strong>W_t</strong>: <code>Tensor</code>. Variable representing units weights for transform gate.</li>
 <li><strong>b</strong>: <code>Tensor</code>. Variable representing biases.</li>
-<li>
-<p><strong>b_t</strong>: <code>Tensor</code>. Variable representing biases for transform gate.</p>
+<li><strong>b_t</strong>: <code>Tensor</code>. Variable representing biases for transform gate.</li>
+</ul>
 </li>
 <li>
 <p><strong>Links</strong>:</p>
-</li>
+<ul>
 <li>__<a href="https://arxiv.org/abs/1505.00387">https__://arxiv.org/abs/1505.00387</a></li>
+</ul>
+</li>
 </ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L436">[source]</a></span></p>
-<h3 id="onehotencoding">OneHotEncoding</h3>
+<h2 id="onehotencoding">OneHotEncoding</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">OneHotEncoding</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">on_value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">off_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;OneHotEncoding&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Transform numeric labels into one hot labels using <code>tf.one_hot</code>.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>n_classes</strong>: <code>int</code>. Total number of classes.</li>
 <li><strong>on_value</strong>: <code>scalar</code>. A scalar defining the on-value.</li>
 <li><strong>off_value</strong>: <code>scalar</code>. A scalar defining the off-value.</li>
 <li><strong>name</strong>: A name for this layer (optional). Default: 'OneHotEncoding'.</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L495">[source]</a></span></p>
-<h3 id="merge">Merge</h3>
+<h2 id="merge">Merge</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Merge</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">merge_mode</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Merge&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L468">[source]</a></span></p>
-<h3 id="slice">Slice</h3>
+<h2 id="slice">Slice</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Slice</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Slice&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -1074,9 +1104,11 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 <p>This operation extracts a slice of size size from a tensor input starting at
 the location specified by begin.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: <code>str</code>. A name for this layer (optional).</li>
+</ul>
+</li>
 </ul>
                 
                   

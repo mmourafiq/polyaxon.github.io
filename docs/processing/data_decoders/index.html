@@ -273,8 +273,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../experiments/model/" title="Model" class="md-nav__link">
-      Model
+    <a href="../../experiments/base_model/" title="Base Model" class="md-nav__link">
+      Base Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../experiments/models/" title="Models" class="md-nav__link">
+      Models
     </a>
   </li>
 
@@ -775,7 +787,7 @@
                   <h1>Data Decoders</h1>
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_decoders.py#L13">[source]</a></span></p>
-<h3 id="datadecoder">DataDecoder</h3>
+<h2 id="datadecoder">DataDecoder</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">data_decoders</span><span class="o">.</span><span class="n">DataDecoder</span><span class="p">()</span>
 </pre></div>
 
@@ -784,7 +796,7 @@
 <p>(A mirror to tf.slim.data DataDecoder)</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_decoders.py#L46">[source]</a></span></p>
-<h3 id="tfexampledecoder">TFExampleDecoder</h3>
+<h2 id="tfexampledecoder">TFExampleDecoder</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">data_decoders</span><span class="o">.</span><span class="n">TFExampleDecoder</span><span class="p">(</span><span class="n">keys_to_features</span><span class="p">,</span> <span class="n">items_to_handlers</span><span class="p">)</span>
 </pre></div>
 
@@ -803,7 +815,7 @@ ItemHandlers. Each ItemHandler indicates the set of features for stage 1 and
 contains the instructions for post_processing its tensors for stage 2.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_decoders.py#L113">[source]</a></span></p>
-<h3 id="splittokensdecoder">SplitTokensDecoder</h3>
+<h2 id="splittokensdecoder">SplitTokensDecoder</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">data_decoders</span><span class="o">.</span><span class="n">SplitTokensDecoder</span><span class="p">(</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">tokens_feature_name</span><span class="o">=</span><span class="s1">&#39;tokens&#39;</span><span class="p">,</span> <span class="n">length_feature_name</span><span class="o">=</span><span class="s1">&#39;length&#39;</span><span class="p">,</span> <span class="n">prepend_token</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">append_token</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
@@ -812,14 +824,16 @@ contains the instructions for post_processing its tensors for stage 2.</p>
 returns the tokens and the length.
 Optionally prepends or appends special tokens.</p>
 <ul>
-<li><strong>Args</strong>:</li>
+<li><strong>Args</strong>:<ul>
 <li><strong>delimiter</strong>: Delimiter to split on. Must be a single character.</li>
 <li><strong>tokens_feature_name</strong>: A descriptive feature name for the token values</li>
 <li><strong>length_feature_name</strong>: A descriptive feature name for the length value</li>
 </ul>
+</li>
+</ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/data_decoders.py#L158">[source]</a></span></p>
-<h3 id="tfsequenceexampledecoder">TFSequenceExampleDecoder</h3>
+<h2 id="tfsequenceexampledecoder">TFSequenceExampleDecoder</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">data_decoders</span><span class="o">.</span><span class="n">TFSequenceExampleDecoder</span><span class="p">(</span><span class="n">context_keys_to_features</span><span class="p">,</span> <span class="n">sequence_keys_to_features</span><span class="p">,</span> <span class="n">items_to_handlers</span><span class="p">)</span>
 </pre></div>
 
