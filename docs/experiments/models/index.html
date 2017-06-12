@@ -310,15 +310,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#regressormodel" title="RegressorModel" class="md-nav__link">
-    RegressorModel
+  <a href="#regressor" title="Regressor" class="md-nav__link">
+    Regressor
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#classifiermodel" title="ClassifierModel" class="md-nav__link">
-    ClassifierModel
+  <a href="#classifier" title="Classifier" class="md-nav__link">
+    Classifier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator" title="Generator" class="md-nav__link">
+    Generator
   </a>
   
 </li>
@@ -702,6 +709,78 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Datasets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Datasets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/converters/" title="Converters" class="md-nav__link">
+      Converters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/cifar10/" title="Cifar10" class="md-nav__link">
+      Cifar10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/flowers17/" title="Flowers17" class="md-nav__link">
+      Flowers17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/mnist/" title="Mnist" class="md-nav__link">
+      Mnist
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
       Contributing
@@ -728,15 +807,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#regressormodel" title="RegressorModel" class="md-nav__link">
-    RegressorModel
+  <a href="#regressor" title="Regressor" class="md-nav__link">
+    Regressor
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#classifiermodel" title="ClassifierModel" class="md-nav__link">
-    ClassifierModel
+  <a href="#classifier" title="Classifier" class="md-nav__link">
+    Classifier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator" title="Generator" class="md-nav__link">
+    Generator
   </a>
   
 </li>
@@ -758,9 +844,9 @@
                 
                   <h1>Models</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/models.py#L259">[source]</a></span></p>
-<h2 id="regressormodel">RegressorModel</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">RegressorModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/regressors.py#L12">[source]</a></span></p>
+<h2 id="regressor">Regressor</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">regressors</span><span class="o">.</span><span class="n">Regressor</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Regressor&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -776,13 +862,11 @@
 <li><code>inputs</code>: the feature inputs.</li>
 </ul>
 </li>
-<li><strong>graph_fn</strong>: An instance of <code>GraphConfig</code>.</li>
 <li><strong>loss_config</strong>: An instance of <code>LossConfig</code>. Default value <code>mean_squared_error</code>.</li>
 <li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adam</code>.</li>
 <li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
     Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
 <li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
-<li><strong>params</strong>: <code>dict</code>. A dictionary of hyperparameter values.</li>
 </ul>
 </li>
 <li>
@@ -791,9 +875,9 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/models.py#L294">[source]</a></span></p>
-<h2 id="classifiermodel">ClassifierModel</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ClassifierModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/classifiers.py#L13">[source]</a></span></p>
+<h2 id="classifier">Classifier</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">classifiers</span><span class="o">.</span><span class="n">Classifier</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">one_hot_encode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Classfier&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -809,7 +893,6 @@
 <li><code>inputs</code>: the feature inputs.</li>
 </ul>
 </li>
-<li><strong>graph_fn</strong>: An instance of <code>GraphConfig</code>.</li>
 <li><strong>loss_config</strong>: An instance of <code>LossConfig</code>. Default value <code>sigmoid_cross_entropy</code>.</li>
 <li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adam</code>.</li>
 <li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
@@ -817,7 +900,51 @@
 <li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
 <li><strong>one_hot_encode</strong>: <code>bool</code>. to one hot encode the outputs.</li>
 <li><strong>n_classes</strong>: <code>int</code>. The number of classes used in the one hot encoding.</li>
-<li><strong>params</strong>: <code>dict</code>. A dictionary of hyperparameter values.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    <code>EstimatorSpec</code></p>
+</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/generators.py#L19">[source]</a></span></p>
+<h2 id="generator">Generator</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">Generator</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">encoder_fn</span><span class="p">,</span> <span class="n">decoder_fn</span><span class="p">,</span> <span class="n">bridge_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Generator&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Generator base model.</p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>encoder_fn</strong>: Encoder Graph function. Follows the signature:<ul>
+<li>Args:</li>
+<li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><code>inputs</code>: the feature inputs.</li>
+</ul>
+</li>
+<li><strong>decoder_fn</strong>: Decoder Graph function. Follows the signature:<ul>
+<li>Args:</li>
+<li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><code>inputs</code>: the feature inputs.</li>
+</ul>
+</li>
+<li><strong>bridge_fn</strong>: The bridge to use. Follows the signature:<ul>
+<li>Args:</li>
+<li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><code>inputs</code>: the feature inputs.</li>
+<li><code>encoder_fn</code>: the encoder function.</li>
+<li><code>decoder_fn</code> the decoder function.</li>
+</ul>
+</li>
+<li><strong>loss_config</strong>: An instance of <code>LossConfig</code>. Default value <code>mean_squared_error</code>.</li>
+<li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adadelta</code>.</li>
+<li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
+    Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+<li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
 </ul>
 </li>
 <li>

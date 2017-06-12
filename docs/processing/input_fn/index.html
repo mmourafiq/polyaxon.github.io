@@ -695,6 +695,78 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Datasets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Datasets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/converters/" title="Converters" class="md-nav__link">
+      Converters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/cifar10/" title="Cifar10" class="md-nav__link">
+      Cifar10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/flowers17/" title="Flowers17" class="md-nav__link">
+      Flowers17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/mnist/" title="Mnist" class="md-nav__link">
+      Mnist
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
       Contributing
@@ -752,19 +824,25 @@
 <p>Creates an input data function that can be used with estimators.
 Note that you must pass "factory functions" for both the data provider and
 featurizer to ensure that everything will be created in  the same graph.</p>
-<div class="codehilite"><pre><span></span>- __Args__:
-- __mode__: `str`, Specifies if this training, evaluation or prediction. See `ModeKeys`.
-- __pipeline_config__: the configuration to create a Pipeline instance.
-- __scope__: `str`. scope to use for this input data block.
-- __input_type__: `str`. The type of the input, values: `NUMPY`, `PANDAS`.
-        If `None`, will create a function based on the pipeline config.
-- __x__: `np.ndarray` or `np.Dataframe` or `None`.
-- __y__: `np.ndarray` or `None`.
-
-- __Returns__:
-An input function that returns `(feature_batch, labels_batch)`
-tuples when called.
-</pre></div>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
+<li><strong>pipeline_config</strong>: the configuration to create a Pipeline instance.</li>
+<li><strong>scope</strong>: <code>str</code>. scope to use for this input data block.</li>
+<li><strong>input_type</strong>: <code>str</code>. The type of the input, values: <code>NUMPY</code>, <code>PANDAS</code>.
+    If <code>None</code>, will create a function based on the pipeline config.</li>
+<li><strong>x</strong>: <code>np.ndarray</code> or <code>np.Dataframe</code> or <code>None</code>.</li>
+<li><strong>y</strong>: <code>np.ndarray</code> or <code>None</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    An input function that returns <code>(feature_batch, labels_batch)</code>
+    tuples when called.</p>
+</li>
+</ul>
                 
                   
                 

@@ -443,6 +443,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gaussiannoise" title="GaussianNoise" class="md-nav__link">
+    GaussianNoise
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#merge" title="Merge" class="md-nav__link">
     Merge
   </a>
@@ -751,6 +758,78 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Datasets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Datasets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/converters/" title="Converters" class="md-nav__link">
+      Converters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/cifar10/" title="Cifar10" class="md-nav__link">
+      Cifar10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/flowers17/" title="Flowers17" class="md-nav__link">
+      Flowers17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/mnist/" title="Mnist" class="md-nav__link">
+      Mnist
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
       Contributing
@@ -821,6 +900,13 @@
         <li class="md-nav__item">
   <a href="#onehotencoding" title="OneHotEncoding" class="md-nav__link">
     OneHotEncoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gaussiannoise" title="GaussianNoise" class="md-nav__link">
+    GaussianNoise
   </a>
   
 </li>
@@ -952,7 +1038,7 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
     (https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf)</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L190">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L223">[source]</a></span></p>
 <h2 id="reshape">Reshape</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Reshape</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">new_shape</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Reshape&#39;</span><span class="p">)</span>
 </pre></div>
@@ -969,7 +1055,7 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L218">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L251">[source]</a></span></p>
 <h2 id="flatten">Flatten</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Flatten&#39;</span><span class="p">)</span>
 </pre></div>
@@ -984,7 +1070,7 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L244">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L277">[source]</a></span></p>
 <h2 id="singleunit">SingleUnit</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">SingleUnit</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Linear&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1013,7 +1099,7 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L314">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L347">[source]</a></span></p>
 <h2 id="highway">Highway</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Highway</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">transform_dropout</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">weights_init</span><span class="o">=</span><span class="s1">&#39;truncated_normal&#39;</span><span class="p">,</span> <span class="n">bias_init</span><span class="o">=</span><span class="s1">&#39;zeros&#39;</span><span class="p">,</span> <span class="n">regularizer</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">restore</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;FullyConnectedHighway&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1069,7 +1155,7 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L436">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L469">[source]</a></span></p>
 <h2 id="onehotencoding">OneHotEncoding</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">OneHotEncoding</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">,</span> <span class="n">on_value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">off_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;OneHotEncoding&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1087,14 +1173,35 @@ N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever &amp; R. Salakhutdinov,
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L495">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L190">[source]</a></span></p>
+<h2 id="gaussiannoise">GaussianNoise</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">GaussianNoise</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;GaussianNoise&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Additive zero-centered Gaussian noise.</p>
+<p>This is useful to mitigate overfitting, could be used as a form of random data augmentation.
+Gaussian Noise (GS) is a natural choice as corruption process for real valued inputs.</p>
+<p>As it is a regularization layer, it is only active at training time.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>scale</strong>: A 0-D Tensor or Python <code>float</code>. The scale at which to apply the the noise.</li>
+<li><strong>mean</strong>: A 0-D Tensor or Python <code>float</code>. The mean of the noise distribution.</li>
+<li><strong>stddev</strong>: A 0-D Tensor or Python <code>float</code>. The standard deviation of the noise distribution.</li>
+<li><strong>seed</strong>: A Python integer. Used to create a random seed. See @{tf.set_random_seed}.</li>
+<li><strong>name</strong>: A name for this operation (optional).</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L528">[source]</a></span></p>
 <h2 id="merge">Merge</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Merge</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">merge_mode</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Merge&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L468">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/layers/core.py#L501">[source]</a></span></p>
 <h2 id="slice">Slice</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Slice</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Slice&#39;</span><span class="p">)</span>
 </pre></div>
