@@ -721,6 +721,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#get_bridge_fn" title="get_bridge_fn" class="md-nav__link">
+    get_bridge_fn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get_model_fn" title="get_model_fn" class="md-nav__link">
     get_model_fn
   </a>
@@ -758,6 +765,78 @@
   <li class="md-nav__item">
     <a href="../utils/" title="Utils" class="md-nav__link">
       Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Datasets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Datasets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/converters/" title="Converters" class="md-nav__link">
+      Converters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/cifar10/" title="Cifar10" class="md-nav__link">
+      Cifar10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/flowers17/" title="Flowers17" class="md-nav__link">
+      Flowers17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/mnist/" title="Mnist" class="md-nav__link">
+      Mnist
     </a>
   </li>
 
@@ -861,6 +940,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#get_bridge_fn" title="get_bridge_fn" class="md-nav__link">
+    get_bridge_fn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get_model_fn" title="get_model_fn" class="md-nav__link">
     get_model_fn
   </a>
@@ -899,49 +985,49 @@
                   <h1>Getters</h1>
                 
                 <h2 id="get_optimizer">get_optimizer</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_optimizer</span><span class="p">(</span><span class="n">optimizer</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_optimizer</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
 <h2 id="get_activation">get_activation</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_activation</span><span class="p">(</span><span class="n">activation</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_activation</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
 <h2 id="get_initializer">get_initializer</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_initializer</span><span class="p">(</span><span class="n">initializer</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_initializer</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
 <h2 id="get_regularizer">get_regularizer</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_regularizer</span><span class="p">(</span><span class="n">regularizer</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_regularizer</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
 <h2 id="get_metric">get_metric</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_metric</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="n">incoming</span><span class="p">,</span> <span class="n">outputs</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_metric</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">incoming</span><span class="p">,</span> <span class="n">outputs</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
 <h2 id="get_eval_metric">get_eval_metric</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_eval_metric</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_eval_metric</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
 <h2 id="get_loss">get_loss</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_loss</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_loss</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>
 </pre></div>
 
 
 <hr />
 <h2 id="get_pipeline">get_pipeline</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_pipeline</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">shuffle</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">,</span> <span class="n">subgraph_configs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_pipeline</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">shuffle</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">,</span> <span class="n">subgraph_configs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
@@ -953,8 +1039,27 @@
 
 <p>Creates the graph operations.</p>
 <hr />
+<h2 id="get_bridge_fn">get_bridge_fn</h2>
+<div class="codehilite"><pre><span></span><span class="n">get_bridge_fn</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates a bridge function. Defaults to <code>NoOpBridge</code></p>
+<ul>
+<li>
+<p><strong>Args</strong>:</p>
+<ul>
+<li><strong>config</strong>: <code>BridgeConfig</code> instance.</li>
+</ul>
+</li>
+<li>
+<p><strong>Returns</strong>:
+    <code>function</code>.</p>
+</li>
+</ul>
+<hr />
 <h2 id="get_model_fn">get_model_fn</h2>
-<div class="codehilite"><pre><span></span><span class="n">get_model_fn</span><span class="p">(</span><span class="n">model_config</span><span class="p">,</span> <span class="n">graph_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">get_model_fn</span><span class="p">(</span><span class="n">model_config</span><span class="p">,</span> <span class="n">graph_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">encoder_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">decoder_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bridge_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 

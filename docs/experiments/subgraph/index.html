@@ -695,6 +695,78 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Datasets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Datasets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/converters/" title="Converters" class="md-nav__link">
+      Converters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/cifar10/" title="Cifar10" class="md-nav__link">
+      Cifar10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/flowers17/" title="Flowers17" class="md-nav__link">
+      Flowers17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/mnist/" title="Mnist" class="md-nav__link">
+      Mnist
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
       Contributing
@@ -746,7 +818,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/subgraph.py#L16">[source]</a></span></p>
 <h2 id="subgraph">SubGraph</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">subgraph</span><span class="o">.</span><span class="n">SubGraph</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">subgraph</span><span class="o">.</span><span class="n">SubGraph</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Subgraph&#39;</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
@@ -756,7 +828,6 @@
 <li><strong>mode</strong>: <code>str</code>. Specifies if this training, evaluation or prediction. See <code>ModeKeys</code>.</li>
 <li><strong>name</strong>: <code>str</code>. The name of this subgraph, used for creating the scope.</li>
 <li><strong>modules</strong>: <code>list</code>.  The modules to connect inside this subgraph, e.g. layers</li>
-<li><strong>kwargs</strong>: <code>list</code>. The list key word args to call each method with.</li>
 <li><strong>features</strong>: <code>list</code>. The list of features keys to extract and use in this subgraph.
     If <code>None</code>, all features will be used.</li>
 </ul>

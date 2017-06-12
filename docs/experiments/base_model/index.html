@@ -313,8 +313,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_create_optimizer" title="_create_optimizer" class="md-nav__link">
-    _create_optimizer
+  <a href="#_build_optimizer" title="_build_optimizer" class="md-nav__link">
+    _build_optimizer
   </a>
   
 </li>
@@ -771,6 +771,78 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Datasets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Datasets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/converters/" title="Converters" class="md-nav__link">
+      Converters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/cifar10/" title="Cifar10" class="md-nav__link">
+      Cifar10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/flowers17/" title="Flowers17" class="md-nav__link">
+      Flowers17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/mnist/" title="Mnist" class="md-nav__link">
+      Mnist
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
       Contributing
@@ -812,8 +884,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_create_optimizer" title="_create_optimizer" class="md-nav__link">
-    _create_optimizer
+  <a href="#_build_optimizer" title="_build_optimizer" class="md-nav__link">
+    _build_optimizer
   </a>
   
 </li>
@@ -896,9 +968,9 @@
                 
                   <h1>Base Model</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/experiments/models.py#L22">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/base.py#L19">[source]</a></span></p>
 <h2 id="basemodel">BaseModel</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -914,7 +986,6 @@
 <li><code>inputs</code>: the feature inputs.</li>
 </ul>
 </li>
-<li><strong>graph_fn</strong>: An instance of <code>GraphConfig</code>.</li>
 <li><strong>loss_config</strong>: An instance of <code>LossConfig</code>.</li>
 <li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adam</code>.</li>
 <li><strong>model_type</strong>: <code>str</code>, the type of this model.
@@ -922,7 +993,6 @@
 <li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
     Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
 <li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
-<li><strong>params</strong>: <code>dict</code>. A dictionary of hyperparameter values.</li>
 </ul>
 </li>
 <li>
@@ -938,15 +1008,15 @@
 
 <p>Clips gradients by global norm.</p>
 <hr />
-<h3 id="_create_optimizer">_create_optimizer</h3>
-<div class="codehilite"><pre><span></span><span class="n">_create_optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<h3 id="_build_optimizer">_build_optimizer</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Creates the optimizer</p>
 <hr />
 <h3 id="_build_summary_op">_build_summary_op</h3>
-<div class="codehilite"><pre><span></span><span class="n">_build_summary_op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">_build_summary_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">generated</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
@@ -960,9 +1030,12 @@
 
 
 <p>Creates the loss operation</p>
-<p>Returns a tuple <code>(losses, loss)</code>:
+<ul>
+<li><strong>Returns</strong>:
+     tuple <code>(losses, loss)</code>:
     <code>losses</code> are the per-batch losses.
-    <code>loss</code> is a single scalar tensor to minimize.</p>
+    <code>loss</code> is a single scalar tensor to minimize.</li>
+</ul>
 <hr />
 <h3 id="_build_eval_metrics">_build_eval_metrics</h3>
 <div class="codehilite"><pre><span></span><span class="n">_build_eval_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>

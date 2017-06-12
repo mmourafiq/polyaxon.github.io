@@ -723,6 +723,78 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Datasets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Datasets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/converters/" title="Converters" class="md-nav__link">
+      Converters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/cifar10/" title="Cifar10" class="md-nav__link">
+      Cifar10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/flowers17/" title="Flowers17" class="md-nav__link">
+      Flowers17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../datasets/mnist/" title="Mnist" class="md-nav__link">
+      Mnist
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
       Contributing
@@ -802,7 +874,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L19">[source]</a></span></p>
 <h2 id="pipeline">Pipeline</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
@@ -820,9 +892,9 @@ features and labels.</p>
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L73">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L74">[source]</a></span></p>
 <h2 id="tfrecordimagepipeline">TFRecordImagePipeline</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">TFRecordImagePipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">meta_data_file</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">TFRecordImagePipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;TFRecordImagePipeline&#39;</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">meta_data_file</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
@@ -840,9 +912,9 @@ features and labels.</p>
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L148">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L149">[source]</a></span></p>
 <h2 id="paralleltextpipeline">ParallelTextPipeline</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">ParallelTextPipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">target_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">target_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">ParallelTextPipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ParallelTextPipeline&#39;</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">target_files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">target_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -865,9 +937,9 @@ features and labels.</p>
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L226">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L228">[source]</a></span></p>
 <h2 id="tfrecordsourcesequencepipeline">TFRecordSourceSequencePipeline</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">TFRecordSourceSequencePipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_field</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">target_field</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="n">source_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">target_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">TFRecordSourceSequencePipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;TFRecordSourceSequencePipeline&#39;</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source_field</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">target_field</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="n">source_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">target_delimiter</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -890,9 +962,9 @@ features and labels.</p>
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L315">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/processing/pipelines.py#L317">[source]</a></span></p>
 <h2 id="imagecaptioningpipeline">ImageCaptioningPipeline</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">ImageCaptioningPipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">image_field</span><span class="o">=</span><span class="s1">&#39;image/data&#39;</span><span class="p">,</span> <span class="n">image_format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="n">caption_ids_field</span><span class="o">=</span><span class="s1">&#39;image/caption_ids&#39;</span><span class="p">,</span> <span class="n">caption_tokens_field</span><span class="o">=</span><span class="s1">&#39;image/caption&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">processing</span><span class="o">.</span><span class="n">pipelines</span><span class="o">.</span><span class="n">ImageCaptioningPipeline</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ImageCaptioningPipeline&#39;</span><span class="p">,</span> <span class="n">subgraphs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">image_field</span><span class="o">=</span><span class="s1">&#39;image/data&#39;</span><span class="p">,</span> <span class="n">image_format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="n">caption_ids_field</span><span class="o">=</span><span class="s1">&#39;image/caption_ids&#39;</span><span class="p">,</span> <span class="n">caption_tokens_field</span><span class="o">=</span><span class="s1">&#39;image/caption&#39;</span><span class="p">)</span>
 </pre></div>
 
 
