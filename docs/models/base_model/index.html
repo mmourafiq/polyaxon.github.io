@@ -9,7 +9,7 @@
         <meta name="description" content="Documentation for polyaxon, a python Deep Learning library for TensorFlow.">
       
       
-        <link rel="canonical" href="http://polyaxon.com/processing/input_fn/">
+        <link rel="canonical" href="http://polyaxon.com/models/base_model/">
       
       
       
@@ -19,7 +19,7 @@
     
     
       
-        <title>Input function - Polyaxon Documentation</title>
+        <title>Base Model - Polyaxon Documentation</title>
       
     
     
@@ -81,11 +81,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Processing
+                  Models
                 </span>
               
             
-            Input function
+            Base Model
           
         </span>
       </div>
@@ -312,10 +312,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Models
@@ -331,11 +333,119 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../models/base_model/" title="Base Model" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Base Model
+      </label>
+    
+    <a href="./" title="Base Model" class="md-nav__link md-nav__link--active">
       Base Model
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basemodel" title="BaseModel" class="md-nav__link">
+    BaseModel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_clip_gradients_fn" title="_clip_gradients_fn" class="md-nav__link">
+    _clip_gradients_fn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_optimizer" title="_build_optimizer" class="md-nav__link">
+    _build_optimizer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_summary_op" title="_build_summary_op" class="md-nav__link">
+    _build_summary_op
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_loss" title="_build_loss" class="md-nav__link">
+    _build_loss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_eval_metrics" title="_build_eval_metrics" class="md-nav__link">
+    _build_eval_metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_train_op" title="_build_train_op" class="md-nav__link">
+    _build_train_op
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_preprocess" title="_preprocess" class="md-nav__link">
+    _preprocess
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_predictions" title="_build_predictions" class="md-nav__link">
+    _build_predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build" title="_build" class="md-nav__link">
+    _build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch_size" title="batch_size" class="md-nav__link">
+    batch_size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -345,7 +455,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../models/models/" title="Models" class="md-nav__link">
+    <a href="../models/" title="Models" class="md-nav__link">
       Models
     </a>
   </li>
@@ -564,12 +674,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
       Processing
@@ -587,7 +695,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
+    <a href="../../processing/categorical_vocabulary/" title="Categorical Vocabulary" class="md-nav__link">
       Categorical Vocabulary
     </a>
   </li>
@@ -599,7 +707,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
+    <a href="../../processing/vocabulary_processor/" title="Vocabulary Processor" class="md-nav__link">
       Vocabulary Processor
     </a>
   </li>
@@ -611,7 +719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../image/" title="Image" class="md-nav__link">
+    <a href="../../processing/image/" title="Image" class="md-nav__link">
       Image
     </a>
   </li>
@@ -621,43 +729,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Input function
-      </label>
-    
-    <a href="./" title="Input function" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../processing/input_fn/" title="Input function" class="md-nav__link">
       Input function
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create_input_data_fn" title="create_input_data_fn" class="md-nav__link">
-    create_input_data_fn
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -667,7 +743,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../pipelines/" title="Pipelines" class="md-nav__link">
+    <a href="../../processing/pipelines/" title="Pipelines" class="md-nav__link">
       Pipelines
     </a>
   </li>
@@ -679,7 +755,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data_decoders/" title="Data Decoders" class="md-nav__link">
+    <a href="../../processing/data_decoders/" title="Data Decoders" class="md-nav__link">
       Data Decoders
     </a>
   </li>
@@ -691,7 +767,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../data_providers/" title="Data Providers" class="md-nav__link">
+    <a href="../../processing/data_providers/" title="Data Providers" class="md-nav__link">
       Data Providers
     </a>
   </li>
@@ -937,9 +1013,85 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create_input_data_fn" title="create_input_data_fn" class="md-nav__link">
-    create_input_data_fn
+  <a href="#basemodel" title="BaseModel" class="md-nav__link">
+    BaseModel
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_clip_gradients_fn" title="_clip_gradients_fn" class="md-nav__link">
+    _clip_gradients_fn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_optimizer" title="_build_optimizer" class="md-nav__link">
+    _build_optimizer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_summary_op" title="_build_summary_op" class="md-nav__link">
+    _build_summary_op
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_loss" title="_build_loss" class="md-nav__link">
+    _build_loss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_eval_metrics" title="_build_eval_metrics" class="md-nav__link">
+    _build_eval_metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_train_op" title="_build_train_op" class="md-nav__link">
+    _build_train_op
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_preprocess" title="_preprocess" class="md-nav__link">
+    _preprocess
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build_predictions" title="_build_predictions" class="md-nav__link">
+    _build_predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_build" title="_build" class="md-nav__link">
+    _build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch_size" title="batch_size" class="md-nav__link">
+    batch_size
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -958,33 +1110,126 @@
               
                 
                 
-                  <h1>Input function</h1>
+                  <h1>Base Model</h1>
                 
-                <h2 id="create_input_data_fn">create_input_data_fn</h2>
-<div class="codehilite"><pre><span></span><span class="n">create_input_data_fn</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">pipeline_config</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">input_type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/base.py#L19">[source]</a></span></p>
+<h2 id="basemodel">BaseModel</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Creates an input data function that can be used with estimators.
-Note that you must pass "factory functions" for both the data provider and
-featurizer to ensure that everything will be created in  the same graph.</p>
+<p>Base class for models.</p>
 <ul>
 <li>
 <p><strong>Args</strong>:</p>
 <ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
-<li><strong>pipeline_config</strong>: the configuration to create a Pipeline instance.</li>
-<li><strong>scope</strong>: <code>str</code>. scope to use for this input data block.</li>
-<li><strong>input_type</strong>: <code>str</code>. The type of the input, values: <code>NUMPY</code>, <code>PANDAS</code>.
-    If <code>None</code>, will create a function based on the pipeline config.</li>
-<li><strong>x</strong>: <code>np.ndarray</code> or <code>np.Dataframe</code> or <code>None</code>.</li>
-<li><strong>y</strong>: <code>np.ndarray</code> or <code>None</code>.</li>
+<li><strong>graph_fn</strong>: Graph function. Follows the signature:<ul>
+<li>Args:</li>
+<li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
+<li><code>inputs</code>: the feature inputs.</li>
+</ul>
+</li>
+<li><strong>loss_config</strong>: An instance of <code>LossConfig</code>.</li>
+<li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adam</code>.</li>
+<li><strong>model_type</strong>: <code>str</code>, the type of this model.
+    Possible values: <code>regressor</code>, <code>classifier</code>, <code>generator</code></li>
+<li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
+    Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+<li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
 </ul>
 </li>
 <li>
 <p><strong>Returns</strong>:
-    An input function that returns <code>(feature_batch, labels_batch)</code>
-    tuples when called.</p>
+    <code>EstimatorSpec</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="_clip_gradients_fn">_clip_gradients_fn</h3>
+<div class="codehilite"><pre><span></span><span class="n">_clip_gradients_fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grads_and_vars</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Clips gradients by global norm.</p>
+<hr />
+<h3 id="_build_optimizer">_build_optimizer</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the optimizer</p>
+<hr />
+<h3 id="_build_summary_op">_build_summary_op</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_summary_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Builds summaries for this model.</p>
+<p>The summaries are one value (or more) of:
+    * (<code>ACTIVATIONS</code>, <code>VARIABLES</code>, <code>GRADIENTS</code>, <code>LOSS</code>, <code>LEARNING_RATE</code>)</p>
+<hr />
+<h3 id="_build_loss">_build_loss</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the loss operation</p>
+<ul>
+<li><strong>Returns</strong>:
+     tuple <code>(losses, loss)</code>:
+    <code>losses</code> are the per-batch losses.
+    <code>loss</code> is a single scalar tensor to minimize.</li>
+</ul>
+<hr />
+<h3 id="_build_eval_metrics">_build_eval_metrics</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_eval_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the loss operation</p>
+<p>Returns a tuple <code>(losses, loss)</code>:
+    <code>losses</code> are the per-batch losses.
+    <code>loss</code> is a single scalar tensor to minimize.</p>
+<hr />
+<h3 id="_build_train_op">_build_train_op</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_train_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the training operation</p>
+<hr />
+<h3 id="_preprocess">_preprocess</h3>
+<div class="codehilite"><pre><span></span><span class="n">_preprocess</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Model specific preprocessing.</p>
+<hr />
+<h3 id="_build_predictions">_build_predictions</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build_predictions</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">losses</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Creates the dictionary of predictions that is returned by the model.</p>
+<hr />
+<h3 id="_build">_build</h3>
+<div class="codehilite"><pre><span></span><span class="n">_build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Build the different operation of the model.</p>
+<hr />
+<h3 id="batch_size">batch_size</h3>
+<div class="codehilite"><pre><span></span><span class="n">batch_size</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Returns the batch size of the curren batch based on the passed features.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>features</strong>: The features.</li>
+<li><strong>labels</strong>: The labels</li>
+</ul>
 </li>
 </ul>
                 
@@ -1005,7 +1250,7 @@ featurizer to ensure that everything will be created in  the same graph.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../image/" title="Image" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../experiments/summarizer/" title="Summerizer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1014,19 +1259,19 @@ featurizer to ensure that everything will be created in  the same graph.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Image
+                Summerizer
               </span>
             </div>
           </a>
         
         
-          <a href="../pipelines/" title="Pipelines" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../models/" title="Models" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Pipelines
+                Models
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
