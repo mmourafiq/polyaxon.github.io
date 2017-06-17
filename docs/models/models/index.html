@@ -990,7 +990,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/regressors.py#L12">[source]</a></span></p>
 <h2 id="regressor">Regressor</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">regressors</span><span class="o">.</span><span class="n">Regressor</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Regressor&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">regressors</span><span class="o">.</span><span class="n">Regressor</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">clip_embed_gradients</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Regressor&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -999,7 +999,8 @@
 <li>
 <p><strong>Args</strong>:</p>
 <ul>
-<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>Modes</code>.
+    Possible values: <code>regressor</code>, <code>classifier</code>, <code>generator</code></li>
 <li><strong>graph_fn</strong>: Graph function. Follows the signature:<ul>
 <li>Args:</li>
 <li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
@@ -1008,8 +1009,11 @@
 </li>
 <li><strong>loss_config</strong>: An instance of <code>LossConfig</code>. Default value <code>mean_squared_error</code>.</li>
 <li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adam</code>.</li>
+<li><strong>eval_metrics_config</strong>: a list of <code>MetricConfig</code> instances.</li>
 <li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
     Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+<li><strong>clip_gradients</strong>: <code>float</code>. Gradients  clipping by global norm.</li>
+<li><strong>clip_embed_gradients</strong>: <code>float</code>. Embedding gradients clipping to a specified value.</li>
 <li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
 </ul>
 </li>
@@ -1021,7 +1025,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/classifiers.py#L13">[source]</a></span></p>
 <h2 id="classifier">Classifier</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">classifiers</span><span class="o">.</span><span class="n">Classifier</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">one_hot_encode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Classfier&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">classifiers</span><span class="o">.</span><span class="n">Classifier</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">clip_embed_gradients</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">one_hot_encode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Classfier&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1030,7 +1034,8 @@
 <li>
 <p><strong>Args</strong>:</p>
 <ul>
-<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>Modes</code>.
+    Possible values: <code>regressor</code>, <code>classifier</code>, <code>generator</code></li>
 <li><strong>graph_fn</strong>: Graph function. Follows the signature:<ul>
 <li>Args:</li>
 <li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
@@ -1039,11 +1044,14 @@
 </li>
 <li><strong>loss_config</strong>: An instance of <code>LossConfig</code>. Default value <code>sigmoid_cross_entropy</code>.</li>
 <li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adam</code>.</li>
+<li><strong>eval_metrics_config</strong>: a list of <code>MetricConfig</code> instances.</li>
 <li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
     Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
-<li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
+<li><strong>clip_gradients</strong>: <code>float</code>. Gradients  clipping by global norm.</li>
+<li><strong>clip_embed_gradients</strong>: <code>float</code>. Embedding gradients clipping to a specified value.</li>
 <li><strong>one_hot_encode</strong>: <code>bool</code>. to one hot encode the outputs.</li>
 <li><strong>n_classes</strong>: <code>int</code>. The number of classes used in the one hot encoding.</li>
+<li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
 </ul>
 </li>
 <li>
@@ -1054,7 +1062,7 @@
 <hr />
 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/generators.py#L17">[source]</a></span></p>
 <h2 id="generator">Generator</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">Generator</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">encoder_fn</span><span class="p">,</span> <span class="n">decoder_fn</span><span class="p">,</span> <span class="n">bridge_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Generator&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">Generator</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">encoder_fn</span><span class="p">,</span> <span class="n">decoder_fn</span><span class="p">,</span> <span class="n">bridge_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">clip_embed_gradients</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Generator&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1063,7 +1071,8 @@
 <li>
 <p><strong>Args</strong>:</p>
 <ul>
-<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
+<li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>Modes</code>.
+    Possible values: <code>regressor</code>, <code>classifier</code>, <code>generator</code>.</li>
 <li><strong>encoder_fn</strong>: Encoder Graph function. Follows the signature:<ul>
 <li>Args:</li>
 <li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
@@ -1088,6 +1097,11 @@
 <li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adadelta</code>.</li>
 <li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
     Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+<li><strong>eval_metrics_config</strong>: a list of <code>MetricConfig</code> instances.</li>
+<li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
+    Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+<li><strong>clip_gradients</strong>: <code>float</code>. Gradients  clipping by global norm.</li>
+<li><strong>clip_embed_gradients</strong>: <code>float</code>. Embedding gradients clipping to a specified value.</li>
 <li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
 </ul>
 </li>
