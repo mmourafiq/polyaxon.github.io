@@ -1126,43 +1126,45 @@
 
 
 <p>Exports inference graph as a SavedModel into given dir.
-This method builds a new graph by first calling the
-serving_input_receiver_fn to obtain feature <code>Tensor</code>s, and then calling
-this <code>Estimator</code>'s model_fn to generate the model graph based on those
-features. It restores the given checkpoint (or, lacking that, the most
-recent checkpoint) into this graph in a fresh session.  Finally it creates
-a timestamped export directory below the given export_dir_base, and writes
-a <code>SavedModel</code> into it containing a single <code>MetaGraphDef</code> saved from this
+This method builds a new graph by first calling the serving_input_receiver_fn to
+obtain feature <code>Tensor</code>s, and then calling this <code>Estimator</code>'s model_fn
+to generate the model graph based on those features. It restores the given checkpoint
+(or, lacking that, the most recent checkpoint) into this graph in a fresh session.
+Finally it creates a timestamped export directory below the given export_dir_base,
+and writes a <code>SavedModel</code> into it containing a single <code>MetaGraphDef</code> saved from this
 session.
-The exported <code>MetaGraphDef</code> will provide one <code>SignatureDef</code> for each
-element of the export_outputs dict returned from the model_fn, named using
-the same keys.  One of these keys is always
-signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY, indicating which
-signature will be served when a serving request does not specify one.
-For each signature, the outputs are provided by the corresponding
-<code>ExportOutput</code>s, and the inputs are always the input receivers provided by
-the serving_input_receiver_fn.
-Extra assets may be written into the SavedModel via the extra_assets
-argument.  This should be a dict, where each key gives a destination path
-(including the filename) relative to the assets.extra directory.  The
-corresponding value gives the full path of the source file to be copied.
-For example, the simple case of copying a single file without renaming it
-is specified as <code>{'my_asset_file.txt': '/path/to/my_asset_file.txt'}</code>.
-- <strong>Args</strong>:
-    - <strong>export_dir_base</strong>: A string containing a directory in which to create
-    timestamped subdirectories containing exported SavedModels.
-    - <strong>serving_input_receiver_fn</strong>: A function that takes no argument and
-    returns a <code>ServingInputReceiver</code>.
-    - <strong>assets_extra</strong>: A dict specifying how to populate the assets.extra directory
-    within the exported SavedModel, or <code>None</code> if no extra assets are needed.
-    - <strong>as_text</strong>: whether to write the SavedModel proto in text format.
-    - <strong>checkpoint_path</strong>: The checkpoint path to export.  If <code>None</code> (the default),
-    the most recent checkpoint found within the model directory is chosen.
-- <strong>Returns</strong>:
-    The string path to the exported directory.
-- <strong>Raises</strong>:
-    - <strong>ValueError</strong>: if no serving_input_receiver_fn is provided, no export_outputs
-    are provided, or no checkpoint can be found.</p>
+The exported <code>MetaGraphDef</code> will provide one <code>SignatureDef</code> for each element of the
+export_outputs dict returned from the model_fn, named using the same keys.
+One of these keys is always signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY,
+indicating which signature will be served when a serving request does not specify one.
+For each signature, the outputs are provided by the corresponding <code>ExportOutput</code>s,
+and the inputs are always the input receivers provided by the serving_input_receiver_fn.
+Extra assets may be written into the SavedModel via the extra_assets argument.
+This should be a dict, where each key gives a destination path (including the filename)
+relative to the assets.extra directory.  The corresponding value gives the full path of
+the source file to be copied. For example, the simple case of copying a single file without
+renaming it is specified as <code>{'my_asset_file.txt': '/path/to/my_asset_file.txt'}</code>.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>export_dir_base</strong>: A string containing a directory in which to create
+timestamped subdirectories containing exported SavedModels.</li>
+<li><strong>serving_input_receiver_fn</strong>: A function that takes no argument and
+returns a <code>ServingInputReceiver</code>.</li>
+<li><strong>assets_extra</strong>: A dict specifying how to populate the assets.extra directory
+within the exported SavedModel, or <code>None</code> if no extra assets are needed.</li>
+<li><strong>as_text</strong>: whether to write the SavedModel proto in text format.</li>
+<li><strong>checkpoint_path</strong>: The checkpoint path to export.  If <code>None</code> (the default),
+the most recent checkpoint found within the model directory is chosen.</li>
+</ul>
+</li>
+<li><strong>Returns</strong>:
+    The string path to the exported directory.</li>
+<li><strong>Raises</strong>:<ul>
+<li><strong>ValueError</strong>: if no serving_input_receiver_fn is provided, no export_outputs
+are provided, or no checkpoint can be found.</li>
+</ul>
+</li>
+</ul>
 <hr />
 <h3 id="train">train</h3>
 <div class="codehilite"><pre><span></span><span class="n">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_fn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hooks</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">max_steps</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
@@ -1205,14 +1207,10 @@ that the second call will not do any iteration since first call did all 100 step
 <p>Evaluates given model with provided evaluation data.</p>
 <p>Stop conditions - we evaluate on the given input data until one of the
 - <strong>following</strong>:
-- If <code>steps</code> is provided, and <code>steps</code> batches of size <code>batch_size</code> are
-processed.
+- If <code>steps</code> is provided, and <code>steps</code> batches of size <code>batch_size</code> are processed.
 - If <code>input_fn</code> is provided, and it raises an end-of-input
 exception (<code>OutOfRangeError</code> or <code>StopIteration</code>).
 - If <code>x</code> is provided, and all items in <code>x</code> have been processed.</p>
-<p>The return value is a dict containing the metrics specified in <code>metrics</code>, as
-well as an entry <code>global_step</code> which contains the value of the global step
-for which this evaluation was performed.</p>
 <ul>
 <li>
 <p><strong>Args</strong>:</p>
@@ -1226,12 +1224,12 @@ been provided. See "Stop conditions" above for specifics.</li>
 <li><strong>steps</strong>: Number of steps for which to evaluate model. If <code>None</code>, evaluate
 until <code>x</code> is consumed or <code>input_fn</code> raises an end-of-input exception.
 See "Stop conditions" above for specifics.</li>
-<li><strong>name</strong>: Name of the evaluation if user needs to run multiple evaluations on
-different data sets, such as on training data vs test data.</li>
 <li><strong>checkpoint_path</strong>: Path of a specific checkpoint to evaluate. If <code>None</code>,
 the latest checkpoint in <code>model_dir</code> is used.</li>
 <li><strong>hooks</strong>: List of <code>SessionRunHook</code> subclass instances.
 Used for callbacks inside the evaluation call.</li>
+<li><strong>name</strong>: Name of the evaluation if user needs to run multiple evaluations on
+different data sets, such as on training data vs test data.</li>
 </ul>
 </li>
 <li>
@@ -1242,7 +1240,9 @@ Used for callbacks inside the evaluation call.</li>
 </li>
 <li>
 <p><strong>Returns</strong>:
-    Returns <code>dict</code> with evaluation results.</p>
+    Returns <code>dict</code> with evaluation results; the metrics specified in <code>metrics</code>, as
+    well as an entry <code>global_step</code> which contains the value of the global step
+    for which this evaluation was performed.</p>
 </li>
 </ul>
 <hr />

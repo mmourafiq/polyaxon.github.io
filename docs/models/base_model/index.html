@@ -1114,7 +1114,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/models/base.py#L19">[source]</a></span></p>
 <h2 id="basemodel">BaseModel</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">clip_embed_gradients</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Model&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1124,6 +1124,8 @@
 <p><strong>Args</strong>:</p>
 <ul>
 <li><strong>mode</strong>: <code>str</code>, Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
+<li><strong>model_type</strong>: <code>str</code>, the type of this model.
+    Possible values: <code>regressor</code>, <code>classifier</code>, <code>generator</code></li>
 <li><strong>graph_fn</strong>: Graph function. Follows the signature:<ul>
 <li>Args:</li>
 <li><code>mode</code>: Specifies if this training, evaluation or prediction. See <code>Modes</code>.</li>
@@ -1132,10 +1134,11 @@
 </li>
 <li><strong>loss_config</strong>: An instance of <code>LossConfig</code>.</li>
 <li><strong>optimizer_config</strong>: An instance of <code>OptimizerConfig</code>. Default value <code>Adam</code>.</li>
-<li><strong>model_type</strong>: <code>str</code>, the type of this model.
-    Possible values: <code>regressor</code>, <code>classifier</code>, <code>generator</code></li>
+<li><strong>eval_metrics_config</strong>: a list of <code>MetricConfig</code> instances.</li>
 <li><strong>summaries</strong>: <code>str</code> or <code>list</code>. The verbosity of the tensorboard visualization.
-    Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+     Possible values: <code>all</code>, <code>activations</code>, <code>loss</code>, <code>learning_rate</code>, <code>variables</code>, <code>gradients</code></li>
+<li><strong>clip_gradients</strong>: <code>float</code>. Gradients  clipping by global norm.</li>
+<li><strong>clip_embed_gradients</strong>: <code>float</code>. Embedding gradients clipping to a specified value.</li>
 <li><strong>name</strong>: <code>str</code>, the name of this model, everything will be encapsulated inside this scope.</li>
 </ul>
 </li>
@@ -1224,7 +1227,7 @@
 </pre></div>
 
 
-<p>Returns the batch size of the curren batch based on the passed features.</p>
+<p>Returns the batch size of the current batch based on the passed features.</p>
 <ul>
 <li><strong>Args</strong>:<ul>
 <li><strong>features</strong>: The features.</li>
