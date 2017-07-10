@@ -946,8 +946,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#runconfig" title="RunConfig" class="md-nav__link">
-    RunConfig
+  <a href="#environmentconfig" title="EnvironmentConfig" class="md-nav__link">
+    EnvironmentConfig
   </a>
   
 </li>
@@ -955,6 +955,13 @@
         <li class="md-nav__item">
   <a href="#configurable" title="Configurable" class="md-nav__link">
     Configurable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runconfig" title="RunConfig" class="md-nav__link">
+    RunConfig
   </a>
   
 </li>
@@ -969,13 +976,6 @@
         <li class="md-nav__item">
   <a href="#inputdataconfig" title="InputDataConfig" class="md-nav__link">
     InputDataConfig
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#environmentconfig" title="EnvironmentConfig" class="md-nav__link">
-    EnvironmentConfig
   </a>
   
 </li>
@@ -1044,6 +1044,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#agentconfig" title="AgentConfig" class="md-nav__link">
+    AgentConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#experimentconfig" title="ExperimentConfig" class="md-nav__link">
     ExperimentConfig
   </a>
@@ -1053,13 +1060,6 @@
         <li class="md-nav__item">
   <a href="#rlexperimentconfig" title="RLExperimentConfig" class="md-nav__link">
     RLExperimentConfig
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create_run_config" title="create_run_config" class="md-nav__link">
-    create_run_config
   </a>
   
 </li>
@@ -1205,8 +1205,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#runconfig" title="RunConfig" class="md-nav__link">
-    RunConfig
+  <a href="#environmentconfig" title="EnvironmentConfig" class="md-nav__link">
+    EnvironmentConfig
   </a>
   
 </li>
@@ -1214,6 +1214,13 @@
         <li class="md-nav__item">
   <a href="#configurable" title="Configurable" class="md-nav__link">
     Configurable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runconfig" title="RunConfig" class="md-nav__link">
+    RunConfig
   </a>
   
 </li>
@@ -1228,13 +1235,6 @@
         <li class="md-nav__item">
   <a href="#inputdataconfig" title="InputDataConfig" class="md-nav__link">
     InputDataConfig
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#environmentconfig" title="EnvironmentConfig" class="md-nav__link">
-    EnvironmentConfig
   </a>
   
 </li>
@@ -1303,6 +1303,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#agentconfig" title="AgentConfig" class="md-nav__link">
+    AgentConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#experimentconfig" title="ExperimentConfig" class="md-nav__link">
     ExperimentConfig
   </a>
@@ -1312,13 +1319,6 @@
         <li class="md-nav__item">
   <a href="#rlexperimentconfig" title="RLExperimentConfig" class="md-nav__link">
     RLExperimentConfig
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create_run_config" title="create_run_config" class="md-nav__link">
-    create_run_config
   </a>
   
 </li>
@@ -1340,14 +1340,22 @@
                 
                   <h1>Configs</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L20">[source]</a></span></p>
-<h2 id="runconfig">RunConfig</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_cores</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">log_device_placement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">gpu_memory_fraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tf_random_seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_summary_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">save_checkpoints_secs</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">save_checkpoints_steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keep_checkpoint_max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">keep_checkpoint_every_n_hours</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">evaluation_master</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">model_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+                <p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L280">[source]</a></span></p>
+<h2 id="environmentconfig">EnvironmentConfig</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">EnvironmentConfig</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">env_id</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 
 
+<p>The EnvironmentConfig holds information needed to create an <code>Environment</code>.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>module</strong>: <code>str</code>, module loss to use.</li>
+<li><strong>params</strong>: <code>dict</code>, extra information to pass to the loss.</li>
+</ul>
+</li>
+</ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L76">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L42">[source]</a></span></p>
 <h2 id="configurable">Configurable</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">Configurable</span><span class="p">()</span>
 </pre></div>
@@ -1356,7 +1364,14 @@
 <p><code>Configurable</code> is an abstract class for defining an configurable objects.</p>
 <p>A configurable class reads a configuration (YAML, Json) and create a config instance.</p>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L123">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L96">[source]</a></span></p>
+<h2 id="runconfig">RunConfig</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_cores</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">log_device_placement</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">gpu_memory_fraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tf_random_seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_summary_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">save_checkpoints_secs</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">save_checkpoints_steps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keep_checkpoint_max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">keep_checkpoint_every_n_hours</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">evaluation_master</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">model_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L160">[source]</a></span></p>
 <h2 id="pipelineconfig">PipelineConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">PipelineConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subgraph_configs_by_features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dynamic_pad</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">bucket_boundaries</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_after_dequeue</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">num_threads</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">allow_smaller_final_batch</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1380,7 +1395,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L184">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L245">[source]</a></span></p>
 <h2 id="inputdataconfig">InputDataConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="p">(</span><span class="n">input_type</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pipeline_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1397,22 +1412,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L211">[source]</a></span></p>
-<h2 id="environmentconfig">EnvironmentConfig</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">EnvironmentConfig</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-</pre></div>
-
-
-<p>The EnvironmentConfig holds information needed to create an <code>Environment</code>.</p>
-<ul>
-<li><strong>Args</strong>:<ul>
-<li><strong>module</strong>: <code>str</code>, module loss to use.</li>
-<li><strong>params</strong>: <code>dict</code>, extra information to pass to the loss.</li>
-</ul>
-</li>
-</ul>
-<hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L223">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L301">[source]</a></span></p>
 <h2 id="lossconfig">LossConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">LossConfig</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1427,7 +1427,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L235">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L320">[source]</a></span></p>
 <h2 id="metricconfig">MetricConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">MetricConfig</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1442,7 +1442,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L247">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L339">[source]</a></span></p>
 <h2 id="explorationconfig">ExplorationConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ExplorationConfig</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1457,7 +1457,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L259">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L358">[source]</a></span></p>
 <h2 id="optimizerconfig">OptimizerConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">OptimizerConfig</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">decay_rate</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">start_decay_at</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop_decay_at</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">,</span> <span class="n">min_learning_rate</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">staircase</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sync_replicas</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sync_replicas_to_aggregate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1485,7 +1485,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L306">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L422">[source]</a></span></p>
 <h2 id="memoryconfig">MemoryConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">MemoryConfig</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1500,7 +1500,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L318">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L441">[source]</a></span></p>
 <h2 id="subgraphconfig">SubGraphConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">SubGraphConfig</span><span class="p">(</span><span class="n">modules</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1518,7 +1518,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L362">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L499">[source]</a></span></p>
 <h2 id="bridgeconfig">BridgeConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">BridgeConfig</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">state_size</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1526,9 +1526,9 @@
 
 <p>The BridgeConfig class holds information neede to create a <code>Bridge</code> for a generator model.</p>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L372">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L517">[source]</a></span></p>
 <h2 id="modelconfig">ModelConfig</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ModelConfig</span><span class="p">(</span><span class="n">loss_config</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">graph_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">encoder_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">decoder_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bridge_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">clip_embed_gradients</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ModelConfig</span><span class="p">(</span><span class="n">loss_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">optimizer_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">graph_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">encoder_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">decoder_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bridge_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clip_gradients</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">clip_embed_gradients</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1538,7 +1538,7 @@
 <li><strong>loss_config</strong>: The loss configuration.</li>
 <li><strong>optimizer_config</strong>: The optimizer configuration.</li>
 <li><strong>graph_config</strong>: The graph configuration.</li>
-<li><strong>model_type</strong>: <code>str</code>, The type of the model (<code>classifier</code>, 'regressor, or <code>generator</code>).</li>
+<li><strong>module</strong>: <code>str</code>, The type of the model (<code>classifier</code>, 'regressor, or <code>generator</code>).</li>
 <li><strong>summaries</strong>: <code>str</code> or <code>list</code>, the summary levels.</li>
 <li><strong>eval_metrics_config</strong>: The evaluation metrics configuration.</li>
 <li><strong>clip_gradients</strong>: <code>float</code>, The value to clip the gradients with.</li>
@@ -1547,7 +1547,7 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L432">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L597">[source]</a></span></p>
 <h2 id="estimatorconfig">EstimatorConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">EstimatorConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;Estimator&#39;</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
@@ -1556,14 +1556,30 @@
 <p>The EstimatorConfig holds information needed to create a <code>Estimator</code>.</p>
 <ul>
 <li><strong>Args</strong>:<ul>
-<li><strong>cls</strong>: <code>str</code>, estimator class to use.</li>
+<li><strong>module</strong>: <code>str</code>, estimator class to use.</li>
 <li><strong>output_dir</strong>: <code>str</code>, where to save training and evaluation data.</li>
 <li><strong>params</strong>: <code>dict</code>, extra information to pass to the estimator.</li>
 </ul>
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L462">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L619">[source]</a></span></p>
+<h2 id="agentconfig">AgentConfig</h2>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">AgentConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;Agent&#39;</span><span class="p">,</span> <span class="n">memory_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The EstimatorConfig holds information needed to create a <code>Estimator</code>.</p>
+<ul>
+<li><strong>Args</strong>:<ul>
+<li><strong>module</strong>: <code>str</code>, estimator class to use.</li>
+<li><strong>output_dir</strong>: <code>str</code>, where to save training and evaluation data.</li>
+<li><strong>params</strong>: <code>dict</code>, extra information to pass to the estimator.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L645">[source]</a></span></p>
 <h2 id="experimentconfig">ExperimentConfig</h2>
 <div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ExperimentConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">run_config</span><span class="p">,</span> <span class="n">train_input_data_config</span><span class="p">,</span> <span class="n">eval_input_data_config</span><span class="p">,</span> <span class="n">estimator_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">,</span> <span class="n">train_hooks_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_hooks_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_every_n_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">train_steps</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">eval_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">eval_delay_secs</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">continuous_eval_throttle_secs</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">delay_workers_by_global_step</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">export_strategies</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">train_steps_per_iteration</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
@@ -1596,9 +1612,9 @@
 </li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L541">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/polyaxon/polyaxon/blob/master/polyaxon/libs/configs.py#L747">[source]</a></span></p>
 <h2 id="rlexperimentconfig">RLExperimentConfig</h2>
-<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">RLExperimentConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">run_config</span><span class="p">,</span> <span class="n">environment_config</span><span class="p">,</span> <span class="n">agent_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">,</span> <span class="n">train_hooks_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_hooks_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_every_n_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">train_steps</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">eval_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">eval_delay_secs</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">continuous_eval_throttle_secs</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">delay_workers_by_global_step</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">export_strategies</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">train_steps_per_iteration</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">polyaxon</span><span class="o">.</span><span class="n">libs</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">RLExperimentConfig</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">run_config</span><span class="p">,</span> <span class="n">environment_config</span><span class="p">,</span> <span class="n">agent_config</span><span class="p">,</span> <span class="n">model_config</span><span class="p">,</span> <span class="n">train_hooks_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_hooks_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_metrics_config</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">eval_every_n_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">train_steps</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">train_episodes</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">first_update</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">update_frequency</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">eval_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">eval_delay_secs</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">continuous_eval_throttle_secs</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">delay_workers_by_global_step</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">export_strategies</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">train_steps_per_iteration</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1627,13 +1643,6 @@
 </ul>
 </li>
 </ul>
-<hr />
-<h2 id="create_run_config">create_run_config</h2>
-<div class="codehilite"><pre><span></span><span class="n">create_run_config</span><span class="p">(</span><span class="n">tf_random_seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_checkpoints_secs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">save_checkpoints_steps</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">keep_checkpoint_max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">keep_checkpoint_every_n_hours</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">gpu_memory_fraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">gpu_allow_growth</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">log_device_placement</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Creates a <code>RunConfig</code> instance.</p>
                 
                   
                 
