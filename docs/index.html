@@ -1078,7 +1078,7 @@
 <a href="./LICENCE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 <a href="https://gitter.im/polyaxon/polyaxon"><img alt="Gitter" src="https://img.shields.io/gitter/room/nwjs/nw.js.svg" /></a></p>
 <h1 id="polyaxon">Polyaxon</h1>
-<p>Deep Learning library for TensorFlow for building end to end models and experiments.</p>
+<p>Deep Learning and Reinforcement learning library for TensorFlow for building end to end models and experiments.</p>
 <h1 id="design-goals">Design Goals</h1>
 <p>Polyaxon was built with the following goals:</p>
 <ul>
@@ -1103,101 +1103,191 @@
 </li>
 </ul>
 <h1 id="quick-start">Quick start</h1>
-<h2 id="a-classification-problem">A classification problem</h2>
-<div class="codehilite"><pre><span></span>    <span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">load_mnist</span><span class="p">()</span>
+<h2 id="a-simple-linear-regression">A simple linear regression</h2>
+<div class="codehilite"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.33</span>
 
-    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;lenet_mnsit&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">,</span>
-        <span class="s1">&#39;eval_every_n_steps&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s1">&#39;train_steps_per_iteration&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s1">&#39;run_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;save_checkpoints_steps&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-        <span class="s1">&#39;train_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
-            <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
-                                <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">},</span>
-            <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X_train</span><span class="p">,</span>
-            <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">Y_train</span>
-        <span class="p">},</span>
-        <span class="s1">&#39;eval_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
-            <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;eval&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
-                                <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">},</span>
-            <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X_test</span><span class="p">,</span>
-            <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">Y_test</span>
-        <span class="p">},</span>
-        <span class="s1">&#39;estimator_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">},</span>
-        <span class="s1">&#39;model_config&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;summaries&#39;</span><span class="p">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;model_type&#39;</span><span class="p">:</span> <span class="s1">&#39;classifier&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;loss_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;softmax_cross_entropy&#39;</span><span class="p">},</span>
-            <span class="s1">&#39;eval_metrics_config&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_accuracy&#39;</span><span class="p">},</span>
-                                    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_precision&#39;</span><span class="p">}],</span>
-            <span class="s1">&#39;optimizer_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.002</span><span class="p">,</span>
-                                 <span class="s1">&#39;decay_type&#39;</span><span class="p">:</span> <span class="s1">&#39;exponential_decay&#39;</span><span class="p">,</span> <span class="s1">&#39;decay_rate&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
-            <span class="s1">&#39;graph_config&#39;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;lenet&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;definition&#39;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_filter&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;filter_size&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;strides&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                                         <span class="s1">&#39;regularizer&#39;</span><span class="p">:</span> <span class="s1">&#39;l2_regularizer&#39;</span><span class="p">}),</span>
-                    <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;kernel_size&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
-                    <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_filter&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;filter_size&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-                                         <span class="s1">&#39;regularizer&#39;</span><span class="p">:</span> <span class="s1">&#39;l2_regularizer&#39;</span><span class="p">}),</span>
-                    <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;kernel_size&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
-                    <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;n_units&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span> <span class="s1">&#39;activation&#39;</span><span class="p">:</span> <span class="s1">&#39;tanh&#39;</span><span class="p">}),</span>
-                    <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;n_units&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}),</span>
-                <span class="p">]</span>
-            <span class="p">}</span>
+<span class="c1"># Test a data set</span>
+<span class="n">X_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">y_val</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">X_val</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">X_val</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.33</span>
+
+
+<span class="k">def</span> <span class="nf">graph_fn</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">SingleUnit</span><span class="p">(</span><span class="n">mode</span><span class="p">)(</span><span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">model_fn</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Regressor</span><span class="p">(</span>
+        <span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="o">=</span><span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">LossConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">),</span>
+        <span class="n">optimizer_config</span><span class="o">=</span><span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">OptimizerConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.009</span><span class="p">),</span>
+        <span class="n">eval_metrics_config</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;regressor&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+
+<span class="n">estimator</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">estimators</span><span class="o">.</span><span class="n">Estimator</span><span class="p">(</span><span class="n">model_fn</span><span class="o">=</span><span class="n">model_fn</span><span class="p">,</span> <span class="n">model_dir</span><span class="o">=</span><span class="s2">&quot;/tmp/polyaxon_logs/linear&quot;</span><span class="p">)</span>
+
+<span class="n">estimator</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">numpy_input_fn</span><span class="p">(</span>
+    <span class="p">{</span><span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="n">X</span><span class="p">},</span> <span class="n">y</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)))</span>
+</pre></div>
+
+
+<h2 id="a-reinforcement-learning-problem">A reinforcement learning problem</h2>
+<div class="codehilite"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">envs</span><span class="o">.</span><span class="n">GymEnvironment</span><span class="p">(</span><span class="s1">&#39;CartPole-v0&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">graph_fn</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="o">=</span><span class="mi">512</span><span class="p">)(</span><span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">model_fn</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">DQNModel</span><span class="p">(</span>
+        <span class="n">mode</span><span class="p">,</span> 
+        <span class="n">graph_fn</span><span class="o">=</span><span class="n">graph_fn</span><span class="p">,</span> 
+        <span class="n">loss_config</span><span class="o">=</span><span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">LossConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;huber_loss&#39;</span><span class="p">),</span>
+        <span class="n">num_states</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_states</span><span class="p">,</span> 
+        <span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">,</span>
+        <span class="n">optimizer_config</span><span class="o">=</span><span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">OptimizerConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">),</span>
+        <span class="n">exploration_config</span><span class="o">=</span><span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ExplorationConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;decay&#39;</span><span class="p">),</span>
+        <span class="n">target_update_frequency</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+        <span class="n">dueling</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> 
+        <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="n">memory</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">rl</span><span class="o">.</span><span class="n">memories</span><span class="o">.</span><span class="n">Memory</span><span class="p">(</span>
+    <span class="n">num_states</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_states</span><span class="p">,</span> <span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">,</span> <span class="n">continuous</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">is_continuous</span><span class="p">)</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">estimators</span><span class="o">.</span><span class="n">Agent</span><span class="p">(</span>
+    <span class="n">model_fn</span><span class="o">=</span><span class="n">model_fn</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span> <span class="n">model_dir</span><span class="o">=</span><span class="s2">&quot;/tmp/polyaxon_logs/dqn_cartpole&quot;</span><span class="p">)</span>
+
+<span class="n">agent</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="a-classification-problem">A classification problem</h2>
+<div class="codehilite"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">load_mnist</span><span class="p">()</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;lenet_mnsit&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">,</span>
+    <span class="s1">&#39;eval_every_n_steps&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;train_steps_per_iteration&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s1">&#39;run_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;save_checkpoints_steps&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+    <span class="s1">&#39;train_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
+        <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+                            <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">},</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X_train</span><span class="p">,</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">Y_train</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;eval_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
+        <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;eval&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+                            <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">},</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X_test</span><span class="p">,</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">Y_test</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;estimator_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">},</span>
+    <span class="s1">&#39;model_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;summaries&#39;</span><span class="p">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;model_type&#39;</span><span class="p">:</span> <span class="s1">&#39;classifier&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;loss_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;softmax_cross_entropy&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;eval_metrics_config&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_accuracy&#39;</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_precision&#39;</span><span class="p">}],</span>
+        <span class="s1">&#39;optimizer_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.002</span><span class="p">,</span>
+                             <span class="s1">&#39;decay_type&#39;</span><span class="p">:</span> <span class="s1">&#39;exponential_decay&#39;</span><span class="p">,</span> <span class="s1">&#39;decay_rate&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
+        <span class="s1">&#39;graph_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;lenet&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;definition&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_filter&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;filter_size&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;strides&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                                     <span class="s1">&#39;regularizer&#39;</span><span class="p">:</span> <span class="s1">&#39;l2_regularizer&#39;</span><span class="p">}),</span>
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;kernel_size&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_filter&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;filter_size&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                                     <span class="s1">&#39;regularizer&#39;</span><span class="p">:</span> <span class="s1">&#39;l2_regularizer&#39;</span><span class="p">}),</span>
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;kernel_size&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span>
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;n_units&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span> <span class="s1">&#39;activation&#39;</span><span class="p">:</span> <span class="s1">&#39;tanh&#39;</span><span class="p">}),</span>
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;n_units&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}),</span>
+            <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="n">experiment_config</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ExperimentConfig</span><span class="o">.</span><span class="n">read_configs</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-    <span class="n">xp</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">create_experiment</span><span class="p">(</span><span class="n">experiment_config</span><span class="p">)</span>
-    <span class="n">xp</span><span class="o">.</span><span class="n">continuous_train_and_evaluate</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="n">experiment_config</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ExperimentConfig</span><span class="o">.</span><span class="n">read_configs</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="n">xp</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">create_experiment</span><span class="p">(</span><span class="n">experiment_config</span><span class="p">)</span>
+<span class="n">xp</span><span class="o">.</span><span class="n">continuous_train_and_evaluate</span><span class="p">()</span>
 </pre></div>
 
 
 <h2 id="a-regression-problem">A regression problem</h2>
-<div class="codehilite"><pre><span></span>    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">time_steps</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">time_steps</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 
-    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;time_series&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">,</span>
-        <span class="s1">&#39;eval_every_n_steps&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="s1">&#39;run_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;save_checkpoints_steps&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-        <span class="s1">&#39;train_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
-            <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
-                                <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">},</span>
-            <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
-            <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span>
-        <span class="p">},</span>
-        <span class="s1">&#39;eval_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
-            <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;eval&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
-                                <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">},</span>
-            <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">],</span>
-            <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">]</span>
-        <span class="p">},</span>
-        <span class="s1">&#39;estimator_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">},</span>
-        <span class="s1">&#39;model_config&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;model_type&#39;</span><span class="p">:</span> <span class="s1">&#39;regressor&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;loss_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;mean_squared_error&#39;</span><span class="p">},</span>
-            <span class="s1">&#39;eval_metrics_config&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_root_mean_squared_error&#39;</span><span class="p">},</span>
-                                    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_mean_absolute_error&#39;</span><span class="p">}],</span>
-            <span class="s1">&#39;optimizer_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Adagrad&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
-            <span class="s1">&#39;graph_config&#39;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;regressor&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;definition&#39;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">LSTM</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_units&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;num_layers&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
-                    <span class="c1"># (Slice, {&#39;begin&#39;: [0, 6], &#39;size&#39;: [-1, 1]}),</span>
-                    <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;n_units&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
-                <span class="p">]</span>
-            <span class="p">}</span>
+<span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;time_series&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">,</span>
+    <span class="s1">&#39;eval_every_n_steps&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;run_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;save_checkpoints_steps&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+    <span class="s1">&#39;train_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
+        <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+                            <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">},</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;eval_input_data_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;input_type&#39;</span><span class="p">:</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">InputDataConfig</span><span class="o">.</span><span class="n">NUMPY</span><span class="p">,</span>
+        <span class="s1">&#39;pipeline_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;eval&#39;</span><span class="p">,</span> <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s1">&#39;num_epochs&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+                            <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">},</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;estimator_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;output_dir&#39;</span><span class="p">:</span> <span class="n">output_dir</span><span class="p">},</span>
+    <span class="s1">&#39;model_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;model_type&#39;</span><span class="p">:</span> <span class="s1">&#39;regressor&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;loss_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;mean_squared_error&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;eval_metrics_config&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_root_mean_squared_error&#39;</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;streaming_mean_absolute_error&#39;</span><span class="p">}],</span>
+        <span class="s1">&#39;optimizer_config&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Adagrad&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
+        <span class="s1">&#39;graph_config&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;regressor&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;definition&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">LSTM</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;num_units&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;num_layers&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
+                <span class="c1"># (Slice, {&#39;begin&#39;: [0, 6], &#39;size&#39;: [-1, 1]}),</span>
+                <span class="p">(</span><span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;n_units&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
+            <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="n">experiment_config</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ExperimentConfig</span><span class="o">.</span><span class="n">read_configs</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-    <span class="n">xp</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">create_experiment</span><span class="p">(</span><span class="n">experiment_config</span><span class="p">)</span>
-    <span class="n">xp</span><span class="o">.</span><span class="n">continuous_train_and_evaluate</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="n">experiment_config</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">ExperimentConfig</span><span class="o">.</span><span class="n">read_configs</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+<span class="n">xp</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">create_experiment</span><span class="p">(</span><span class="n">experiment_config</span><span class="p">)</span>
+<span class="n">xp</span><span class="o">.</span><span class="n">continuous_train_and_evaluate</span><span class="p">()</span>
+</pre></div>
+
+
+<h2 id="creating-a-distributed-experiment">Creating a distributed experiment</h2>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">create_experiment</span><span class="p">(</span><span class="n">task_type</span><span class="p">,</span> <span class="n">task_index</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">graph_fn</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;tanh&#39;</span><span class="p">)(</span><span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">plx</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">FullyConnected</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">num_units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">model_fn</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Regressor</span><span class="p">(</span>
+            <span class="n">mode</span><span class="p">,</span> <span class="n">graph_fn</span><span class="o">=</span><span class="n">graph_fn</span><span class="p">,</span> <span class="n">loss_config</span><span class="o">=</span><span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">LossConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;absolute_difference&#39;</span><span class="p">),</span>
+            <span class="n">optimizer_config</span><span class="o">=</span><span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">OptimizerConfig</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">decay_type</span><span class="o">=</span><span class="s1">&#39;exponential_decay&#39;</span><span class="p">,</span> <span class="n">decay_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">summaries</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;xor&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">model</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;task_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">task_type</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;task_index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">task_index</span><span class="p">)</span>
+
+    <span class="n">cluster_config</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;master&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;127.0.0.1:9000&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;ps&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;127.0.0.1:9001&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;worker&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;127.0.0.1:9002&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;environment&#39;</span><span class="p">:</span> <span class="s1">&#39;cloud&#39;</span>
+        <span class="p">}</span>
+
+    <span class="n">config</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">configs</span><span class="o">.</span><span class="n">RunConfig</span><span class="p">(</span><span class="n">cluster_config</span><span class="o">=</span><span class="n">cluster_config</span><span class="p">)</span>
+
+    <span class="n">estimator</span> <span class="o">=</span> <span class="n">plx</span><span class="o">.</span><span class="n">estimators</span><span class="o">.</span><span class="n">Estimator</span><span class="p">(</span><span class="n">model_fn</span><span class="o">=</span><span class="n">model_fn</span><span class="p">,</span> <span class="n">model_dir</span><span class="o">=</span><span class="s2">&quot;/tmp/polyaxon_logs/xor&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">plx</span><span class="o">.</span><span class="n">experiments</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">input_fn</span><span class="p">,</span> <span class="n">input_fn</span><span class="p">)</span>
 </pre></div>
 
 
