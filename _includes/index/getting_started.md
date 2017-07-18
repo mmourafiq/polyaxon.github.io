@@ -3,7 +3,7 @@ git clone https://github.com/polyaxon/polyaxon.git
 
 cd polyaxon
 
-docker/setup
+cmd/setup
 
-docker/runserver
+cmd/runserver
 {% endhighlight %}
