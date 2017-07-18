@@ -40,6 +40,8 @@ url:         http://polyaxon.com
 host: 0.0.0.0
 
 paginate:             10
+paginate_path: "blog/page:num/"
+permalink: /blog/:categories/:year/:month/:day/:title/
 
 # safe mode must be disabled to use jekyll-assets.
 safe:               false
