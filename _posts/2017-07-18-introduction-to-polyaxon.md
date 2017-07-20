@@ -19,20 +19,20 @@ Polyaxon is a library and a platform built on top of TensorFlow for building dee
 
 ## Why another TensorFlow library
 
-Since the intention of creating library is to have an end to end system and a platform for managing experiments, the choice of creating a new library was very important, we wanted to to have complete control over the apis and future design decisions. We tried before to base the platform on Keras and/or tf.contrib.learn, but it was not easy, we were brought to tweak many parts which ended by creating a new library. In fact, if you have a chance to read the code, you will find that many programming decisions were completely inspired by these libraries, and sometimes only patching/mirroring the code of these libraries.
+In order to have an end to end system and a platform for managing experiments, the choice of creating a new library was very important, we wanted to to have complete control over the apis and future design decisions. We tried before to base the platform on Keras and/or tf.contrib.learn, but it was not easy, we were brought to tweak many parts and we decided to create a new library. In fact, if you have a chance to read the code, you will find that many programming decisions were completely inspired by these libraries, and sometimes we only patched/mirrored the code of these libraries.
 
 Having said that, the use of Polyaxon does not exclude using other libraries. So every module created by Polyaxon could be mixed and extended by other libraries.
 
 
 ## How can I start using Polyaxon
 
-Polyaxon is very modular and provides a simple interface to creating deep learning algorithms.
+Polyaxon is very modular and provides a simple interface for creating deep learning algorithms.
 
 There are 2 ways you can follow to use Polyaxon:
 
-  * By creating Python objects in a programatic way. Polyaon provides high level Layers and Models based on GraphModules, a high level object that easily share variables.
+  * By creating Python objects in a programatic way. Polyaxon provides high level Layers and Models based on GraphModules, a high level object that easily share variables.
 
-  * By creating configuration files (Json or YAML). In this case, the library is meant to be used in applications that want to utilize an intelligent system to achieve some task. This configurations would then be customized through an interface, web/cli, and would enable the user to easily tweak the parameters without caring about all the underlying implementation.
+  * By creating configuration files (json or yaml). In this case, the library is meant to be used in applications that want to utilize an intelligent system to achieve some task. This configurations would then be customized through an interface, web/cli, and would enable the user to easily tweak the parameters without caring about all the underlying implementation.
 
 ### An example of graph defined in a Json file:
 
@@ -214,8 +214,8 @@ For training and evaluating an algorithm, you can use Polyaxon built-in [experim
 
 ## Can I train my models in a distributed way
 
-Yes, as it was mentioned before, the project was initialy built on top of tf.learn, but the API was constantly changing and breaking, and this is why we decided to roll our own estimator and experiemnt modules, with the idea that in the future we can interchangeably use tensorflow built in estimators/experiments when they become stable.
+Yes, as it was mentioned before, the project was initially built on top of tf.contrib.learn, but the API was constantly changing and breaking, and this is why we decided to roll our own estimator and experiment modules, with the idea that in the future we can interchangeably use tensorflow's built in estimators/experiments when they become stable.
 
-## How can deploy and monitor my algorithms
+## How can I deploy and monitor my algorithms
 
-First we hope that you might find a useful use-case of Polyaxon for your projects. We are currently working on getting an architecture which will allow to easily manage, monitor, and compare experiments. And finally deploy an API to the cloud. We are also trying different approaches and concepts in an internal version to have a consistent, simple and stable way to create useful application of deep learning to real world problems.
+First we hope that you might find a useful use-case for your projects. We are currently working on getting an architecture which will allow to easily manage, monitor, and compare experiments. And finally deploy an API to the cloud. We are also trying different approaches and concepts in an internal version to have a consistent, simple and stable way to create useful application of deep learning to real world problems.
